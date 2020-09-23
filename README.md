@@ -1,9 +1,15 @@
 <img src="https://octodex.github.com/images/stormtroopocat.jpg" width="250">
 
+## Git Workflow Checklist
+- [x] **Fork** the repository
+- [x] **Edit** changes to code, add files for staging
+- [x] Use git to add commited files with *conventional commit format style*
+- [x] **Push** code into personal repository
+- [x] **Create pull request** to main project repository
 
 ## 📑 Team Checklist:
 
-- [ ] **Find database that fits project**
+- [x] **Find database that fits project**
 - [ ] Continuously update [SRS](https://docs.google.com/document/d/1lbW62LPh84QcCzgn3-WpvVLJhuLZc-Fj-svnL28oMaM/edit) documentation
 - [ ] Brainstorm features we want to apply
 - [ ] Brainstorm specific courses/scenarios for user training
