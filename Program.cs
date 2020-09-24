@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_PICK
+namespace PICKTrainingInc
 {
     static class Program
     {
@@ -16,7 +16,8 @@ namespace Project_PICK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new SplashPage());
+            //Application.Run(new LoginPage());
         }
     }
 }
