@@ -1,11 +1,65 @@
 <img src="https://octodex.github.com/images/stormtroopocat.jpg" width="250">
 
+
 ## 🤚Git Workflow Checklist
-- [✅] **Fork** the repository
-- [✅] **Edit** changes to code, add files for staging
-- [✅] Use git to add commited files following **conventional commit format style**
-- [✅] **Push** code into personal repository
-- [✅] **Create pull request** to main project repository
+## Initial Steps:
+> - [✅] **Fork** the project repository into your personal Github
+
+<img width="290" alt="Screen Shot 2020-09-25 at 9 51 29 PM" src="https://user-images.githubusercontent.com/68033681/94330477-f123c380-ff79-11ea-9ab6-8a793eb6277b.png">
+
+> - [✅] **Clone** the repository from your fork into your folder for editing
+
+<img width="330" alt="Screen Shot 2020-09-25 at 10 05 06 PM" src="https://user-images.githubusercontent.com/68033681/94330639-2e3c8580-ff7b-11ea-9032-240cad558a39.png">
+
+```
+git clone https://github.com/ptoulino/Project-PICK.git
+```
+***
+
+## Development:
+
+> - [✅] **SYNC FORK** 🤚 Make sure your personal repository is all synced with the project
+
+
+<img width="350" alt="Screen Shot 2020-09-25 at 10 09 19 PM" src="https://user-images.githubusercontent.com/68033681/94330804-98a1f580-ff7c-11ea-82a9-1115b85401a4.png">
+
+<img width="350" alt="Screen Shot 2020-09-25 at 10 11 55 PM" src="https://user-images.githubusercontent.com/68033681/94330803-9770c880-ff7c-11ea-97b8-268d7681e2a3.png">
+
+
+<img width="350" alt="Screen Shot 2020-09-25 at 10 16 30 PM" src="https://user-images.githubusercontent.com/68033681/94330842-d99a0a00-ff7c-11ea-9a84-24b889d6c913.png">
+
+```
+cd folder_name
+git pull
+```
+
+> - [✅] **Edit** changes to code, add files for staging
+
+```
+git add folder_name //or
+git add file_name  //or
+git add . //Adds all edited files in folder that has been repoed
+```
+
+> - [✅] Use git to add commited files following **conventional commit format style**
+
+>> - [✅] **Push** code into personal repository
+
+```
+git commit -m "feat(forms): Product Functions - Login" -m "Closes #843" //or simply
+git commit -m "feat(forms): Product Functions - Login"
+git push
+```
+
+> - [✅] 🤚 **Create pull request** to main project repository and add appropriate labels for merge
+
+<img width="235" alt="Screen Shot 2020-09-25 at 10 52 02 PM" src="https://user-images.githubusercontent.com/68033681/94331528-00a70a80-ff82-11ea-8e5a-13abd71f52b5.png">
+
+
+***
+
+
+
 + [More information on Git](https://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html) 
 ***
 
@@ -107,3 +161,4 @@
 > + [SRS Template](https://canvas.humboldt.edu/courses/46023/files/2042318?module_item_id=740405)
 >> + [SRS **MUST** Haves](https://canvas.humboldt.edu/courses/46023/pages/srs-must-haves?module_item_id=740406)
 > + [Design Specification Template](http://www.cs.iit.edu/~oaldawud/CS487/project/software_design_specification.htm)
+
