@@ -1,4 +1,4 @@
- <img src="https://octodex.github.com/images/stormtroopocat.jpg" width="250">
+<img src="https://octodex.github.com/images/stormtroopocat.jpg" width="250">
 
 ## 🤚Git Workflow Checklist
 - [✅] **Fork** the repository
