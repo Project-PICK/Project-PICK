@@ -1,15 +1,22 @@
 <img src="https://octodex.github.com/images/stormtroopocat.jpg" width="250">
 
+## 🤚Git Workflow Checklist
+- [✅] **Fork** the repository
+- [✅] **Edit** changes to code, add files for staging
+- [✅] Use git to add commited files following **conventional commit format style**
+- [✅] **Push** code into personal repository
+- [✅] **Create pull request** to main project repository
++ [More information on Git](https://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html) 
+***
 
 ## 📑 Team Checklist:
 
-- [ ] **Find database that fits project**
-- [ ] Continuously update [SRS](https://docs.google.com/document/d/1lbW62LPh84QcCzgn3-WpvVLJhuLZc-Fj-svnL28oMaM/edit) documentation
-- [ ] Brainstorm features we want to apply
-- [ ] Brainstorm specific courses/scenarios for user training
-- [ ] Git documentation(*how we go about pushing code (branches) and our agreed commit structure*)
-- [ ] Discuss possible CI/CD implementation
-- [x] *Completed task example*
+- [✅] *Find database that fits project*
+- [✅] *Continuously update [SRS](https://docs.google.com/document/d/1lbW62LPh84QcCzgn3-WpvVLJhuLZc-Fj-svnL28oMaM/edit) documentation*
+- [ ] **Brainstorm and apply features we want in our application**
+- [ ] **Brainstorm specific courses/scenarios for user training**
+- [✅] Git documentation(*how we go about pushing code (branches) and our agreed commit structure*)
+- [ ] **Discuss possible CI/CD implementation**
 ***
 
 ## 🔖 Links
@@ -69,8 +76,8 @@
 
 | 	⌛ Due Dates | Requirements | Percentage |
 | ------ | ----------- |-------- |
-| 09/23   | Software Requirement Specification-Sprint 1 |**6%** |
-| 10/14 | Software Design Specification Sprint 2 (including User Interface design) |*4%* |
+| ~~09/23~~   | ~~Software Requirement Specification-Sprint 1~~ |~~**6%**~~ |
+| **10/14** | Software Design Specification Sprint 2 (including User Interface design) |*4%* |
 | 11/12    | Test Plan |*4%* |
 | 12/02    | Demonstration of the software  |**10%**|
 | 12/05    | User Manual |*3%* |
