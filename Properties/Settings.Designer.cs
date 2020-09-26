@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project_PICK.Properties
+namespace PICKTrainingInc.Properties
 {
 
 
