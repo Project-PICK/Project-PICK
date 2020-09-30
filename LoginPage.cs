@@ -16,5 +16,12 @@ namespace PICKTrainingInc
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            ChooseTrainerPage tp = new ChooseTrainerPage();
+            tp.Show();
+        }
     }
 }

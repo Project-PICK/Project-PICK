@@ -16,6 +16,7 @@ namespace PICKTrainingInc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new AdminConsole());
             Application.Run(new SplashPage());
             //Application.Run(new LoginPage());
         }
