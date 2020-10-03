@@ -7,23 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Sql;
-
 
 namespace PICKTrainingInc
 {
-    public partial class SplashPage : Form
+    public partial class ChooseTrainerPage : Form
     {
-        public SplashPage()
+        public ChooseTrainerPage()
         {
             InitializeComponent();
         }
 
-        private void Logo_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            
-            LoginPage lp = new LoginPage();
-            lp.Show();
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
