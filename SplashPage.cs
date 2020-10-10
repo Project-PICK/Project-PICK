@@ -46,8 +46,12 @@ namespace PICKTrainingInc
 
             // Show a dialog box.
             DialogResult d = MessageBox.Show("Are You Sure You Want To Exit?", "Project PICK", MessageBoxButtons.YesNo);
-            if (d == DialogResult.No)
+            if (d == DialogResult.Yes)
             {
+                // The user wants to exit the application
+                System.Environment.Exit(1);
+            }
+            else {
                 // Restart the timer.
                 timer.Start();
 
