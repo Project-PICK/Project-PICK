@@ -85,6 +85,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SplashPage";
             this.Text = "PICK Training Inc.";
+            this.Load += new System.EventHandler(this.SplashPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
