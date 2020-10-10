@@ -33,6 +33,28 @@ namespace PICKTrainingInc
         public SplashPage()
         {
             InitializeComponent();
+            this.FormClosing += new FormClosingEventHandler(closeForm);
+        }
+
+        /**
+         * To be called when the user tries to close the form.
+         */
+        private void closeForm(Object sender, FormClosingEventArgs e)
+        {
+            // We don't want the timer to run while our dialog box is showing.
+            timer.Stop();
+
+            // Show a dialog box.
+            DialogResult d = MessageBox.Show("Are You Sure You Want To Exit?", "Project PICK", MessageBoxButtons.YesNo);
+            if (d == DialogResult.No)
+            {
+                // Restart the timer.
+                timer.Start();
+
+                // Issue the cancel command.
+                e.Cancel = true;
+            }
+                
         }
 
         /**
@@ -57,9 +79,7 @@ namespace PICKTrainingInc
             timer.Start();
         }
 
-#pragma warning disable IDE1006 // Naming Styles
         private async void continueToLogin(Object myObject, EventArgs myEventArgs)
-#pragma warning restore IDE1006 // Naming Styles
         {
             // Hides this form
             this.Hide();
