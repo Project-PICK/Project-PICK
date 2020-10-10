@@ -78,7 +78,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-      
     <EmbeddedResource Include="ImageLoader.resx">
       <DependentUpon>ImageLoader.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,10 +117,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="logo.png" />
+    <None Include="images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ADA.jpg" />
+    <None Include="images\ADA.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
