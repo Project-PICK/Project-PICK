@@ -52,6 +52,18 @@
     <Compile Include="ImageLoader.Designer.cs">
       <DependentUpon>ImageLoader.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminConsole.Designer.cs">
+      <DependentUpon>AdminConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseTrainerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseTrainerPage.Designer.cs">
+      <DependentUpon>ChooseTrainerPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,8 +78,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+      
     <EmbeddedResource Include="ImageLoader.resx">
       <DependentUpon>ImageLoader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminConsole.resx">
+      <DependentUpon>AdminConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseTrainerPage.resx">
+      <DependentUpon>ChooseTrainerPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
@@ -83,6 +102,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ADA.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
