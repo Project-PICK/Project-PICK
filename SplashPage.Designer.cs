@@ -41,9 +41,10 @@
             this.Logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
-            this.Logo.Location = new System.Drawing.Point(12, 9);
+            this.Logo.Location = new System.Drawing.Point(18, 14);
+            this.Logo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(215, 214);
+            this.Logo.Size = new System.Drawing.Size(322, 328);
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;
             this.Logo.Click += new System.EventHandler(this.Logo_Click);
@@ -52,9 +53,10 @@
             // 
             this.sloganLabel.AutoSize = true;
             this.sloganLabel.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sloganLabel.Location = new System.Drawing.Point(244, 126);
+            this.sloganLabel.Location = new System.Drawing.Point(366, 194);
+            this.sloganLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sloganLabel.Name = "sloganLabel";
-            this.sloganLabel.Size = new System.Drawing.Size(433, 75);
+            this.sloganLabel.Size = new System.Drawing.Size(669, 117);
             this.sloganLabel.TabIndex = 1;
             this.sloganLabel.Text = "Skip the classroom and\r\n train from anywhere in the world with an \r\nLMS for the m" +
     "odern workforce.\r\n";
@@ -64,23 +66,26 @@
             // 
             this.sloganLabel2.AutoSize = true;
             this.sloganLabel2.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sloganLabel2.Location = new System.Drawing.Point(244, 48);
+            this.sloganLabel2.Location = new System.Drawing.Point(366, 74);
+            this.sloganLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sloganLabel2.Name = "sloganLabel2";
-            this.sloganLabel2.Size = new System.Drawing.Size(390, 29);
+            this.sloganLabel2.Size = new System.Drawing.Size(588, 44);
             this.sloganLabel2.TabIndex = 2;
             this.sloganLabel2.Text = "Easily Train Your Remote Team\r\n";
             // 
             // SplashPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 238);
+            this.ClientSize = new System.Drawing.Size(1200, 366);
             this.Controls.Add(this.sloganLabel2);
             this.Controls.Add(this.sloganLabel);
             this.Controls.Add(this.Logo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SplashPage";
             this.Text = "PICK Training Inc.";
+            this.Load += new System.EventHandler(this.SplashPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
