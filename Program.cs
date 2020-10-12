@@ -14,11 +14,14 @@ namespace PICKTrainingInc
         [STAThread]
         static void Main()
         {
+            Application.Run(new MainTrainingPage());
+           /*
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new AdminConsole());
             Application.Run(new SplashPage());
             //Application.Run(new LoginPage());
+            */
         }
     }
 }
