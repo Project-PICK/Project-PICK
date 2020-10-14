@@ -89,7 +89,7 @@ namespace PICKTrainingInc
             this.Hide();
 
             // Start our next form.
-            LoginPage lp = new LoginPage();
+            LoginPage lp = new LoginPage(null);
             lp.Show();
 
             // Stop the timer.

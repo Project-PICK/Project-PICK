@@ -36,11 +36,11 @@ namespace PICKTrainingInc
             this.SignIn = new System.Windows.Forms.GroupBox();
             this.submitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_userName = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip = new System.Windows.Forms.ToolStripStatusLabel();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,10 +108,10 @@ namespace PICKTrainingInc
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tb_password, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.UsernameLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tb_userName, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 62);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -121,13 +121,13 @@ namespace PICKTrainingInc
             this.tableLayoutPanel1.Size = new System.Drawing.Size(682, 154);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // textBox2
+            // tb_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(345, 82);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(246, 30);
-            this.textBox2.TabIndex = 5;
+            this.tb_password.Location = new System.Drawing.Point(345, 82);
+            this.tb_password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_password.Name = "tb_password";
+            this.tb_password.Size = new System.Drawing.Size(246, 30);
+            this.tb_password.TabIndex = 5;
             // 
             // label1
             // 
@@ -140,19 +140,19 @@ namespace PICKTrainingInc
             this.label1.TabIndex = 3;
             this.label1.Text = "Password";
             // 
-            // textBox1
+            // tb_userName
             // 
-            this.textBox1.Location = new System.Drawing.Point(345, 5);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 30);
-            this.textBox1.TabIndex = 4;
+            this.tb_userName.Location = new System.Drawing.Point(345, 5);
+            this.tb_userName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_userName.Name = "tb_userName";
+            this.tb_userName.Size = new System.Drawing.Size(246, 30);
+            this.tb_userName.TabIndex = 4;
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.statusStrip});
             this.statusStrip1.Location = new System.Drawing.Point(0, 593);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
@@ -160,11 +160,11 @@ namespace PICKTrainingInc
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "Login Please";
             // 
-            // toolStripStatusLabel1
+            // statusStrip
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(110, 25);
-            this.toolStripStatusLabel1.Text = "Login Please";
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(110, 25);
+            this.statusStrip.Text = "Login Please";
             // 
             // menuStrip1
             // 
@@ -175,14 +175,14 @@ namespace PICKTrainingInc
             this.userOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1068, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1068, 36);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // userOptionsToolStripMenuItem
@@ -190,7 +190,7 @@ namespace PICKTrainingInc
             this.userOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adminToolStripMenuItem});
             this.userOptionsToolStripMenuItem.Name = "userOptionsToolStripMenuItem";
-            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 29);
+            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 30);
             this.userOptionsToolStripMenuItem.Text = "User Options";
             // 
             // adminToolStripMenuItem
@@ -236,11 +236,11 @@ namespace PICKTrainingInc
         private System.Windows.Forms.GroupBox SignIn;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_password;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_userName;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel statusStrip;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;

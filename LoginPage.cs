@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -20,6 +21,9 @@ namespace PICKTrainingInc
     public partial class LoginPage : Form
     {
 
+        //Used to manage the db connection
+        DataBaseManager dbManager;
+
         // Used to deside if the user is trying to close the program
         // we assume if the program is being closed, the user wants to exit
         // unless the submit button gets hit, then the user doesn't want
@@ -29,12 +33,10 @@ namespace PICKTrainingInc
         /**
          * Constructor
          */
-        public LoginPage()
+        public LoginPage(DataBaseManager dbManager)
         {
             InitializeComponent();
-
-            // Wire up the form closing Handler
-            //this.FormClosing += new FormClosingEventHandler(closeForm);
+            this.dbManager = dbManager;
         }
 
         /**
@@ -54,7 +56,8 @@ namespace PICKTrainingInc
                 tp.Show();
             }
             else{
-                statusStrip1.Text = "Wrong Username/Password!";
+                statusStrip.Text = "Wrong Username/Password!";
+                //statusStrip1.Refresh();
             }
             
         }
@@ -65,9 +68,28 @@ namespace PICKTrainingInc
          * allowed, and returns false if they are not.
          */
         private bool checkLogin(){
-            //TODO : write code to properly check login against DB
+            // Setup our return data
+            bool returnVal = false;
 
-            return true;
+            // Get our info from the form.
+            string userName = tb_userName.Text;
+            string password = tb_password.Text;
+
+            // Set up a structure to save our response
+            List<NameValueCollection> queryResult;
+
+            // Execute the Query, checking for username and password.
+            queryResult = dbManager.query("SELECT * FROM user WHERE userName = '"+userName+"' AND password = '"+password+"'");
+            if(queryResult.Count >= 1)
+            {
+                returnVal = true;
+            }
+            else
+            {
+                returnVal = false;
+            }
+
+            return returnVal;
         }
 
         /**
