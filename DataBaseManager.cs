@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Collections.Specialized;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace PICKTrainingInc
 {
@@ -35,6 +36,49 @@ namespace PICKTrainingInc
             return sqlite_conn;
         }
         //List<int> termsList = new List<int>();
+
+        /*
+         * Initiates an Insert Command on the Database, returns true if an insert occured.
+         */
+        public bool insert(string insertText)
+        {
+            // Setup our return Variable
+            bool returnVal = false;
+
+            // Setup the command
+            SQLiteCommand sqlite_cmd;
+            sqlite_cmd = sqlite_conn.CreateCommand();
+            sqlite_cmd.CommandText = insertText;
+
+            
+            // Variable to check if insert works
+            int numUpdated = 0;
+
+            try
+            {
+                // Execute the insert
+                numUpdated = sqlite_cmd.ExecuteNonQuery();
+            }
+            catch(System.Data.SQLite.SQLiteException e)
+            {
+                // Insert did not work.
+                numUpdated = 0;
+            }
+            
+
+            // Check if we updated any lines
+            if(numUpdated > 0)
+            {
+                returnVal = true;
+            }
+            else
+            {
+                returnVal = false;
+            }
+
+            return returnVal;
+        }
+
         public List<NameValueCollection> query(string queryText)
         {
             // NameValueCollection[] returnVal = { };
@@ -44,6 +88,7 @@ namespace PICKTrainingInc
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = sqlite_conn.CreateCommand();
             sqlite_cmd.CommandText = queryText;
+
 
             sqlite_datareader = sqlite_cmd.ExecuteReader();
 

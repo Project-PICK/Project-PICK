@@ -126,5 +126,15 @@ namespace PICKTrainingInc
         {
 
         }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            RegisterPage rp = new RegisterPage(dbManager, stateManager);
+            this.Close();
+
+            rp.Show();
+        }
     }
 }
