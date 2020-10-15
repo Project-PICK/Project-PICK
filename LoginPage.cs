@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace PICKTrainingInc
 
         //Used to manage the db connection
         DataBaseManager dbManager;
+        StateManager stateManager;
 
         // Used to deside if the user is trying to close the program
         // we assume if the program is being closed, the user wants to exit
@@ -33,10 +35,11 @@ namespace PICKTrainingInc
         /**
          * Constructor
          */
-        public LoginPage(DataBaseManager dbManager)
+        public LoginPage(DataBaseManager dbManager, StateManager stateManager)
         {
             InitializeComponent();
             this.dbManager = dbManager;
+            this.stateManager = stateManager;
         }
 
         /**
@@ -52,7 +55,7 @@ namespace PICKTrainingInc
                 this.Close();
 
                 // Open the choose trainer form
-                ChooseTrainerPage tp = new ChooseTrainerPage();
+                ChooseTrainerPage tp = new ChooseTrainerPage(dbManager, stateManager);
                 tp.Show();
             }
             else{
@@ -61,6 +64,7 @@ namespace PICKTrainingInc
             }
             
         }
+
 
         /**
          * Checks the users referenced login information against the DB
@@ -83,6 +87,7 @@ namespace PICKTrainingInc
             if(queryResult.Count >= 1)
             {
                 returnVal = true;
+                stateManager.setUserName(userName);
             }
             else
             {

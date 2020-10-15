@@ -17,12 +17,15 @@ using System.Windows.Forms;
 using System.Data.Sql;
 using System.Timers;
 using System.Runtime.CompilerServices;
+using System.Data.Entity.Core.Objects;
 
 namespace PICKTrainingInc
 {
     public partial class SplashPage : Form
     {
         /* Field Variables Here */
+        DataBaseManager dbManager;
+        StateManager stateManager;
 
         // Used to time when the spash screen should be closed. 
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
@@ -30,9 +33,11 @@ namespace PICKTrainingInc
         /**
          * Constructor, Called when the page is created.
          */
-        public SplashPage()
+        public SplashPage(DataBaseManager dbManager, StateManager stateManager)
         {
             InitializeComponent();
+            this.dbManager = dbManager;
+            this.stateManager = stateManager;
             this.FormClosing += new FormClosingEventHandler(closeForm);
         }
 
@@ -89,7 +94,7 @@ namespace PICKTrainingInc
             this.Hide();
 
             // Start our next form.
-            LoginPage lp = new LoginPage(null);
+            LoginPage lp = new LoginPage(dbManager, stateManager);
             lp.Show();
 
             // Stop the timer.

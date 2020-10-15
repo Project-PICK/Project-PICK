@@ -98,6 +98,7 @@
     <Compile Include="prototypes\isaac\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="StateManager.cs" />
     <Compile Include="UserDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
