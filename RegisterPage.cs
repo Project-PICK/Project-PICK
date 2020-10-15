@@ -1,11 +1,4 @@
-﻿/**
- * LoginPage.cs
- * Project-PICK
- * 10/10/2020
- * Authors: Isaac Travers, Candace Moore, Phillip Toulinov, Kyle Smith
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +10,8 @@ using System.Windows.Forms;
 
 namespace PICKTrainingInc
 {
-    public partial class LoginPage : Form
+
+    public partial class RegisterPage : Form
     {
 
         // Used to deside if the user is trying to close the program
@@ -29,43 +23,23 @@ namespace PICKTrainingInc
         /**
          * Constructor
          */
-        public LoginPage()
+        public RegisterPage()
         {
             InitializeComponent();
-
-            // Wire up the form closing Handler
-            //this.FormClosing += new FormClosingEventHandler(closeForm);
         }
+
 
         /**
          * Called when the user clicks the submit button
          */
         private void submitButton_Click(object sender, EventArgs e)
         {
-            closeProgram = false;
-            //  Check if the user properly logged in
-            if (checkLogin()){
 
-                // Close this form
-                this.Close();
-
-                // Open the choose trainer form
-                ChooseTrainerPage tp = new ChooseTrainerPage();
-                tp.Show();
-            }
-            else{
-                statusStrip1.Text = "Wrong Username/Password!";
-            }
-            
         }
 
-        /**
-         * Checks the users referenced login information against the DB
-         * to see if they are allowed to login. Returns true if they are
-         * allowed, and returns false if they are not.
-         */
-        private bool checkLogin(){
-            //TODO : write code to properly check login against DB
+        private bool checkRegister()
+        {
+            //TODO : write code to properly sanitize user input
 
             return true;
         }
@@ -73,7 +47,8 @@ namespace PICKTrainingInc
         /**
          * Called When the user tries to close the form
          */
-        private void closeForm(Object sender, FormClosingEventArgs e){
+        private void closeForm(Object sender, FormClosingEventArgs e)
+        {
 
             // Only prompt the user if we are pressing the close button.
             if (closeProgram)
@@ -92,10 +67,15 @@ namespace PICKTrainingInc
                     System.Environment.Exit(1);
                 }
             }
-            
+
         }
 
-        private void LoginPage_Load(object sender, EventArgs e)
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SignIn_Enter(object sender, EventArgs e)
         {
 
         }
