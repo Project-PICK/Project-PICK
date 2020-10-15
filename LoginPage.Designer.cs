@@ -97,7 +97,7 @@ namespace PICKTrainingInc
             this.tableLayoutPanel1.Controls.Add(this.tb_userName, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 62);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+           // this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
