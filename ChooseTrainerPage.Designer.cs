@@ -37,20 +37,20 @@
             this.Logo = new System.Windows.Forms.PictureBox();
             this.chooseTrainingLabel = new System.Windows.Forms.Label();
             this.fillPanel = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.gb_training = new System.Windows.Forms.GroupBox();
             this.tp_training = new System.Windows.Forms.TableLayoutPanel();
             this.gb_training1 = new System.Windows.Forms.GroupBox();
             this.pb_training1 = new System.Windows.Forms.PictureBox();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.gb_training = new System.Windows.Forms.GroupBox();
             this.menuOptions.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.fillPanel.SuspendLayout();
-            this.mainPanel.SuspendLayout();
-            this.gb_training.SuspendLayout();
             this.tp_training.SuspendLayout();
             this.gb_training1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_training1)).BeginInit();
+            this.mainPanel.SuspendLayout();
+            this.gb_training.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuOptions
@@ -62,7 +62,7 @@
             this.userOptionsToolStripMenuItem});
             this.menuOptions.Location = new System.Drawing.Point(0, 0);
             this.menuOptions.Name = "menuOptions";
-            this.menuOptions.Size = new System.Drawing.Size(1255, 36);
+            this.menuOptions.Size = new System.Drawing.Size(1255, 33);
             this.menuOptions.TabIndex = 8;
             this.menuOptions.Text = "menuStrip2";
             // 
@@ -130,25 +130,6 @@
             this.fillPanel.Size = new System.Drawing.Size(1233, 427);
             this.fillPanel.TabIndex = 11;
             // 
-            // mainPanel
-            // 
-            this.mainPanel.Controls.Add(this.gb_training);
-            this.mainPanel.Location = new System.Drawing.Point(0, 204);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1255, 578);
-            this.mainPanel.TabIndex = 12;
-            // 
-            // gb_training
-            // 
-            this.gb_training.Controls.Add(this.fillPanel);
-            this.gb_training.Font = new System.Drawing.Font("Britannic Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_training.Location = new System.Drawing.Point(4, 3);
-            this.gb_training.Name = "gb_training";
-            this.gb_training.Size = new System.Drawing.Size(1239, 456);
-            this.gb_training.TabIndex = 12;
-            this.gb_training.TabStop = false;
-            this.gb_training.Text = "Choose Your Training Course";
-            // 
             // tp_training
             // 
             this.tp_training.ColumnCount = 3;
@@ -188,6 +169,26 @@
             this.pb_training1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_training1.TabIndex = 0;
             this.pb_training1.TabStop = false;
+            //this.pb_training1.Click += new System.EventHandler(this.pb_training1_Click);
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Controls.Add(this.gb_training);
+            this.mainPanel.Location = new System.Drawing.Point(0, 204);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1255, 578);
+            this.mainPanel.TabIndex = 12;
+            // 
+            // gb_training
+            // 
+            this.gb_training.Controls.Add(this.fillPanel);
+            this.gb_training.Font = new System.Drawing.Font("Britannic Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_training.Location = new System.Drawing.Point(4, 3);
+            this.gb_training.Name = "gb_training";
+            this.gb_training.Size = new System.Drawing.Size(1239, 456);
+            this.gb_training.TabIndex = 12;
+            this.gb_training.TabStop = false;
+            this.gb_training.Text = "Choose Your Training Course";
             // 
             // ChooseTrainerPage
             // 
@@ -210,11 +211,11 @@
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.fillPanel.ResumeLayout(false);
-            this.mainPanel.ResumeLayout(false);
-            this.gb_training.ResumeLayout(false);
             this.tp_training.ResumeLayout(false);
             this.gb_training1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_training1)).EndInit();
+            this.mainPanel.ResumeLayout(false);
+            this.gb_training.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
