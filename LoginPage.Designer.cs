@@ -31,7 +31,6 @@ namespace PICKTrainingInc
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
-            this.Logo = new System.Windows.Forms.PictureBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.SignIn = new System.Windows.Forms.GroupBox();
             this.submitButton = new System.Windows.Forms.Button();
@@ -46,34 +45,21 @@ namespace PICKTrainingInc
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.SignIn.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Logo
-            // 
-            this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
-            this.Logo.Location = new System.Drawing.Point(18, 122);
-            this.Logo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(322, 319);
-            this.Logo.TabIndex = 1;
-            this.Logo.TabStop = false;
             // 
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabel.Location = new System.Drawing.Point(4, 0);
-            this.UsernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UsernameLabel.Location = new System.Drawing.Point(3, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(176, 39);
+            this.UsernameLabel.Size = new System.Drawing.Size(116, 25);
             this.UsernameLabel.TabIndex = 2;
             this.UsernameLabel.Text = "Username";
             // 
@@ -82,11 +68,9 @@ namespace PICKTrainingInc
             this.SignIn.Controls.Add(this.submitButton);
             this.SignIn.Controls.Add(this.tableLayoutPanel1);
             this.SignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignIn.Location = new System.Drawing.Point(350, 122);
-            this.SignIn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SignIn.Location = new System.Drawing.Point(233, 79);
             this.SignIn.Name = "SignIn";
-            this.SignIn.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.SignIn.Size = new System.Drawing.Size(700, 320);
+            this.SignIn.Size = new System.Drawing.Size(467, 208);
             this.SignIn.TabIndex = 3;
             this.SignIn.TabStop = false;
             this.SignIn.Text = "Sign-In";
@@ -94,10 +78,9 @@ namespace PICKTrainingInc
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.Location = new System.Drawing.Point(516, 260);
-            this.submitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.submitButton.Location = new System.Drawing.Point(344, 169);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(176, 51);
+            this.submitButton.Size = new System.Drawing.Size(117, 33);
             this.submitButton.TabIndex = 4;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -114,11 +97,13 @@ namespace PICKTrainingInc
             this.tableLayoutPanel1.Controls.Add(this.tb_userName, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 62);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(682, 154);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(455, 100);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // tb_password
@@ -133,10 +118,9 @@ namespace PICKTrainingInc
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 77);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 39);
+            this.label1.Size = new System.Drawing.Size(111, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Password";
             // 
@@ -155,8 +139,7 @@ namespace PICKTrainingInc
             this.statusStrip});
             this.statusStrip1.Location = new System.Drawing.Point(0, 593);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1068, 32);
+            this.statusStrip1.Size = new System.Drawing.Size(712, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "Login Please";
             // 
@@ -168,7 +151,6 @@ namespace PICKTrainingInc
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem,
@@ -196,25 +178,36 @@ namespace PICKTrainingInc
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.adminToolStripMenuItem.Text = "Admin";
+            // 
+            // Logo
+            // 
+            this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
+            this.Logo.Location = new System.Drawing.Point(12, 79);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(215, 208);
+            this.Logo.TabIndex = 1;
+            this.Logo.TabStop = false;
             // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 625);
+            this.ClientSize = new System.Drawing.Size(712, 406);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.SignIn);
             this.Controls.Add(this.Logo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginPage";
             this.Text = "User Login Page";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.closeForm);
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.SignIn.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -222,6 +215,7 @@ namespace PICKTrainingInc
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
