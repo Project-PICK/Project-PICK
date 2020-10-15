@@ -55,13 +55,14 @@
             // 
             // menuOptions
             // 
+            this.menuOptions.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuOptions.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem,
             this.userOptionsToolStripMenuItem});
             this.menuOptions.Location = new System.Drawing.Point(0, 0);
             this.menuOptions.Name = "menuOptions";
-            this.menuOptions.Size = new System.Drawing.Size(1255, 33);
+            this.menuOptions.Size = new System.Drawing.Size(1255, 36);
             this.menuOptions.TabIndex = 8;
             this.menuOptions.Text = "menuStrip2";
             // 
@@ -158,10 +159,12 @@
             this.tp_training.Dock = System.Windows.Forms.DockStyle.Top;
             this.tp_training.Location = new System.Drawing.Point(0, 0);
             this.tp_training.Name = "tp_training";
-            this.tp_training.RowCount = 2;
-            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.90909F));
-            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.09091F));
-            this.tp_training.Size = new System.Drawing.Size(1207, 495);
+            this.tp_training.RowCount = 4;
+            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.3369F));
+            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.6631F));
+            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 229F));
+            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 292F));
+            this.tp_training.Size = new System.Drawing.Size(1207, 1023);
             this.tp_training.TabIndex = 0;
             // 
             // gb_training1
