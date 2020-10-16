@@ -1,9 +1,17 @@
-﻿using System;
+﻿/**
+ * ChooseTrainerPage.cs
+ * Project-PICK
+ * 10/10/2020
+ * Authors: Isaac Travers, Candace Moore, Phillip Toulinov, Kyle Smith
+ */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,12 +25,10 @@ namespace PICKTrainingInc
     {
 
         /* Field Variables */
-
-        // Used to deside if the user is trying to close the program
-        // we assume if the program is being closed, the user wants to exit
-        // unless the submit button gets hit, then the user doesn't want
-        // to exit the whole program.
+        DataBaseManager dbManager;
+        StateManager stateManager;
         bool closeProgram = true;
+
         string user;                        /* Keeps track of our current user's name */
         ArrayList trainingNames;             /* Keeps track of the names of our possible trainings. */
         ArrayList trainingDirectories;      /* Keeps track of all the directory names of training. */
@@ -31,9 +37,11 @@ namespace PICKTrainingInc
         /*
          * Constructor
          */
-        public ChooseTrainerPage()
+        public ChooseTrainerPage(DataBaseManager dbManager, StateManager stateManager)
         {
             InitializeComponent();
+            this.dbManager = dbManager;
+            this.stateManager = stateManager;
             this.FormClosing += new FormClosingEventHandler(closeForm);
         }
 
@@ -89,8 +97,12 @@ namespace PICKTrainingInc
                 picBox.Image = Image.FromFile(imageLoc);
                 picBox.Location = new System.Drawing.Point(10, 20);
                 picBox.MinimumSize = new System.Drawing.Size(240, 130);
+                picBox.Name = trainingName;
 
                 picBox.Visible = true;
+
+               
+                picBox.Click += new System.EventHandler(this.training_CLICK);
 
                 GroupBox groupBox = new GroupBox();
                 groupBox.Text = trainingName;
@@ -167,8 +179,7 @@ namespace PICKTrainingInc
         /* Returns the name of the currently logged in user */
         private string getUser(){
             //TODO: Implement actual getUser
-
-            return "Test User";
+            return stateManager.getUserName();
         }
 
         /* Sets the username for the current form */
@@ -200,5 +211,24 @@ namespace PICKTrainingInc
             }
 
         }
+
+        private void training_CLICK(object sender, EventArgs e)
+        {
+            // Keeps the, are you sure you want to close popup from happening.
+            closeProgram = false;
+
+            string trainingName = ((PictureBox)sender).Name;
+            statusBar.Text = trainingName;
+
+            stateManager.setTrainingName(trainingName);
+
+            MainTrainingPage mtp = new MainTrainingPage(dbManager, stateManager);
+
+            this.Close();
+
+            mtp.Show();
+        }
+
+    
     }
 }
