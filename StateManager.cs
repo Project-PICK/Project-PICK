@@ -12,7 +12,8 @@ namespace PICKTrainingInc
     public class StateManager
     {
         /* FIELD VARIABLES */
-        string userName = null; 
+        string userName = null;
+        string trainingName = null;
 
         /* Constructor */
         public StateManager()
@@ -38,6 +39,22 @@ namespace PICKTrainingInc
         public string getUserName()
         {
             return userName;
+        }
+
+        /*
+         * Returns the current training name
+         */
+        public string getTrainingName()
+        {
+            return trainingName;
+        }
+
+        /**
+         * Sets the states current training name
+         * */
+        public void setTrainingName(string trainingName)
+        {
+            this.trainingName = trainingName;
         }
     }
 }

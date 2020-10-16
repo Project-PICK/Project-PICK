@@ -27,12 +27,8 @@ namespace PICKTrainingInc
         /* Field Variables */
         DataBaseManager dbManager;
         StateManager stateManager;
-
-        /* Used to deside if the user is trying to close the program
-           we assume if the program is being closed, the user wants to exit
-           unless the submit button gets hit, then the user doesn't want
-           to exit the whole program. */
         bool closeProgram = true;
+
         string user;                        /* Keeps track of our current user's name */
         ArrayList trainingNames;             /* Keeps track of the names of our possible trainings. */
         ArrayList trainingDirectories;      /* Keeps track of all the directory names of training. */
@@ -101,8 +97,12 @@ namespace PICKTrainingInc
                 picBox.Image = Image.FromFile(imageLoc);
                 picBox.Location = new System.Drawing.Point(10, 20);
                 picBox.MinimumSize = new System.Drawing.Size(240, 130);
+                picBox.Name = trainingName;
 
                 picBox.Visible = true;
+
+               
+                picBox.Click += new System.EventHandler(this.training_CLICK);
 
                 GroupBox groupBox = new GroupBox();
                 groupBox.Text = trainingName;
@@ -211,5 +211,24 @@ namespace PICKTrainingInc
             }
 
         }
+
+        private void training_CLICK(object sender, EventArgs e)
+        {
+            // Keeps the, are you sure you want to close popup from happening.
+            closeProgram = false;
+
+            string trainingName = ((PictureBox)sender).Name;
+            statusBar.Text = trainingName;
+
+            stateManager.setTrainingName(trainingName);
+
+            MainTrainingPage mtp = new MainTrainingPage(dbManager, stateManager);
+
+            this.Close();
+
+            mtp.Show();
+        }
+
+    
     }
 }
