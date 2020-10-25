@@ -29,7 +29,7 @@ namespace PICKTrainingInc
 
             //Start the splash page, passing it the dbManager
             //Application.Run(new SplashPage(dbManager, stateManager));
-            Application.Run(new MainTrainingPage(dbManager, stateManager));
+            //Application.Run(new MainTrainingPage(dbManager, stateManager));
 
 
             List <NameValueCollection> queryResult; // = new NameValueCollection();
@@ -38,7 +38,7 @@ namespace PICKTrainingInc
             //Application.Run(new PICKTrainingInc.prototypes.isaac.Form1());
             //Application.Run(new MainTrainingPage());
             //Application.Run(new LoginPage(dbManager));
-            //Application.Run(new SplashPage());
+            Application.Run(new UserDashBoard());
             //Application.Run(new SplashPage());
             /*
              Application.EnableVisualStyles();

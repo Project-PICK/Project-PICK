@@ -41,6 +41,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.currentUser = new System.Windows.Forms.Label();
+            this.allUsers = new System.Windows.Forms.Label();
+            this.totalAnswered = new System.Windows.Forms.Label();
+            this.totalCorrect = new System.Windows.Forms.Label();
+            this.totalWrong = new System.Windows.Forms.Label();
+            this.currentUserCorrect = new System.Windows.Forms.Label();
+            this.currentUserWrong = new System.Windows.Forms.Label();
+            this.currentUserTotal = new System.Windows.Forms.Label();
+            this.allUserCorrect = new System.Windows.Forms.Label();
+            this.allUserWrong = new System.Windows.Forms.Label();
+            this.allUserTotal = new System.Windows.Forms.Label();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new PICKTrainingInc.DataSet1();
@@ -50,17 +61,6 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbl_welcome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.totalAnswered = new System.Windows.Forms.Label();
-            this.allUsers = new System.Windows.Forms.Label();
-            this.currentUser = new System.Windows.Forms.Label();
-            this.totalWrong = new System.Windows.Forms.Label();
-            this.totalCorrect = new System.Windows.Forms.Label();
-            this.currentUserCorrect = new System.Windows.Forms.Label();
-            this.currentUserWrong = new System.Windows.Forms.Label();
-            this.currentUserTotal = new System.Windows.Forms.Label();
-            this.allUserCorrect = new System.Windows.Forms.Label();
-            this.allUserWrong = new System.Windows.Forms.Label();
-            this.allUserTotal = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -77,27 +77,27 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem,
             this.userOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1364, 36);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // userOptionsToolStripMenuItem
             // 
             this.userOptionsToolStripMenuItem.Name = "userOptionsToolStripMenuItem";
-            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 29);
+            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(87, 22);
             this.userOptionsToolStripMenuItem.Text = "User Options";
             // 
             // Logo
@@ -105,10 +105,9 @@
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
-            this.Logo.Location = new System.Drawing.Point(18, 42);
-            this.Logo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Logo.Location = new System.Drawing.Point(12, 27);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(139, 131);
+            this.Logo.Size = new System.Drawing.Size(93, 85);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 3;
             this.Logo.TabStop = false;
@@ -117,11 +116,9 @@
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(785, 58);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(523, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(485, 630);
+            this.groupBox1.Size = new System.Drawing.Size(323, 409);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select Your Answer";
@@ -138,8 +135,7 @@
             this.tableLayoutPanel1.Controls.Add(this.button3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(27, 38);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -147,16 +143,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(435, 567);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(290, 369);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(294, 21);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Location = new System.Drawing.Point(195, 13);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 71);
+            this.button3.Size = new System.Drawing.Size(91, 46);
             this.button3.TabIndex = 2;
             this.button3.Text = "Alfred Sisley";
             this.button3.UseVisualStyleBackColor = true;
@@ -164,10 +159,9 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(149, 21);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(99, 13);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 71);
+            this.button2.Size = new System.Drawing.Size(90, 46);
             this.button2.TabIndex = 1;
             this.button2.Text = "Claude Monet";
             this.button2.UseVisualStyleBackColor = true;
@@ -175,10 +169,9 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(4, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(3, 13);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 71);
+            this.button1.Size = new System.Drawing.Size(90, 46);
             this.button1.TabIndex = 0;
             this.button1.Text = "Andy Warhol";
             this.button1.UseVisualStyleBackColor = true;
@@ -187,11 +180,9 @@
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
             this.groupBox2.Font = new System.Drawing.Font("Rockwell", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(165, 58);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(110, 38);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(594, 115);
+            this.groupBox2.Size = new System.Drawing.Size(396, 75);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Question Statistics";
@@ -202,7 +193,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
             this.tableLayoutPanel2.Controls.Add(this.currentUser, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.allUsers, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.totalAnswered, 0, 3);
@@ -214,15 +205,148 @@
             this.tableLayoutPanel2.Controls.Add(this.allUserCorrect, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.allUserWrong, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.allUserTotal, 2, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 27);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 18);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(561, 80);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(374, 52);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // currentUser
+            // 
+            this.currentUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.currentUser.AutoSize = true;
+            this.currentUser.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentUser.Location = new System.Drawing.Point(153, 0);
+            this.currentUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.currentUser.Name = "currentUser";
+            this.currentUser.Size = new System.Drawing.Size(77, 13);
+            this.currentUser.TabIndex = 3;
+            this.currentUser.Text = "Current User";
+            // 
+            // allUsers
+            // 
+            this.allUsers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.allUsers.AutoSize = true;
+            this.allUsers.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allUsers.Location = new System.Drawing.Point(287, 0);
+            this.allUsers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.allUsers.Name = "allUsers";
+            this.allUsers.Size = new System.Drawing.Size(56, 13);
+            this.allUsers.TabIndex = 2;
+            this.allUsers.Text = "All Users";
+            // 
+            // totalAnswered
+            // 
+            this.totalAnswered.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.totalAnswered.AutoSize = true;
+            this.totalAnswered.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalAnswered.Location = new System.Drawing.Point(41, 39);
+            this.totalAnswered.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.totalAnswered.Name = "totalAnswered";
+            this.totalAnswered.Size = new System.Drawing.Size(85, 13);
+            this.totalAnswered.TabIndex = 1;
+            this.totalAnswered.Text = "Total Answered";
+            // 
+            // totalCorrect
+            // 
+            this.totalCorrect.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.totalCorrect.AutoSize = true;
+            this.totalCorrect.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCorrect.Location = new System.Drawing.Point(53, 13);
+            this.totalCorrect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.totalCorrect.Name = "totalCorrect";
+            this.totalCorrect.Size = new System.Drawing.Size(73, 13);
+            this.totalCorrect.TabIndex = 5;
+            this.totalCorrect.Text = "Total Correct";
+            // 
+            // totalWrong
+            // 
+            this.totalWrong.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.totalWrong.AutoSize = true;
+            this.totalWrong.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalWrong.Location = new System.Drawing.Point(57, 26);
+            this.totalWrong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.totalWrong.Name = "totalWrong";
+            this.totalWrong.Size = new System.Drawing.Size(69, 13);
+            this.totalWrong.TabIndex = 4;
+            this.totalWrong.Text = "Total Wrong";
+            // 
+            // currentUserCorrect
+            // 
+            this.currentUserCorrect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.currentUserCorrect.AutoSize = true;
+            this.currentUserCorrect.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentUserCorrect.Location = new System.Drawing.Point(182, 13);
+            this.currentUserCorrect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.currentUserCorrect.Name = "currentUserCorrect";
+            this.currentUserCorrect.Size = new System.Drawing.Size(19, 13);
+            this.currentUserCorrect.TabIndex = 6;
+            this.currentUserCorrect.Text = "50";
+            // 
+            // currentUserWrong
+            // 
+            this.currentUserWrong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.currentUserWrong.AutoSize = true;
+            this.currentUserWrong.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentUserWrong.Location = new System.Drawing.Point(182, 26);
+            this.currentUserWrong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.currentUserWrong.Name = "currentUserWrong";
+            this.currentUserWrong.Size = new System.Drawing.Size(19, 13);
+            this.currentUserWrong.TabIndex = 7;
+            this.currentUserWrong.Text = "10";
+            // 
+            // currentUserTotal
+            // 
+            this.currentUserTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.currentUserTotal.AutoSize = true;
+            this.currentUserTotal.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentUserTotal.Location = new System.Drawing.Point(182, 39);
+            this.currentUserTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.currentUserTotal.Name = "currentUserTotal";
+            this.currentUserTotal.Size = new System.Drawing.Size(19, 13);
+            this.currentUserTotal.TabIndex = 8;
+            this.currentUserTotal.Text = "60";
+            // 
+            // allUserCorrect
+            // 
+            this.allUserCorrect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.allUserCorrect.AutoSize = true;
+            this.allUserCorrect.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allUserCorrect.Location = new System.Drawing.Point(302, 13);
+            this.allUserCorrect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.allUserCorrect.Name = "allUserCorrect";
+            this.allUserCorrect.Size = new System.Drawing.Size(25, 13);
+            this.allUserCorrect.TabIndex = 9;
+            this.allUserCorrect.Text = "100";
+            // 
+            // allUserWrong
+            // 
+            this.allUserWrong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.allUserWrong.AutoSize = true;
+            this.allUserWrong.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allUserWrong.Location = new System.Drawing.Point(305, 26);
+            this.allUserWrong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.allUserWrong.Name = "allUserWrong";
+            this.allUserWrong.Size = new System.Drawing.Size(19, 13);
+            this.allUserWrong.TabIndex = 10;
+            this.allUserWrong.Text = "45";
+            // 
+            // allUserTotal
+            // 
+            this.allUserTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.allUserTotal.AutoSize = true;
+            this.allUserTotal.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allUserTotal.Location = new System.Drawing.Point(302, 39);
+            this.allUserTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.allUserTotal.Name = "allUserTotal";
+            this.allUserTotal.Size = new System.Drawing.Size(25, 13);
+            this.allUserTotal.TabIndex = 11;
+            this.allUserTotal.Text = "145";
             // 
             // userBindingSource
             // 
@@ -243,11 +367,9 @@
             // 
             this.groupBox3.Controls.Add(this.pb_question);
             this.groupBox3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(18, 183);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Location = new System.Drawing.Point(12, 119);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(741, 505);
+            this.groupBox3.Size = new System.Drawing.Size(494, 328);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Question";
@@ -257,10 +379,9 @@
             this.pb_question.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_question.Image = ((System.Drawing.Image)(resources.GetObject("pb_question.Image")));
             this.pb_question.InitialImage = ((System.Drawing.Image)(resources.GetObject("pb_question.InitialImage")));
-            this.pb_question.Location = new System.Drawing.Point(22, 38);
-            this.pb_question.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pb_question.Location = new System.Drawing.Point(15, 25);
             this.pb_question.Name = "pb_question";
-            this.pb_question.Size = new System.Drawing.Size(711, 457);
+            this.pb_question.Size = new System.Drawing.Size(474, 297);
             this.pb_question.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_question.TabIndex = 4;
             this.pb_question.TabStop = false;
@@ -270,164 +391,44 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 819);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 434);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1364, 32);
+            this.statusStrip1.Size = new System.Drawing.Size(856, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(213, 25);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(143, 17);
             this.toolStripStatusLabel1.Text = "Welcome to Your Training";
             // 
             // lbl_welcome
             // 
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
-            this.lbl_welcome.Location = new System.Drawing.Point(225, 20);
+            this.lbl_welcome.Location = new System.Drawing.Point(150, 13);
+            this.lbl_welcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_welcome.Name = "lbl_welcome";
-            this.lbl_welcome.Size = new System.Drawing.Size(475, 33);
+            this.lbl_welcome.Size = new System.Drawing.Size(328, 23);
             this.lbl_welcome.TabIndex = 8;
             this.lbl_welcome.Text = "Test Class Training For Test User";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1394, 741);
+            this.label1.Location = new System.Drawing.Point(929, 482);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 20);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Project PICK";
             // 
-            // totalAnswered
-            // 
-            this.totalAnswered.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.totalAnswered.AutoSize = true;
-            this.totalAnswered.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalAnswered.Location = new System.Drawing.Point(67, 60);
-            this.totalAnswered.Name = "totalAnswered";
-            this.totalAnswered.Size = new System.Drawing.Size(123, 19);
-            this.totalAnswered.TabIndex = 1;
-            this.totalAnswered.Text = "Total Answered";
-            // 
-            // allUsers
-            // 
-            this.allUsers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.allUsers.AutoSize = true;
-            this.allUsers.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allUsers.Location = new System.Drawing.Point(434, 0);
-            this.allUsers.Name = "allUsers";
-            this.allUsers.Size = new System.Drawing.Size(79, 19);
-            this.allUsers.TabIndex = 2;
-            this.allUsers.Text = "All Users";
-            // 
-            // currentUser
-            // 
-            this.currentUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.currentUser.AutoSize = true;
-            this.currentUser.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentUser.Location = new System.Drawing.Point(234, 0);
-            this.currentUser.Name = "currentUser";
-            this.currentUser.Size = new System.Drawing.Size(110, 19);
-            this.currentUser.TabIndex = 3;
-            this.currentUser.Text = "Current User";
-            // 
-            // totalWrong
-            // 
-            this.totalWrong.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.totalWrong.AutoSize = true;
-            this.totalWrong.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalWrong.Location = new System.Drawing.Point(90, 40);
-            this.totalWrong.Name = "totalWrong";
-            this.totalWrong.Size = new System.Drawing.Size(100, 19);
-            this.totalWrong.TabIndex = 4;
-            this.totalWrong.Text = "Total Wrong";
-            // 
-            // totalCorrect
-            // 
-            this.totalCorrect.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.totalCorrect.AutoSize = true;
-            this.totalCorrect.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalCorrect.Location = new System.Drawing.Point(84, 20);
-            this.totalCorrect.Name = "totalCorrect";
-            this.totalCorrect.Size = new System.Drawing.Size(106, 19);
-            this.totalCorrect.TabIndex = 5;
-            this.totalCorrect.Text = "Total Correct";
-            // 
-            // currentUserCorrect
-            // 
-            this.currentUserCorrect.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.currentUserCorrect.AutoSize = true;
-            this.currentUserCorrect.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentUserCorrect.Location = new System.Drawing.Point(276, 20);
-            this.currentUserCorrect.Name = "currentUserCorrect";
-            this.currentUserCorrect.Size = new System.Drawing.Size(27, 19);
-            this.currentUserCorrect.TabIndex = 6;
-            this.currentUserCorrect.Text = "50";
-            // 
-            // currentUserWrong
-            // 
-            this.currentUserWrong.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.currentUserWrong.AutoSize = true;
-            this.currentUserWrong.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentUserWrong.Location = new System.Drawing.Point(276, 40);
-            this.currentUserWrong.Name = "currentUserWrong";
-            this.currentUserWrong.Size = new System.Drawing.Size(27, 19);
-            this.currentUserWrong.TabIndex = 7;
-            this.currentUserWrong.Text = "10";
-            // 
-            // currentUserTotal
-            // 
-            this.currentUserTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.currentUserTotal.AutoSize = true;
-            this.currentUserTotal.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentUserTotal.Location = new System.Drawing.Point(276, 60);
-            this.currentUserTotal.Name = "currentUserTotal";
-            this.currentUserTotal.Size = new System.Drawing.Size(27, 19);
-            this.currentUserTotal.TabIndex = 8;
-            this.currentUserTotal.Text = "60";
-            // 
-            // allUserCorrect
-            // 
-            this.allUserCorrect.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.allUserCorrect.AutoSize = true;
-            this.allUserCorrect.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allUserCorrect.Location = new System.Drawing.Point(455, 20);
-            this.allUserCorrect.Name = "allUserCorrect";
-            this.allUserCorrect.Size = new System.Drawing.Size(36, 19);
-            this.allUserCorrect.TabIndex = 9;
-            this.allUserCorrect.Text = "100";
-            // 
-            // allUserWrong
-            // 
-            this.allUserWrong.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.allUserWrong.AutoSize = true;
-            this.allUserWrong.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allUserWrong.Location = new System.Drawing.Point(460, 40);
-            this.allUserWrong.Name = "allUserWrong";
-            this.allUserWrong.Size = new System.Drawing.Size(27, 19);
-            this.allUserWrong.TabIndex = 10;
-            this.allUserWrong.Text = "45";
-            // 
-            // allUserTotal
-            // 
-            this.allUserTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.allUserTotal.AutoSize = true;
-            this.allUserTotal.Font = new System.Drawing.Font("Rockwell", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allUserTotal.Location = new System.Drawing.Point(455, 60);
-            this.allUserTotal.Name = "allUserTotal";
-            this.allUserTotal.Size = new System.Drawing.Size(36, 19);
-            this.allUserTotal.TabIndex = 11;
-            this.allUserTotal.Text = "145";
-            // 
             // MainTrainingPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 851);
+            this.ClientSize = new System.Drawing.Size(856, 456);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_welcome);
             this.Controls.Add(this.statusStrip1);
@@ -438,7 +439,6 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainTrainingPage";
             this.Text = "MainTrainingPage";
             this.Load += new System.EventHandler(this.MainTrainingPage_Load);
