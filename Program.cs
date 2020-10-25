@@ -28,9 +28,10 @@ namespace PICKTrainingInc
             StateManager stateManager = new StateManager();
 
             //Start the splash page, passing it the dbManager
-            Application.Run(new SplashPage(dbManager, stateManager));
+            //Application.Run(new SplashPage(dbManager, stateManager));
+            Application.Run(new UserDashBoard());
 
-           
+
             List <NameValueCollection> queryResult; // = new NameValueCollection();
            // queryResult = dbManager.query("SELECT * FROM user");
             //Console.WriteLine(queryResult[0]["userName"]);
