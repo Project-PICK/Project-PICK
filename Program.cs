@@ -28,16 +28,17 @@ namespace PICKTrainingInc
             StateManager stateManager = new StateManager();
 
             //Start the splash page, passing it the dbManager
-            Application.Run(new SplashPage(dbManager, stateManager));
+            //Application.Run(new SplashPage(dbManager, stateManager));
+            //Application.Run(new MainTrainingPage(dbManager, stateManager));
 
-           
+
             List <NameValueCollection> queryResult; // = new NameValueCollection();
            // queryResult = dbManager.query("SELECT * FROM user");
             //Console.WriteLine(queryResult[0]["userName"]);
             //Application.Run(new PICKTrainingInc.prototypes.isaac.Form1());
             //Application.Run(new MainTrainingPage());
             //Application.Run(new LoginPage(dbManager));
-            //Application.Run(new SplashPage());
+            Application.Run(new UserDashBoard());
             //Application.Run(new SplashPage());
             /*
              Application.EnableVisualStyles();
