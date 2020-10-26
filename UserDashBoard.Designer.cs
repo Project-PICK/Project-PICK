@@ -156,16 +156,6 @@
             // 
             // bunifuTileButton3
             // 
-<<<<<<< HEAD
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem,
-            this.userOptionsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(801, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-=======
             this.bunifuTileButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.bunifuTileButton3.color = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.bunifuTileButton3.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -182,7 +172,6 @@
             this.bunifuTileButton3.Name = "bunifuTileButton3";
             this.bunifuTileButton3.Size = new System.Drawing.Size(106, 98);
             this.bunifuTileButton3.TabIndex = 9;
->>>>>>> 7aab1d84724bf658c8df73ee2bbe27f4110bcec0
             // 
             // bunifuTileButton2
             // 
@@ -225,15 +214,6 @@
             // 
             // panel2
             // 
-<<<<<<< HEAD
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 390);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(801, 22);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
-=======
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox3);
@@ -247,7 +227,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(890, 80);
             this.panel2.TabIndex = 6;
->>>>>>> 7aab1d84724bf658c8df73ee2bbe27f4110bcec0
             // 
             // dashBoardLabel
             // 
@@ -627,9 +606,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(801, 412);
-=======
             this.ClientSize = new System.Drawing.Size(1045, 525);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.myTrainingLabel);
@@ -639,7 +615,6 @@
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
->>>>>>> 7aab1d84724bf658c8df73ee2bbe27f4110bcec0
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
