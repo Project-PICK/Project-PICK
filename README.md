@@ -64,5 +64,5 @@
 >> + [Project Overview](https://canvas.humboldt.edu/courses/46023/pages/project-overview?module_item_id=740402)
 > + [SRS Template](https://canvas.humboldt.edu/courses/46023/files/2042318?module_item_id=740405)
 >> + [SRS **MUST** Haves](https://canvas.humboldt.edu/courses/46023/pages/srs-must-haves?module_item_id=740406)
-> + [Design Specification Template](http://www.cs.iit.edu/~oaldawud/CS487/project/software_design_specification.htm)
+> + [Design Specification Template](http://www.cs.iit.edu/~oaldawud/CS487/project/software_design_specification.htm) 
 
