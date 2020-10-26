@@ -59,7 +59,7 @@
             this.userOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1490, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(801, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,9 +79,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 787);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 390);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1490, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(801, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1490, 809);
+            this.ClientSize = new System.Drawing.Size(801, 412);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.menuStrip1);
