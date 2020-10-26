@@ -84,11 +84,8 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-<<<<<<< HEAD
-            this.menuStrip1.Size = new System.Drawing.Size(889, 24);
-=======
+
             this.menuStrip1.Size = new System.Drawing.Size(856, 24);
->>>>>>> 7aab1d84724bf658c8df73ee2bbe27f4110bcec0
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,18 +179,11 @@
             // 
             // groupBox2
             // 
-<<<<<<< HEAD
-            this.groupBox2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(110, 38);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(408, 75);
-=======
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
             this.groupBox2.Font = new System.Drawing.Font("Rockwell", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(110, 38);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(396, 75);
->>>>>>> 7aab1d84724bf658c8df73ee2bbe27f4110bcec0
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Question Statistics";
@@ -402,15 +392,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-<<<<<<< HEAD
-            this.statusStrip1.Location = new System.Drawing.Point(0, 514);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(889, 22);
-=======
+
             this.statusStrip1.Location = new System.Drawing.Point(0, 434);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(856, 22);
->>>>>>> 7aab1d84724bf658c8df73ee2bbe27f4110bcec0
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -445,11 +430,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(889, 536);
-=======
+
             this.ClientSize = new System.Drawing.Size(856, 456);
->>>>>>> 7aab1d84724bf658c8df73ee2bbe27f4110bcec0
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_welcome);
             this.Controls.Add(this.statusStrip1);
