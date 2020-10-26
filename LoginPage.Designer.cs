@@ -33,6 +33,7 @@ namespace PICKTrainingInc
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.SignIn = new System.Windows.Forms.GroupBox();
+            this.showPassword = new System.Windows.Forms.CheckBox();
             this.registerButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,10 +45,11 @@ namespace PICKTrainingInc
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Logo = new System.Windows.Forms.PictureBox();
-            this.showPassword = new System.Windows.Forms.CheckBox();
+            this.goback_btn = new System.Windows.Forms.Button();
             this.SignIn.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -79,11 +81,22 @@ namespace PICKTrainingInc
             this.SignIn.TabStop = false;
             this.SignIn.Text = "Sign-In";
             // 
+            // showPassword
+            // 
+            this.showPassword.AutoSize = true;
+            this.showPassword.Location = new System.Drawing.Point(267, 148);
+            this.showPassword.Name = "showPassword";
+            this.showPassword.Size = new System.Drawing.Size(136, 20);
+            this.showPassword.TabIndex = 6;
+            this.showPassword.Text = "Show Password";
+            this.showPassword.UseVisualStyleBackColor = true;
+            this.showPassword.CheckedChanged += new System.EventHandler(this.showPassword_CheckedChanged);
+            // 
             // registerButton
             // 
             this.registerButton.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold);
             this.registerButton.Location = new System.Drawing.Point(6, 170);
-            this.registerButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.registerButton.Margin = new System.Windows.Forms.Padding(2);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(117, 33);
             this.registerButton.TabIndex = 5;
@@ -180,9 +193,18 @@ namespace PICKTrainingInc
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quitToolStripMenuItem});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // quitToolStripMenuItem
+            // 
+            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.quitToolStripMenuItem.Text = "Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
             // userOptionsToolStripMenuItem
             // 
@@ -195,7 +217,7 @@ namespace PICKTrainingInc
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // Logo
@@ -210,22 +232,22 @@ namespace PICKTrainingInc
             this.Logo.TabIndex = 1;
             this.Logo.TabStop = false;
             // 
-            // showPassword
+            // goback_btn
             // 
-            this.showPassword.AutoSize = true;
-            this.showPassword.Location = new System.Drawing.Point(267, 148);
-            this.showPassword.Name = "showPassword";
-            this.showPassword.Size = new System.Drawing.Size(136, 20);
-            this.showPassword.TabIndex = 6;
-            this.showPassword.Text = "Show Password";
-            this.showPassword.UseVisualStyleBackColor = true;
-            this.showPassword.CheckedChanged += new System.EventHandler(this.showPassword_CheckedChanged);
+            this.goback_btn.Location = new System.Drawing.Point(625, 27);
+            this.goback_btn.Name = "goback_btn";
+            this.goback_btn.Size = new System.Drawing.Size(75, 23);
+            this.goback_btn.TabIndex = 6;
+            this.goback_btn.Text = "Go Back";
+            this.goback_btn.UseVisualStyleBackColor = true;
+            this.goback_btn.Click += new System.EventHandler(this.goback_btn_Click);
             // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 406);
+            this.Controls.Add(this.goback_btn);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.SignIn);
@@ -271,5 +293,7 @@ namespace PICKTrainingInc
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.CheckBox showPassword;
+        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.Button goback_btn;
     }
 }

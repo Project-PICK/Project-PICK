@@ -157,5 +157,20 @@ namespace PICKTrainingInc
                 tb_password.UseSystemPasswordChar = true;
             }
         }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void goback_btn_Click(object sender, EventArgs e)
+        {
+           closeProgram = false;
+
+            this.Close();
+            SplashPage sp = new SplashPage(dbManager, stateManager);
+            sp.Show(); 
+        }
     }
 }

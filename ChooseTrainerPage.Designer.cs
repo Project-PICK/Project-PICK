@@ -42,6 +42,7 @@
             this.pb_training1 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.gb_training = new System.Windows.Forms.GroupBox();
+            this.goback_btn = new System.Windows.Forms.Button();
             this.menuOptions.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -94,6 +95,7 @@
             this.statusBar.Name = "statusBar";
             this.statusBar.Size = new System.Drawing.Size(119, 17);
             this.statusBar.Text = "Choose Your Training";
+            this.statusBar.Click += new System.EventHandler(this.statusBar_Click);
             // 
             // Logo
             // 
@@ -123,7 +125,7 @@
             this.fillPanel.Controls.Add(this.tp_training);
             this.fillPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fillPanel.Location = new System.Drawing.Point(2, 17);
-            this.fillPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fillPanel.Margin = new System.Windows.Forms.Padding(2);
             this.fillPanel.Name = "fillPanel";
             this.fillPanel.Size = new System.Drawing.Size(828, 353);
             this.fillPanel.TabIndex = 11;
@@ -137,7 +139,7 @@
             this.tp_training.Controls.Add(this.gb_training1, 0, 0);
             this.tp_training.Dock = System.Windows.Forms.DockStyle.Top;
             this.tp_training.Location = new System.Drawing.Point(0, 0);
-            this.tp_training.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tp_training.Margin = new System.Windows.Forms.Padding(2);
             this.tp_training.Name = "tp_training";
             this.tp_training.RowCount = 4;
             this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.3369F));
@@ -152,9 +154,9 @@
             this.gb_training1.Controls.Add(this.pb_training1);
             this.gb_training1.Font = new System.Drawing.Font("Britannic Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_training1.Location = new System.Drawing.Point(2, 2);
-            this.gb_training1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gb_training1.Margin = new System.Windows.Forms.Padding(2);
             this.gb_training1.Name = "gb_training1";
-            this.gb_training1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gb_training1.Padding = new System.Windows.Forms.Padding(2);
             this.gb_training1.Size = new System.Drawing.Size(264, 153);
             this.gb_training1.TabIndex = 1;
             this.gb_training1.TabStop = false;
@@ -174,7 +176,7 @@
             // 
             this.mainPanel.Controls.Add(this.gb_training);
             this.mainPanel.Location = new System.Drawing.Point(0, 133);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(837, 376);
             this.mainPanel.TabIndex = 12;
@@ -184,19 +186,30 @@
             this.gb_training.Controls.Add(this.fillPanel);
             this.gb_training.Font = new System.Drawing.Font("Britannic Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_training.Location = new System.Drawing.Point(3, 2);
-            this.gb_training.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gb_training.Margin = new System.Windows.Forms.Padding(2);
             this.gb_training.Name = "gb_training";
-            this.gb_training.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gb_training.Padding = new System.Windows.Forms.Padding(2);
             this.gb_training.Size = new System.Drawing.Size(832, 372);
             this.gb_training.TabIndex = 12;
             this.gb_training.TabStop = false;
             this.gb_training.Text = "Choose Your Training Course";
+            // 
+            // goback_btn
+            // 
+            this.goback_btn.Location = new System.Drawing.Point(741, 43);
+            this.goback_btn.Name = "goback_btn";
+            this.goback_btn.Size = new System.Drawing.Size(75, 23);
+            this.goback_btn.TabIndex = 13;
+            this.goback_btn.Text = "Go Back";
+            this.goback_btn.UseVisualStyleBackColor = true;
+            this.goback_btn.Click += new System.EventHandler(this.goback_btn_Click);
             // 
             // ChooseTrainerPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 537);
+            this.Controls.Add(this.goback_btn);
             this.Controls.Add(this.chooseTrainingLabel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.Logo);
@@ -236,5 +249,6 @@
         private System.Windows.Forms.TableLayoutPanel tp_training;
         private System.Windows.Forms.GroupBox gb_training1;
         private System.Windows.Forms.PictureBox pb_training1;
+        private System.Windows.Forms.Button goback_btn;
     }
 }
