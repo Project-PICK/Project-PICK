@@ -49,7 +49,7 @@ namespace PICKTrainingInc
         {
             closeProgram = false;
             //  Check if the user properly logged in
-            if (checkLogin()){
+            if (checkLogin()) {
 
                 // Close this form
                 this.Close();
@@ -58,11 +58,11 @@ namespace PICKTrainingInc
                 ChooseTrainerPage tp = new ChooseTrainerPage(dbManager, stateManager);
                 tp.Show();
             }
-            else{
+            else {
                 statusStrip.Text = "Wrong Username/Password!";
                 //statusStrip1.Refresh();
             }
-            
+
         }
 
 
@@ -71,7 +71,7 @@ namespace PICKTrainingInc
          * to see if they are allowed to login. Returns true if they are
          * allowed, and returns false if they are not.
          */
-        private bool checkLogin(){
+        private bool checkLogin() {
             // Setup our return data
             bool returnVal = false;
 
@@ -83,8 +83,8 @@ namespace PICKTrainingInc
             List<NameValueCollection> queryResult;
 
             // Execute the Query, checking for username and password.
-            queryResult = dbManager.query("SELECT * FROM user WHERE userName = '"+userName+"' AND password = '"+password+"'");
-            if(queryResult.Count >= 1)
+            queryResult = dbManager.query("SELECT * FROM user WHERE userName = '" + userName + "' AND password = '" + password + "'");
+            if (queryResult.Count >= 1)
             {
                 returnVal = true;
                 stateManager.setUserName(userName);
@@ -100,7 +100,7 @@ namespace PICKTrainingInc
         /**
          * Called When the user tries to close the form
          */
-        private void closeForm(Object sender, FormClosingEventArgs e){
+        private void closeForm(Object sender, FormClosingEventArgs e) {
 
             // Only prompt the user if we are pressing the close button.
             if (closeProgram)
@@ -119,7 +119,7 @@ namespace PICKTrainingInc
                     System.Environment.Exit(1);
                 }
             }
-            
+
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
@@ -135,6 +135,42 @@ namespace PICKTrainingInc
             this.Close();
 
             rp.Show();
+        }
+
+        private void tb_password_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        /**
+          * Called When the user selects to view their password in plain text
+         */
+        private void showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showPassword.Checked)
+            {
+                tb_password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                tb_password.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void goback_btn_Click(object sender, EventArgs e)
+        {
+           closeProgram = false;
+
+            this.Close();
+            SplashPage sp = new SplashPage(dbManager, stateManager);
+            sp.Show(); 
         }
     }
 }

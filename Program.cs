@@ -38,7 +38,7 @@ namespace PICKTrainingInc
             //Application.Run(new PICKTrainingInc.prototypes.isaac.Form1());
             //Application.Run(new MainTrainingPage());
             //Application.Run(new LoginPage(dbManager));
-            Application.Run(new UserDashBoard());
+            //Application.Run(new UserDashBoard());
             //Application.Run(new SplashPage());
             /*
              Application.EnableVisualStyles();

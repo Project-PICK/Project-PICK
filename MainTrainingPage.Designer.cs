@@ -61,6 +61,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbl_welcome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.goback_btn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -193,7 +194,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
             this.tableLayoutPanel2.Controls.Add(this.currentUser, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.allUsers, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.totalAnswered, 0, 3);
@@ -206,7 +207,7 @@
             this.tableLayoutPanel2.Controls.Add(this.allUserWrong, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.allUserTotal, 2, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 18);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -424,11 +425,22 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Project PICK";
             // 
+            // goback_btn
+            // 
+            this.goback_btn.Location = new System.Drawing.Point(756, 27);
+            this.goback_btn.Name = "goback_btn";
+            this.goback_btn.Size = new System.Drawing.Size(75, 23);
+            this.goback_btn.TabIndex = 14;
+            this.goback_btn.Text = "Go Back";
+            this.goback_btn.UseVisualStyleBackColor = true;
+            this.goback_btn.Click += new System.EventHandler(this.goback_btn_Click);
+            // 
             // MainTrainingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 456);
+            this.Controls.Add(this.goback_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_welcome);
             this.Controls.Add(this.statusStrip1);
@@ -495,5 +507,6 @@
         private System.Windows.Forms.Label allUserCorrect;
         private System.Windows.Forms.Label allUserWrong;
         private System.Windows.Forms.Label allUserTotal;
+        private System.Windows.Forms.Button goback_btn;
     }
 }
