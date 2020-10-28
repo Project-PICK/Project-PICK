@@ -62,7 +62,7 @@ namespace PICKTrainingInc
             answers.Insert(correctAnswerPosition, correctAnswer);
 
             //populateQuestionImage(questionImage);
-            //populateAnswers(answers);
+           // populateAnswers(answers);
             
         }
 
@@ -71,9 +71,30 @@ namespace PICKTrainingInc
             string trainingName = stateManager.getTrainingName();
             string dirName = @"..\..\TrainingData\" + trainingName;
             string[] dirNames = Directory.GetDirectories(dirName);
+            ArrayList cleanDirNames = new ArrayList();
 
+            //remove path and underscores
+            foreach(string n in dirNames)
+            {
+                string temp = n.Substring(n.LastIndexOf("\\") + 1);
+                temp = temp.Replace("_", " ");
+                cleanDirNames.Add(temp);
+            }
 
-            return null;
+            //TODO build wrong answer array
+            //string correctName = dirName + @"\" + correctAnswer;
+
+            ArrayList wrongAnswers = new ArrayList();
+            
+            foreach(string candidateName in cleanDirNames)
+            {
+                if (candidateName != correctAnswer)
+                {
+                    wrongAnswers.Add(candidateName);
+                }
+            }
+
+            return wrongAnswers;
         }
     
         private string[] getRandomQuestionImage()
@@ -84,8 +105,9 @@ namespace PICKTrainingInc
             string[] dirNames = Directory.GetDirectories(dirName);
             string answerDir = dirNames[random.Next(dirNames.Length-1)];
             
+            
 
-            string randImage = Directory.GetFiles(answerDir)[random.Next(answerDir.Length-1)];
+            string randImage = Directory.GetFiles(answerDir)[random.Next(dirNames.Length-1)];
 
             answerDir = answerDir.Substring(answerDir.LastIndexOf("\\") + 1);
             answerDir = answerDir.Replace("_", " ");
