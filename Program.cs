@@ -27,25 +27,9 @@ namespace PICKTrainingInc
             DataBaseManager dbManager = new DataBaseManager("Data Source = ../../PICKDataBase.db; Version = 3; New = True; Compress = True; ");
             StateManager stateManager = new StateManager();
 
-            //Start the splash page, passing it the dbManager
+            //stateManager.setUserName("admin");
             Application.Run(new SplashPage(dbManager, stateManager));
 
-           
-            List <NameValueCollection> queryResult; // = new NameValueCollection();
-           // queryResult = dbManager.query("SELECT * FROM user");
-            //Console.WriteLine(queryResult[0]["userName"]);
-            //Application.Run(new PICKTrainingInc.prototypes.isaac.Form1());
-            //Application.Run(new MainTrainingPage());
-            //Application.Run(new LoginPage(dbManager));
-            //Application.Run(new SplashPage());
-            //Application.Run(new SplashPage());
-            /*
-             Application.EnableVisualStyles();
-             Application.SetCompatibleTextRenderingDefault(false);
-             //Application.Run(new AdminConsole());
-             Application.Run(new SplashPage());
-             //Application.Run(new LoginPage());
-             */
         }
     }
 }

@@ -68,6 +68,7 @@ namespace PICKTrainingInc
             // Get and assign the user.
             user = getUser();
             setName(user);
+            setStatusBar(user);
 
             //set our demo training to invisible
             gb_training1.Visible = false;
@@ -229,6 +230,29 @@ namespace PICKTrainingInc
             mtp.Show();
         }
 
-    
+        private void goback_btn_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            LoginPage lp = new LoginPage(dbManager, stateManager);
+            lp.Show();
+        }
+
+        private void statusBar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Hello");
+            statusBar.Text = "Hello";
+        }
+
+        private void setStatusBar(string name)
+        {
+            statusBar.Text = "Welcome back, " + name + "!";
+        }
     }
 }
