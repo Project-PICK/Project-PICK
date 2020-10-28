@@ -56,14 +56,43 @@ namespace PICKTrainingInc
             lbl_welcome.Text = stateManager.getTrainingName() + " for " + stateManager.getUserName();
             string[] answerAndImage = getRandomQuestionImage();
             string correctAnswer = answerAndImage[0];
+
             string image = answerAndImage[1];
             ArrayList answers = getRandomWrongAnswers(correctAnswer);
             int correctAnswerPosition = random.Next(TOTAL_ANSWERS);
-            answers.Insert(correctAnswerPosition, correctAnswer);
+            answers.Insert(correctAnswerPosition, correctAnswer); //TODO: Argument out of range exception
 
-            //populateQuestionImage(questionImage);
-           // populateAnswers(answers);
+            populateQuestionImage(image);
+            populateAnswers(answers);
             
+        }
+
+        /**
+         * Loads our media with the appropriate question image 
+         * */
+        private void populateQuestionImage(string imageLocation)
+        {
+            pb_question.Image = Image.FromFile(imageLocation);
+        }
+
+        private void populateAnswers(ArrayList answers)
+        {
+            //hide our default button
+            button1.Hide();
+
+
+            foreach(string answer in answers)
+            {
+                addButton(answer);
+            }
+        }
+
+        private void addButton(string buttonText)
+        {
+            Button b = new Button();
+            b.Text = buttonText;
+            b.Size = new Size(150, 50);
+            tbl_answers.Controls.Add(b);
         }
 
         private ArrayList getRandomWrongAnswers(string correctAnswer)
@@ -92,6 +121,13 @@ namespace PICKTrainingInc
                 {
                     wrongAnswers.Add(candidateName);
                 }
+            }
+
+            //choose a random number 11 times 
+            while(wrongAnswers.Count >= 15)
+            {
+                int indexToRemove = random.Next(0, wrongAnswers.Count - 1);
+                wrongAnswers.RemoveAt(indexToRemove);
             }
 
             return wrongAnswers;
