@@ -39,6 +39,7 @@ namespace PICKTrainingInc
             this.dbManager = dbManager;
             this.stateManager = stateManager;
             random  = new Random();
+            this.FormClosing += new FormClosingEventHandler(closeForm);
         }
 
         /* PUBLIC METHODS */
