@@ -29,8 +29,9 @@ namespace PICKTrainingInc
         StateManager stateManager;
         Random random;
         bool closeProgram = true;
+        Button correctButton = null; //Whenever a correct answer is set, the correct button will be here for comparisons.
 
-        int TOTAL_ANSWERS = 16;
+        int TOTAL_ANSWERS = 15;
 
         /* CONSTRUCTORS */
         public MainTrainingPage(DataBaseManager dbManager, StateManager stateManager)
@@ -53,6 +54,12 @@ namespace PICKTrainingInc
 
         private void MainTrainingPage_Load(object sender, EventArgs e)
         {
+            load();
+            
+        }
+
+        private void load()
+        {
             //Set the welcome label
             lbl_welcome.Text = stateManager.getTrainingName() + " for " + stateManager.getUserName();
             string[] answerAndImage = getRandomQuestionImage();
@@ -64,7 +71,8 @@ namespace PICKTrainingInc
             answers.Insert(correctAnswerPosition, correctAnswer); //TODO: Argument out of range exception
 
             populateQuestionImage(image);
-            populateAnswers(answers);
+            populateAnswers(answers, correctAnswerPosition);
+
             
         }
 
@@ -76,24 +84,33 @@ namespace PICKTrainingInc
             pb_question.Image = Image.FromFile(imageLocation);
         }
 
-        private void populateAnswers(ArrayList answers)
+        private void populateAnswers(ArrayList answers, int correctAnswerPosition)
         {
+            tbl_answers.Controls.Clear();
             //hide our default button
             button1.Hide();
 
-
+            int i = 0;
             foreach(string answer in answers)
             {
-                addButton(answer);
+                addButton(answer, i == correctAnswerPosition);
+
+
+
+                i++;
             }
         }
 
-        private void addButton(string buttonText)
+        private void addButton(string buttonText, bool markAsCorrect)
         {
             Button b = new Button();
             b.Text = buttonText;
             b.Size = new Size(150, 50);
+            b.Click += button_Click;
             tbl_answers.Controls.Add(b);
+
+            // If this is the button to the correct answer, save it for comparison.
+            if (markAsCorrect) correctButton = b;
         }
 
         private ArrayList getRandomWrongAnswers(string correctAnswer)
@@ -134,6 +151,9 @@ namespace PICKTrainingInc
             return wrongAnswers;
         }
     
+        /**
+         * Returns a random image from our current training set to be used as a question.
+         * */
         private string[] getRandomQuestionImage()
         {
             
@@ -141,10 +161,9 @@ namespace PICKTrainingInc
             string dirName = @"..\..\TrainingData\" + trainingName;
             string[] dirNames = Directory.GetDirectories(dirName);
             string answerDir = dirNames[random.Next(dirNames.Length-1)];
-            
-            
+            string[] fileNamesInDir = Directory.GetFiles(dirName);
 
-            string randImage = Directory.GetFiles(answerDir)[random.Next(dirNames.Length-1)];
+            string randImage = Directory.GetFiles(answerDir)[random.Next(fileNamesInDir.Length-1)];
 
             answerDir = answerDir.Substring(answerDir.LastIndexOf("\\") + 1);
             answerDir = answerDir.Replace("_", " ");
@@ -186,6 +205,113 @@ namespace PICKTrainingInc
             this.Close();
             ChooseTrainerPage tp = new ChooseTrainerPage(dbManager, stateManager);
             tp.Show();
+        }
+
+        private async void blinkButton(Button b, Color colorToBlink, int numTimes, bool reloadForm)
+        {
+            if (numTimes == 0) numTimes = 999999999;
+
+
+            Color backColor = b.BackColor;
+            Color foreColor = b.ForeColor;
+            for(int i = 0; i < numTimes; i ++)
+            {
+                await Task.Delay(150);
+
+                // Blink the button.
+                if (b.BackColor == backColor)
+                {
+                    b.BackColor = colorToBlink;
+                }
+                else
+                {
+                    b.BackColor = backColor;
+                }
+            }
+
+            if (reloadForm)
+            {
+                statusStrip1.Text = "Loading Next Question Now...";
+                await Task.Delay(2000);
+                load();
+            }
+        }
+
+        /**
+         * Records the fact that the user just answered this question correctly
+         * to the database.
+         */
+        void recordCorrectQuestion()
+        {
+            //TODO
+        }
+
+        /**
+        * Records the fact that the user just answered this question wrong
+        * to the database.
+        */
+        void recordWrongQuestion()
+        {
+            //TODO
+        }
+
+        /**
+         * The user just answered this question correct, we want to send the user
+         * feedback, record this, and load the next question. */
+        void setQuestionAnsweredCorrect(Button b)
+        {
+            //We'll record this to the database
+            recordCorrectQuestion();
+
+            //We'll give the user feedback by setting the status.
+            toolStripStatusLabel1.Text = "Question answered CORRECT! Loading Next Question...";
+
+            //And we'll blink a button Green
+            blinkButton(b, Color.Green, 11, true);
+        }
+
+        /**
+         * The user just answered this question wrong. Do the things needed
+         */
+        void setQuestionAnsweredWrong(Button b)
+        {
+            //Record this to the Database
+            recordWrongQuestion();
+
+            //Give user feeback with status strip and red button
+            toolStripStatusLabel1.Text = "Question answered Wrong! Loading Next Question...";
+
+            //And we'll blink a button Green
+            blinkButton(b, Color.Red, 9, false);
+
+        }
+
+        /* Checks if the given button is infact the button for
+         * the correct answer.
+         * */
+        
+        bool isCorrectAnswer(Button b)
+        {
+            return correctButton == b;
+        }
+
+        /**
+         * Called when an answer button is clicked.
+         * */
+        private void button_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            b.Enabled = false;
+
+            if (isCorrectAnswer(b))
+            {
+                setQuestionAnsweredCorrect(b);
+            }
+            else
+            {
+                setQuestionAnsweredWrong(b);
+            }
+            
         }
     }
 }

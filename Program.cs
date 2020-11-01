@@ -28,7 +28,7 @@ namespace PICKTrainingInc
             StateManager stateManager = new StateManager();
 
             //stateManager.setUserName("admin");
-            Application.Run(new ChooseTrainerPage(dbManager, stateManager));
+            Application.Run(new SplashPage(dbManager, stateManager));
 
         }
     }
