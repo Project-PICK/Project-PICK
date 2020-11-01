@@ -225,9 +225,11 @@ namespace PICKTrainingInc
 
             MainTrainingPage mtp = new MainTrainingPage(dbManager, stateManager);
 
-            this.Close();
-
             mtp.Show();
+
+            this.Hide();
+
+            
         }
 
         private void goback_btn_Click(object sender, EventArgs e)
