@@ -12,8 +12,8 @@
 | 	⌛ Due Dates | Requirements | Percentage |
 | ------ | ----------- |-------- |
 | ~~09/23~~   | ~~Software Requirement Specification-Sprint 1~~ |~~**6%**~~ |
-| **10/14** | Software Design Specification Sprint 2 (including User Interface design) |*4%* |
-| 11/12    | Test Plan |*4%* |
+| ~~10/17~~ | ~~Software Design Specification Sprint 2 (including User Interface design)~~ |~~*4%*~~ |
+| **11/12**    | **Test Plan** |*4%* |
 | 12/02    | Demonstration of the software  |**10%**|
 | 12/05    | User Manual |*3%* |
 | 12/05    | Programmers’ manual |*3%* |
@@ -24,13 +24,14 @@
 
 
 ## 📑 Team Checklist:
-
-- [✅] *Find database that fits project*
-- [✅] *Continuously update [SRS](https://docs.google.com/document/d/1lbW62LPh84QcCzgn3-WpvVLJhuLZc-Fj-svnL28oMaM/edit) documentation*
-- [ ] **Brainstorm and apply features we want in our application**
-- [ ] **Brainstorm specific courses/scenarios for user training**
-- [✅] Git documentation(*how we go about pushing code (branches) and our agreed commit structure*)
 - [ ] **Discuss possible CI/CD implementation**
+- [ ] **NUnit Testing implementation**
+- [✅] ~~*Find database that fits project*~~
+- [✅] ~~*Continuously update [SRS](https://docs.google.com/document/d/1lbW62LPh84QcCzgn3-WpvVLJhuLZc-Fj-svnL28oMaM/edit) documentation*~~
+- [✅] ~~**Brainstorm and apply features we want in our application**~~
+- [✅] ~~**Brainstorm specific courses/scenarios for user training**~~
+- [✅] ~~Git documentation(*how we go about pushing code (branches) and our agreed commit structure*)~~
+
 ***
 ## 🚦 Blockers
  
@@ -64,5 +65,5 @@
 >> + [Project Overview](https://canvas.humboldt.edu/courses/46023/pages/project-overview?module_item_id=740402)
 > + [SRS Template](https://canvas.humboldt.edu/courses/46023/files/2042318?module_item_id=740405)
 >> + [SRS **MUST** Haves](https://canvas.humboldt.edu/courses/46023/pages/srs-must-haves?module_item_id=740406)
-> + [Design Specification Template](http://www.cs.iit.edu/~oaldawud/CS487/project/software_design_specification.htm)
+> + [Design Specification Template](http://www.cs.iit.edu/~oaldawud/CS487/project/software_design_specification.htm) 
 
