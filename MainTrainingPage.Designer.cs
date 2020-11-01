@@ -36,6 +36,7 @@
             this.Logo = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbl_answers = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.currentUser = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.lbl_welcome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.goback_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -83,21 +83,20 @@
             this.userOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // userOptionsToolStripMenuItem
             // 
             this.userOptionsToolStripMenuItem.Name = "userOptionsToolStripMenuItem";
-            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 29);
+            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 30);
             this.userOptionsToolStripMenuItem.Text = "User Options";
             // 
             // Logo
@@ -147,6 +146,18 @@
             this.tbl_answers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tbl_answers.Size = new System.Drawing.Size(435, 568);
             this.tbl_answers.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(5, 21);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 71);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Andy Warhol";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
@@ -398,17 +409,6 @@
             this.goback_btn.Text = "Go Back";
             this.goback_btn.UseVisualStyleBackColor = true;
             this.goback_btn.Click += new System.EventHandler(this.goback_btn_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(5, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 71);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Andy Warhol";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainTrainingPage
             // 
