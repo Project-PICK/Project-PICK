@@ -13,12 +13,15 @@ namespace PICKTrainingInc
     {
         /* FIELD VARIABLES */
         string userName = null;
+        int userID = -1; //the userID of this user as it is in the DB
+        int questionID = -1;
         string trainingName = null;
+        DataBaseManager dbManager;
 
         /* Constructor */
-        public StateManager()
+        public StateManager(DataBaseManager dbManager)
         {
-            //do we need to do anything here?
+            this.dbManager = dbManager;
         }
 
         /* PRIVATE METHODS */
@@ -28,9 +31,16 @@ namespace PICKTrainingInc
         /**
          * Sets the states username variable
          */
-        public void setUserName(string userName)
+        public void setUserName(string userName, string password)
         {
+            // Set the Username
             this.userName = userName;
+
+            // Get the users ID from the DB
+            int userID = dbManager.getUserID(userName, password);
+
+            // And save that userID
+            setUserID(userID);
         }
 
         /*
@@ -56,5 +66,39 @@ namespace PICKTrainingInc
         {
             this.trainingName = trainingName;
         }
+
+        /**
+         * Set the states current user ID
+         */
+        public void setUserID(int userID)
+        {
+            this.userID = userID;
+        }
+
+        /**
+         * Returns the current user id
+         */
+        public int getUserID()
+        {
+            return userID;
+        }
+
+        /**
+         * Set the states current questionID ID
+         */
+        public void setQuestionID(int questionID)
+        {
+            this.questionID = questionID;
+        }
+
+        /**
+         * Returns the current user id
+         */
+        public int getQuestionID()
+        {
+            return questionID;
+        }
+
+
     }
 }

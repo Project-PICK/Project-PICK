@@ -18,11 +18,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms.VisualStyles;
 
 namespace PICKTrainingInc
 {
+    public enum QA_TYPE
+    {
+        IMAGE,
+        TEXT
+    }
+
     public partial class MainTrainingPage : Form
     {
+
+       
 
         /* FIELD VARIABLES */
         DataBaseManager dbManager;
@@ -58,10 +67,18 @@ namespace PICKTrainingInc
             
         }
 
+        /**
+         * Called When the MainTrainingPage is loaded.
+         * Generate a question, either from the file system, or from the
+         * database, and show that to the user. If a question is generated
+         * it is also saved to the database.
+         * */
         private void load()
         {
-            //Set the welcome label
+            // Set the welcome label
             lbl_welcome.Text = stateManager.getTrainingName() + " for " + stateManager.getUserName();
+
+            //Load the question and answers
             string[] answerAndImage = getRandomQuestionImage();
             string correctAnswer = answerAndImage[0];
 
@@ -70,10 +87,23 @@ namespace PICKTrainingInc
             int correctAnswerPosition = random.Next(TOTAL_ANSWERS);
             answers.Insert(correctAnswerPosition, correctAnswer); //TODO: Argument out of range exception
 
+            // Setup the gui with the correct questions and answers.
             populateQuestionImage(image);
             populateAnswers(answers, correctAnswerPosition);
 
-            
+            //set labels
+            //increment display labels
+            currentUserTotal.Text = "0";
+            currentUserCorrect.Text = "0";
+            currentUserWrong.Text = "0";
+            allUserCorrect.Text = "0";
+            allUserTotal.Text = "0";
+            allUserWrong.Text = "0";
+
+            int questionID = dbManager.saveQuestion(image, correctAnswer, answers, stateManager, QA_TYPE.IMAGE);
+            stateManager.setQuestionID(questionID);
+
+            dbManager.incrementQuestionDisplay(stateManager.getUserID(), stateManager.getQuestionID());
         }
 
         /**
@@ -243,7 +273,26 @@ namespace PICKTrainingInc
          */
         void recordCorrectQuestion()
         {
-            //TODO
+            dbManager.incrementQuestionAttempt(stateManager.getUserID(), stateManager.getQuestionID());
+            dbManager.incrementQuestionCorrect(stateManager.getUserID(), stateManager.getQuestionID());
+
+            //increment display labels
+            int total = int.Parse(currentUserTotal.Text);
+            total = total + 1;
+            currentUserTotal.Text = total.ToString();
+
+            total = int.Parse(currentUserCorrect.Text);
+            total = total + 1;
+            currentUserCorrect.Text = total.ToString();
+
+            //increment display labels
+            total = int.Parse(allUserTotal.Text);
+            total = total + 1;
+            allUserTotal.Text = total.ToString();
+
+            total = int.Parse(allUserCorrect.Text);
+            total = total + 1;
+            allUserCorrect.Text = total.ToString();
         }
 
         /**
@@ -252,7 +301,26 @@ namespace PICKTrainingInc
         */
         void recordWrongQuestion()
         {
-            //TODO
+            dbManager.incrementQuestionAttempt(stateManager.getUserID(), stateManager.getQuestionID());
+            dbManager.incrementQuestionWrong(stateManager.getUserID(), stateManager.getQuestionID());
+
+            //increment display labels
+            int total = int.Parse(currentUserTotal.Text);
+            total = total + 1;
+            currentUserTotal.Text = total.ToString();
+
+            total = int.Parse(currentUserWrong.Text);
+            total = total + 1;
+            currentUserWrong.Text = total.ToString();
+
+            //increment display labels
+            total = int.Parse(allUserTotal.Text);
+            total = total + 1;
+            allUserTotal.Text = total.ToString();
+
+            total = int.Parse(allUserWrong.Text);
+            total = total + 1;
+            allUserWrong.Text = total.ToString();
         }
 
         /**

@@ -109,7 +109,8 @@ namespace PICKTrainingInc
             if (dbManager.insert(query))
             {
                 // Set our username in the state Machine.
-                stateManager.setUserName(userName);
+                stateManager.setUserName(userName, password);
+                
 
                 // Close this form
                 this.Close();
