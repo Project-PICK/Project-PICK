@@ -17,6 +17,7 @@ namespace PICKTrainingInc
 {
     static class Program
     {
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -25,10 +26,16 @@ namespace PICKTrainingInc
         {
             // Start the DB Manager
             DataBaseManager dbManager = new DataBaseManager("Data Source = ../../PICKDataBase.db; Version = 3; New = True; Compress = True; ");
-            StateManager stateManager = new StateManager();
+            StateManager stateManager = new StateManager(dbManager);
+
+
 
             //stateManager.setUserName("admin");
-            Application.Run(new SplashPage(dbManager, stateManager));
+            //Application.Run(new SplashPage(dbManager, stateManager));
+
+            //debug stuff
+            stateManager.setUserName("admin", "password");
+            Application.Run(new ChooseTrainerPage(dbManager, stateManager));
 
         }
     }

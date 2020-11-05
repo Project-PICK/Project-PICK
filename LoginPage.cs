@@ -84,10 +84,13 @@ namespace PICKTrainingInc
 
             // Execute the Query, checking for username and password.
             queryResult = dbManager.query("SELECT * FROM user WHERE userName = '" + userName + "' AND password = '" + password + "'");
+
+            //queryResult = dbManager.query("SELECT * FROM user WHERE userName = @user_name AND password = @pass_word");
+
             if (queryResult.Count >= 1)
             {
                 returnVal = true;
-                stateManager.setUserName(userName);
+                stateManager.setUserName(userName, password);
             }
             else
             {

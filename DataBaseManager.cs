@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Collections.Specialized;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Collections;
 
 namespace PICKTrainingInc
 {
@@ -119,6 +120,65 @@ namespace PICKTrainingInc
             }
             return returnVal;
             //conn.Close();
+        }
+
+        /**
+         * Saves a question to the database, returns the questions id
+         */
+        public int saveQuestion(string question, string correctAnswer, ArrayList allAnswers, StateManager stateManager, QA_TYPE questionType)
+        {
+            string tquery = "INSERT INTO question (question, correctAnswer, answer1, answer2, answer3, answer4, answer5, answer6, " +
+                                                 "answer7, answer8, answer9, answer10, answer11, answer12, answer13, answer14," + 
+                                                 "answer15, trainingName  ) VALUES('" + question + "', '" + correctAnswer + "', '" +
+                                                 allAnswers[0] + "', '" + allAnswers[1] + "', '" + allAnswers[2] + "', '" +
+                                                 allAnswers[3] + "', '" + allAnswers[4] + "', '" + allAnswers[5] + "', '" +
+                                                 allAnswers[6] + "', '" + allAnswers[7] + "', '" + allAnswers[8] + "', '" +
+                                                 allAnswers[9] + "', '" + allAnswers[10] + "', '" + allAnswers[11] + "', '" +
+                                                 allAnswers[12] + "', '" + allAnswers[13] + "', '" + allAnswers[14] + "', '" +
+                                                 stateManager.getTrainingName() + "');";
+            insert(tquery);
+
+            tquery = "SELECT * from question where question = '"+question+"' AND answer12 = '"+allAnswers[11]+"'; ";
+            List<NameValueCollection> idList = query(tquery);
+
+
+            return int.Parse(idList[0]["id"]);
+        }
+
+        public int getUserID(string userName, string password)
+        {
+            string queryString = "SELECT * from user WHERE userName = '"+userName+"' AND password = '"+password+"'; ";
+            List<NameValueCollection> results = query(queryString);
+
+            return int.Parse(results[0]["id"]);
+        }
+
+        public bool incrementQuestionDisplay(int userID, int questionID)
+        {
+            string query = "INSERT INTO user_answers_question(userID, questionID, numDisplay, numAttempt, numCorrect, numWrong) " +
+                            " VALUES("+ userID + ", "+questionID+", 1, 0, 0, 0) " +
+                            " ON CONFLICT(userID, questionID) " +
+                            " DO UPDATE SET numDisplay = numDisplay + 1;";
+
+            return insert(query);
+        }
+
+        public bool incrementQuestionAttempt(int userID, int questionID)
+        {
+            string query = "UPDATE user_answers_question SET numAttempt = numAttempt + 1 WHERE userID = '"+userID+"' AND questionID == '"+questionID+"'; ";
+            return insert(query);
+        }
+
+        public bool incrementQuestionCorrect(int userID, int questionID)
+        {
+            string query = "UPDATE user_answers_question SET numCorrect = numCorrect + 1 WHERE userID = '" + userID + "' AND questionID == '" + questionID + "'; ";
+            return insert(query);
+        }
+
+        public bool incrementQuestionWrong(int userID, int questionID)
+        {
+            string query = "UPDATE user_answers_question SET numWrong = numWrong + 1 WHERE userID = '" + userID + "' AND questionID == '" + questionID + "'; ";
+            return insert(query);
         }
 
         private void CloseConnection()
