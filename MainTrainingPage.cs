@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms.VisualStyles;
 
 namespace PICKTrainingInc
 {
@@ -89,6 +90,15 @@ namespace PICKTrainingInc
             // Setup the gui with the correct questions and answers.
             populateQuestionImage(image);
             populateAnswers(answers, correctAnswerPosition);
+
+            //set labels
+            //increment display labels
+            currentUserTotal.Text = "0";
+            currentUserCorrect.Text = "0";
+            currentUserWrong.Text = "0";
+            allUserCorrect.Text = "0";
+            allUserTotal.Text = "0";
+            allUserWrong.Text = "0";
 
             int questionID = dbManager.saveQuestion(image, correctAnswer, answers, stateManager, QA_TYPE.IMAGE);
             stateManager.setQuestionID(questionID);
@@ -265,6 +275,24 @@ namespace PICKTrainingInc
         {
             dbManager.incrementQuestionAttempt(stateManager.getUserID(), stateManager.getQuestionID());
             dbManager.incrementQuestionCorrect(stateManager.getUserID(), stateManager.getQuestionID());
+
+            //increment display labels
+            int total = int.Parse(currentUserTotal.Text);
+            total = total + 1;
+            currentUserTotal.Text = total.ToString();
+
+            total = int.Parse(currentUserCorrect.Text);
+            total = total + 1;
+            currentUserCorrect.Text = total.ToString();
+
+            //increment display labels
+            total = int.Parse(allUserTotal.Text);
+            total = total + 1;
+            allUserTotal.Text = total.ToString();
+
+            total = int.Parse(allUserCorrect.Text);
+            total = total + 1;
+            allUserCorrect.Text = total.ToString();
         }
 
         /**
@@ -275,6 +303,24 @@ namespace PICKTrainingInc
         {
             dbManager.incrementQuestionAttempt(stateManager.getUserID(), stateManager.getQuestionID());
             dbManager.incrementQuestionWrong(stateManager.getUserID(), stateManager.getQuestionID());
+
+            //increment display labels
+            int total = int.Parse(currentUserTotal.Text);
+            total = total + 1;
+            currentUserTotal.Text = total.ToString();
+
+            total = int.Parse(currentUserWrong.Text);
+            total = total + 1;
+            currentUserWrong.Text = total.ToString();
+
+            //increment display labels
+            total = int.Parse(allUserTotal.Text);
+            total = total + 1;
+            allUserTotal.Text = total.ToString();
+
+            total = int.Parse(allUserWrong.Text);
+            total = total + 1;
+            allUserWrong.Text = total.ToString();
         }
 
         /**
