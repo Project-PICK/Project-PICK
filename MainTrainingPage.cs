@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.VisualStyles;
+using System.Collections.Specialized;
 
 namespace PICKTrainingInc
 {
@@ -78,6 +79,170 @@ namespace PICKTrainingInc
             // Set the welcome label
             lbl_welcome.Text = stateManager.getTrainingName() + " for " + stateManager.getUserName();
 
+            // Load a question for the current training
+            loadQuestion();
+
+            
+        }
+
+        /**
+         * Load's a questions for the current training.
+         * Will query the DB for the 10 lowest scored questions in this training that the user has 
+         * attempted and randomly choose 1 of the 10. It will then decide whether to show this
+         * question to the user again, or to generate a brand new question. With likelyhood
+         * 1 - (correctAnswer/totalAnswer)*/
+        private void loadQuestion()
+        {
+            //Get our Worst question to deal with
+            List<NameValueCollection> tenWorstQuestions = dbManager.getWorstQuestions(stateManager, 10);
+
+            // If we don't have any questions returned, this means this is the users first question generated, ever!
+            if (tenWorstQuestions.Count == 0)
+            {
+                generateNewQuestion();
+                return;
+            }
+
+            int index = random.Next(tenWorstQuestions.Count - 1);
+            NameValueCollection worstQuestion = tenWorstQuestions[index];
+
+            // Calculate likelyhood of showing this question, vs generating new question
+                
+            double correctPCT = double.Parse(worstQuestion["pctCorrect"]);
+            string correctAnswer = worstQuestion["correctAnswer"];
+
+            // Likelyhood of showing this question is inverse to it's correctPCT
+            double likelyhood = 1 - correctPCT;
+
+            double randomDouble = random.NextDouble();
+
+            // showOldQuestion should be true exactly likelyhood% of the time.
+            bool showOldQuestion = randomDouble < likelyhood;
+
+            if(showOldQuestion)
+            {
+                generateOldQuestion(worstQuestion);
+            }
+            else if(randomDouble > .90) //10% of the time, just choose a random pre-generated question
+            {
+                string questionID = dbManager.getRandomQuestionID(stateManager);
+                generateOldQuestionFromID(questionID);
+            }
+            else
+            {
+                generateNewQuestion();
+            }
+        }
+
+
+        private void generateOldQuestionFromID(string questionID)
+        {
+            string queryString = "SELECT * from question WHERE id = '"+questionID+"';";
+            NameValueCollection question = dbManager.query(queryString)[0];
+
+            string correctAnswer = question["correctAnswer"];
+            ArrayList answers = new ArrayList();
+            answers.Add(question["answer1"]);
+            answers.Add(question["answer2"]);
+            answers.Add(question["answer3"]);
+            answers.Add(question["answer4"]);
+            answers.Add(question["answer5"]);
+            answers.Add(question["answer6"]);
+            answers.Add(question["answer7"]);
+            answers.Add(question["answer8"]);
+            answers.Add(question["answer9"]);
+            answers.Add(question["answer10"]);
+            answers.Add(question["answer11"]);
+            answers.Add(question["answer12"]);
+            answers.Add(question["answer13"]);
+            answers.Add(question["answer14"]);
+            answers.Add(question["answer15"]);
+
+            string image = question["question"];
+
+            int correctAnswerPosition = answers.IndexOf(correctAnswer);
+
+            // Setup the gui with the correct questions and answers.
+            populateQuestionImage(image);
+            populateAnswers(answers, correctAnswerPosition);
+
+            int totalAttempts = dbManager.getQuestionAttempts(question["id"]);
+            int totalCorrect = dbManager.getQuestionCorrect(question["id"]);
+            int totalWrong = dbManager.getQuestionWrong(question["id"]);
+            int numAttempt = dbManager.getQuestionAttemptsByUser(question["id"], stateManager.getUserID());
+            int numCorrect = dbManager.getQuestionCorrectByUser(question["id"], stateManager.getUserID());
+            int numWrong = dbManager.getQuestionWrongByUser(question["id"], stateManager.getUserID());
+
+            //increment display labels
+            currentUserTotal.Text = numAttempt.ToString();
+            currentUserCorrect.Text = numCorrect.ToString();
+            currentUserWrong.Text = numWrong.ToString();
+
+            allUserCorrect.Text = totalCorrect.ToString();
+            allUserTotal.Text = totalAttempts.ToString();
+            allUserWrong.Text = totalWrong.ToString();
+
+            gb_stats.Text = "Question Statistics for #id: " + question["id"];
+
+
+            stateManager.setQuestionID(int.Parse(question["id"]));
+            dbManager.incrementQuestionDisplay(stateManager.getUserID(), stateManager.getQuestionID());
+        }
+
+
+        private void generateOldQuestion(NameValueCollection question)
+        {
+            string correctAnswer = question["correctAnswer"];
+            ArrayList answers = new ArrayList();
+            answers.Add(question["answer1"]);
+            answers.Add(question["answer2"]);
+            answers.Add(question["answer3"]);
+            answers.Add(question["answer4"]);
+            answers.Add(question["answer5"]);
+            answers.Add(question["answer6"]);
+            answers.Add(question["answer7"]);
+            answers.Add(question["answer8"]);
+            answers.Add(question["answer9"]);
+            answers.Add(question["answer10"]);
+            answers.Add(question["answer11"]);
+            answers.Add(question["answer12"]);
+            answers.Add(question["answer13"]);
+            answers.Add(question["answer14"]);
+            answers.Add(question["answer15"]);
+
+            string image = question["question"];
+
+            int correctAnswerPosition = answers.IndexOf(correctAnswer);
+
+            // Setup the gui with the correct questions and answers.
+            populateQuestionImage(image);
+            populateAnswers(answers, correctAnswerPosition);
+
+            int totalAttempts = dbManager.getQuestionAttempts(question["questionID"]);
+            int totalCorrect = dbManager.getQuestionCorrect(question["questionID"]);
+            int totalWrong = dbManager.getQuestionWrong(question["questionID"]);
+
+            //increment display labels
+            currentUserTotal.Text = question["numAttempt"];
+            currentUserCorrect.Text = question["numCorrect"];
+            currentUserWrong.Text = question["numWrong"];
+
+            allUserCorrect.Text = totalCorrect.ToString(); 
+            allUserTotal.Text = totalAttempts.ToString();
+            allUserWrong.Text = totalWrong.ToString();
+            gb_stats.Text = "Question Statistics for #id: " + question["questionID"];
+
+            
+            stateManager.setQuestionID(int.Parse(question["questionID"]));
+            dbManager.incrementQuestionDisplay(stateManager.getUserID(), stateManager.getQuestionID());
+        }
+
+        /**
+         * Generates a new question and all related answers from the file system
+         * displays question and saves to database.
+         * */
+        private void generateNewQuestion()
+        {
             //Load the question and answers
             string[] answerAndImage = getRandomQuestionImage();
             string correctAnswer = answerAndImage[0];
@@ -100,8 +265,12 @@ namespace PICKTrainingInc
             allUserTotal.Text = "0";
             allUserWrong.Text = "0";
 
+            
+
             int questionID = dbManager.saveQuestion(image, correctAnswer, answers, stateManager, QA_TYPE.IMAGE);
             stateManager.setQuestionID(questionID);
+            gb_stats.Text = "Question Statistics for #id: " + questionID;
+
 
             dbManager.incrementQuestionDisplay(stateManager.getUserID(), stateManager.getQuestionID());
         }

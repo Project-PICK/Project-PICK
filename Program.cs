@@ -31,11 +31,11 @@ namespace PICKTrainingInc
 
 
             //stateManager.setUserName("admin");
-            //Application.Run(new SplashPage(dbManager, stateManager));
+            Application.Run(new SplashPage(dbManager, stateManager));
 
             //debug stuff
-            stateManager.setUserName("admin", "password");
-            Application.Run(new ChooseTrainerPage(dbManager, stateManager));
+            ////stateManager.setUserName("admin", "password");
+            ////Application.Run(new ChooseTrainerPage(dbManager, stateManager));
 
         }
     }
