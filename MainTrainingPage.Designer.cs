@@ -37,7 +37,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbl_answers = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gb_stats = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.currentUser = new System.Windows.Forms.Label();
             this.allUsers = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tbl_answers.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gb_stats.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
@@ -83,20 +83,20 @@
             this.userOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // userOptionsToolStripMenuItem
             // 
             this.userOptionsToolStripMenuItem.Name = "userOptionsToolStripMenuItem";
-            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 30);
+            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 29);
             this.userOptionsToolStripMenuItem.Text = "User Options";
             // 
             // Logo
@@ -159,18 +159,18 @@
             this.button1.Text = "Andy Warhol";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // groupBox2
+            // gb_stats
             // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox2.Font = new System.Drawing.Font("Rockwell", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(165, 58);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(594, 115);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Question Statistics";
+            this.gb_stats.Controls.Add(this.tableLayoutPanel2);
+            this.gb_stats.Font = new System.Drawing.Font("Rockwell", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_stats.Location = new System.Drawing.Point(165, 58);
+            this.gb_stats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gb_stats.Name = "gb_stats";
+            this.gb_stats.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gb_stats.Size = new System.Drawing.Size(594, 115);
+            this.gb_stats.TabIndex = 5;
+            this.gb_stats.TabStop = false;
+            this.gb_stats.Text = "Question Statistics";
             // 
             // tableLayoutPanel2
             // 
@@ -420,7 +420,7 @@
             this.Controls.Add(this.lbl_welcome);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gb_stats);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.menuStrip1);
@@ -435,7 +435,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tbl_answers.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.gb_stats.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
@@ -457,7 +457,7 @@
         private System.Windows.Forms.ToolStripMenuItem userOptionsToolStripMenuItem;
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gb_stats;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;

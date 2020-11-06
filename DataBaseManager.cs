@@ -7,6 +7,7 @@ using System.Data.SQLite;
 using System.Collections.Specialized;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Collections;
+using System.Data.Entity.Migrations.Builders;
 
 namespace PICKTrainingInc
 {
@@ -179,6 +180,120 @@ namespace PICKTrainingInc
         {
             string query = "UPDATE user_answers_question SET numWrong = numWrong + 1 WHERE userID = '" + userID + "' AND questionID == '" + questionID + "'; ";
             return insert(query);
+        }
+
+        public List<NameValueCollection> getWorstQuestions(StateManager stateManager, int numQuestions)
+        {
+            string userName = stateManager.getUserName();
+            string trainingName = stateManager.getTrainingName();
+
+            string queryString = "select user.id AS userID, question.id AS questionID, (user_answers_question.numCorrect*1.0 / user_answers_question.numAttempt*1.0) AS pctCorrect, " + 
+                                    " numAttempt, numCorrect, numWrong, trainingName, userName, " + 
+                                    " question.question, correctAnswer, answer1, answer2, answer3, answer4, answer5, answer6, answer7, " +
+                                    " answer8, answer9, answer10, answer11, answer12, answer13, answer14, answer15 " + 
+                                    "from user_answers_question, user, question " +
+                                    "WHERE user_answers_question.userID = user.id " +
+                                    " AND user_answers_question.questionID = question.id " +
+                                    " AND pctCorrect NOT NULL " + 
+                                    " AND userName = '" + userName + "' " +
+                                    " AND trainingName = '" + trainingName + "' " +
+                                    " ORDER BY pctCorrect " +
+                                    " LIMIT "+numQuestions+"; ";
+
+            return query(queryString);
+        }
+
+        public string getRandomQuestionID(StateManager stateManager)
+        {
+            string queryString = "SELECT question.id AS questionID" +
+                                 " FROM question " +
+                                 " WHERE trainingName='" + stateManager.getTrainingName() + "'" +
+                                 " ORDER BY RANDOM() " +
+                                 " LIMIT 1; ";
+
+            List<NameValueCollection> returnVal = query(queryString);
+            string questionID = returnVal[0]["questionID"];
+            return questionID;
+        }
+
+
+        public int getQuestionAttempts(string questionID)
+        {
+            string queryString = "select sum(numAttempt) AS totalAttempts from user_answers_question WHERE questionID = '"+questionID+"';";
+            List<NameValueCollection> results = query(queryString);
+            NameValueCollection result = results[0];
+            int numAttempts = int.Parse(result["totalAttempts"]);
+
+            return numAttempts;
+        }
+
+        public int getQuestionCorrect(string questionID)
+        {
+            string queryString = "select sum(numCorrect) AS totalCorrect from user_answers_question WHERE questionID = '" + questionID + "';";
+            List<NameValueCollection> results = query(queryString);
+            NameValueCollection result = results[0];
+
+            return int.Parse(result["totalCorrect"]);
+        }
+
+        public int getQuestionWrong(string questionID)
+        {
+            string queryString = "select sum(numWrong) AS totalWrong from user_answers_question WHERE questionID = '" + questionID + "';";
+            List<NameValueCollection> results = query(queryString);
+            NameValueCollection result = results[0];
+
+            return int.Parse(result["totalWrong"]);
+        }
+
+        public int getQuestionCorrectByUser(string questionID, int userID)
+        {
+            string queryString = "SELECT numCorrect FROM user_answers_question WHERE questionID = '"+questionID+"' AND userID = '"+userID+"'";
+            List<NameValueCollection> returnVal = query(queryString);
+            int numAttempts = 0;
+            if (returnVal.Count == 0)
+            {
+                numAttempts = 0;
+            }
+            else
+            {
+                numAttempts = int.Parse(returnVal[0]["numCorrect"]);
+            }
+
+            return numAttempts;
+        }
+
+        public int getQuestionWrongByUser(string questionID, int userID)
+        {
+            string queryString = "SELECT numWrong FROM user_answers_question WHERE questionID = '" + questionID + "' AND userID = '" + userID + "'";
+            List<NameValueCollection> returnVal = query(queryString);
+            int numAttempts = 0;
+            if (returnVal.Count == 0)
+            {
+                numAttempts = 0;
+            }
+            else
+            {
+                numAttempts = int.Parse(returnVal[0]["numWrong"]);
+            }
+
+            return numAttempts;
+        }
+
+        public int getQuestionAttemptsByUser(string questionID, int userID)
+        {
+            string queryString = "SELECT numAttempt FROM user_answers_question WHERE questionID = '" + questionID + "' AND userID = '" + userID + "'";
+            List<NameValueCollection> returnVal = query(queryString);
+            int numAttempts = 0;
+            if (returnVal.Count == 0)
+            {
+                numAttempts = 0;
+            }
+            else
+            {
+                numAttempts = int.Parse(returnVal[0]["numAttempt"]);
+            }
+
+            return numAttempts;
         }
 
         private void CloseConnection()
