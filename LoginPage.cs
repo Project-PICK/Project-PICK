@@ -175,5 +175,45 @@ namespace PICKTrainingInc
             SplashPage sp = new SplashPage(dbManager, stateManager);
             sp.Show(); 
         }
+
+        private void goback_btn1_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            SplashPage sp = new SplashPage(dbManager, stateManager);
+            sp.Show();
+        }
+
+        private void register_button_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            RegisterPage rp = new RegisterPage(dbManager, stateManager);
+            this.Close();
+
+            rp.Show();
+        }
+
+        private void submit_button_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+            //  Check if the user properly logged in
+            if (checkLogin())
+            {
+
+                // Close this form
+                this.Close();
+
+                // Open the choose trainer form
+                ChooseTrainerPage tp = new ChooseTrainerPage(dbManager, stateManager);
+                tp.Show();
+            }
+            else
+            {
+                statusStrip.Text = "Wrong Username/Password!";
+                //statusStrip1.Refresh();
+            }
+        }
     }
 }

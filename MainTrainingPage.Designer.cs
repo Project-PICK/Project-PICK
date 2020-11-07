@@ -59,7 +59,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbl_welcome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.goback_btn = new System.Windows.Forms.Button();
+            this.goback = new ePOSOne.btnProduct.Button_WOC();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -83,24 +83,25 @@
             this.userOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 32);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // userOptionsToolStripMenuItem
             // 
             this.userOptionsToolStripMenuItem.Name = "userOptionsToolStripMenuItem";
-            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 29);
+            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 32);
             this.userOptionsToolStripMenuItem.Text = "User Options";
             // 
             // Logo
             // 
+            this.Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
@@ -114,6 +115,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.tbl_answers);
             this.groupBox1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(784, 58);
@@ -161,6 +163,7 @@
             // 
             // gb_stats
             // 
+            this.gb_stats.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gb_stats.Controls.Add(this.tableLayoutPanel2);
             this.gb_stats.Font = new System.Drawing.Font("Rockwell", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_stats.Location = new System.Drawing.Point(165, 58);
@@ -338,6 +341,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.pb_question);
             this.groupBox3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(18, 183);
@@ -364,13 +368,15 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 670);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1284, 32);
+            this.statusStrip1.Size = new System.Drawing.Size(238, 32);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -382,6 +388,7 @@
             // 
             // lbl_welcome
             // 
+            this.lbl_welcome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.lbl_welcome.Location = new System.Drawing.Point(225, 20);
@@ -399,23 +406,33 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Project PICK";
             // 
-            // goback_btn
+            // goback
             // 
-            this.goback_btn.Location = new System.Drawing.Point(1134, 42);
-            this.goback_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.goback_btn.Name = "goback_btn";
-            this.goback_btn.Size = new System.Drawing.Size(112, 35);
-            this.goback_btn.TabIndex = 14;
-            this.goback_btn.Text = "Go Back";
-            this.goback_btn.UseVisualStyleBackColor = true;
-            this.goback_btn.Click += new System.EventHandler(this.goback_btn_Click);
+            this.goback.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.goback.BackColor = System.Drawing.Color.Transparent;
+            this.goback.BorderColor = System.Drawing.Color.Transparent;
+            this.goback.ButtonColor = System.Drawing.Color.YellowGreen;
+            this.goback.FlatAppearance.BorderSize = 0;
+            this.goback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goback.ForeColor = System.Drawing.Color.Transparent;
+            this.goback.Location = new System.Drawing.Point(1101, 20);
+            this.goback.Name = "goback";
+            this.goback.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.goback.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.goback.OnHoverTextColor = System.Drawing.Color.Black;
+            this.goback.Size = new System.Drawing.Size(145, 54);
+            this.goback.TabIndex = 17;
+            this.goback.Text = "Go Back";
+            this.goback.TextColor = System.Drawing.Color.Black;
+            this.goback.UseVisualStyleBackColor = false;
+            this.goback.Click += new System.EventHandler(this.goback_Click);
             // 
             // MainTrainingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 702);
-            this.Controls.Add(this.goback_btn);
+            this.Controls.Add(this.goback);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_welcome);
             this.Controls.Add(this.statusStrip1);
@@ -480,7 +497,7 @@
         private System.Windows.Forms.Label allUserCorrect;
         private System.Windows.Forms.Label allUserWrong;
         private System.Windows.Forms.Label allUserTotal;
-        private System.Windows.Forms.Button goback_btn;
         private System.Windows.Forms.Button button1;
+        private ePOSOne.btnProduct.Button_WOC goback;
     }
 }

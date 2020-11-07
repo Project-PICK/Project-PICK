@@ -37,8 +37,8 @@
             // 
             // Logo
             // 
+            this.Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
             this.Logo.Location = new System.Drawing.Point(18, 14);
@@ -51,6 +51,7 @@
             // 
             // sloganLabel
             // 
+            this.sloganLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sloganLabel.AutoSize = true;
             this.sloganLabel.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sloganLabel.Location = new System.Drawing.Point(366, 194);
@@ -64,6 +65,7 @@
             // 
             // sloganLabel2
             // 
+            this.sloganLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sloganLabel2.AutoSize = true;
             this.sloganLabel2.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sloganLabel2.Location = new System.Drawing.Point(366, 74);
