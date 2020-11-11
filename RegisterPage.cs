@@ -109,7 +109,8 @@ namespace PICKTrainingInc
             if (dbManager.insert(query))
             {
                 // Set our username in the state Machine.
-                stateManager.setUserName(userName);
+                stateManager.setUserName(userName, password);
+                
 
                 // Close this form
                 this.Close();
@@ -128,6 +129,44 @@ namespace PICKTrainingInc
                 closeProgram = true;
             }
 
+        }
+
+        private void submit_button2_Click(object sender, EventArgs e)
+        {
+            // We want the gui to know we aren't clicking the exit button.
+            closeProgram = false;
+
+            string userName = tb_userName.Text;
+            string password = tb_password.Text;
+
+            //TODO: Sanitize this sql input.
+
+            // Create our insert Query
+            string query = "INSERT INTO user (userName, password) VALUES('" + userName + "', '" + password + "');";
+
+            // Attempt the insert
+            if (dbManager.insert(query))
+            {
+                // Set our username in the state Machine.
+                stateManager.setUserName(userName, password);
+
+
+                // Close this form
+                this.Close();
+
+                // Open the choose trainer form
+                ChooseTrainerPage tp = new ChooseTrainerPage(dbManager, stateManager);
+                tp.Show();
+            }
+            else
+            {
+
+                // Show error to user
+                statusBar.Text = "Error, could not register user: " + userName;
+
+                // Hey maybe we will click the exit button next time.
+                closeProgram = true;
+            }
         }
     }
 }

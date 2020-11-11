@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.tb_userName = new System.Windows.Forms.TextBox();
+            this.submit_button2 = new ePOSOne.btnProduct.Button_WOC();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -59,7 +60,6 @@
             this.userOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1071, 33);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
@@ -200,11 +200,32 @@
             this.tb_userName.Size = new System.Drawing.Size(246, 30);
             this.tb_userName.TabIndex = 4;
             // 
+            // submit_button2
+            // 
+            this.submit_button2.BackColor = System.Drawing.Color.Transparent;
+            this.submit_button2.BorderColor = System.Drawing.Color.Transparent;
+            this.submit_button2.ButtonColor = System.Drawing.Color.RoyalBlue;
+            this.submit_button2.FlatAppearance.BorderSize = 0;
+            this.submit_button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submit_button2.ForeColor = System.Drawing.Color.Transparent;
+            this.submit_button2.Location = new System.Drawing.Point(463, 285);
+            this.submit_button2.Name = "submit_button2";
+            this.submit_button2.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.submit_button2.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.submit_button2.OnHoverTextColor = System.Drawing.Color.Black;
+            this.submit_button2.Size = new System.Drawing.Size(145, 54);
+            this.submit_button2.TabIndex = 16;
+            this.submit_button2.Text = "Submit";
+            this.submit_button2.TextColor = System.Drawing.Color.Black;
+            this.submit_button2.UseVisualStyleBackColor = false;
+            this.submit_button2.Click += new System.EventHandler(this.submit_button2_Click);
+            // 
             // RegisterPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 625);
+            this.Controls.Add(this.submit_button2);
             this.Controls.Add(this.Register);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.Logo);
@@ -241,5 +262,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.TextBox tb_userName;
+        private ePOSOne.btnProduct.Button_WOC submit_button2;
     }
 }
