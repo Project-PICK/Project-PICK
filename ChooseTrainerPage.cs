@@ -256,5 +256,14 @@ namespace PICKTrainingInc
         {
             statusBar.Text = "Welcome back, " + name + "!";
         }
+
+        private void goback_btn2_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            LoginPage lp = new LoginPage(dbManager, stateManager);
+            lp.Show();
+        }
     }
 }
