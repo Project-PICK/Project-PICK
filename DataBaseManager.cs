@@ -225,7 +225,18 @@ namespace PICKTrainingInc
             string queryString = "select sum(numAttempt) AS totalAttempts from user_answers_question WHERE questionID = '"+questionID+"';";
             List<NameValueCollection> results = query(queryString);
             NameValueCollection result = results[0];
-            int numAttempts = int.Parse(result["totalAttempts"]);
+
+            //Check if result["totalAttempts"] is a blank string
+            int numAttempts;
+
+            if(result["totalAttempts"] == "")
+            {
+                numAttempts = 0;
+            }
+            else
+            {
+                numAttempts = int.Parse(result["totalAttempts"]);
+            }
 
             return numAttempts;
         }

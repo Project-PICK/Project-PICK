@@ -23,30 +23,31 @@ using System.Collections.Specialized;
 
 namespace PICKTrainingInc
 {
+    /**
+     * Used to allow us to have two types of questions, an image question or a text question
+     */
     public enum QA_TYPE
     {
         IMAGE,
         TEXT
     }
 
+    /* *
+     * This is our Main Training Form
+     */
     public partial class MainTrainingPage : Form
     {
-
-       
-
         /* FIELD VARIABLES */
-        DataBaseManager dbManager;
-        StateManager stateManager;
-        Random random;
-        bool closeProgram = true;
-        Button correctButton = null; //Whenever a correct answer is set, the correct button will be here for comparisons.
-
-        int TOTAL_ANSWERS = 15;
+        DataBaseManager dbManager;      /* Used to manage the DB */
+        StateManager stateManager;      /* Used to keep track of state */
+        Random random;                  /* Generates random numbers. */
+        bool closeProgram = true;       /* Are we currently trying to close the program with our button press? */
+        Button correctButton = null;    /* Whenever a correct answer is set, the correct button will be here for comparisons. */
 
         /* CONSTRUCTORS */
         public MainTrainingPage(DataBaseManager dbManager, StateManager stateManager)
         {
-            InitializeComponent();
+            InitializeComponent(); 
             this.dbManager = dbManager;
             this.stateManager = stateManager;
             random  = new Random();
@@ -134,7 +135,9 @@ namespace PICKTrainingInc
             }
         }
 
-
+        /**
+         * Sets up a question with all answers from the DB, by referencing it's DB ID Number
+         * */
         private void generateOldQuestionFromID(string questionID)
         {
             string queryString = "SELECT * from question WHERE id = '"+questionID+"';";
@@ -184,12 +187,13 @@ namespace PICKTrainingInc
 
             gb_stats.Text = "Question Statistics for #id: " + question["id"];
 
-
             stateManager.setQuestionID(int.Parse(question["id"]));
             dbManager.incrementQuestionDisplay(stateManager.getUserID(), stateManager.getQuestionID());
         }
 
-
+        /**
+         * Sets the GUI up with a preloaded question.
+         * */
         private void generateOldQuestion(NameValueCollection question)
         {
             string correctAnswer = question["correctAnswer"];
@@ -266,12 +270,9 @@ namespace PICKTrainingInc
             allUserTotal.Text = "0";
             allUserWrong.Text = "0";
 
-            
-
             int questionID = dbManager.saveQuestion(image, correctAnswer, answers, stateManager, QA_TYPE.IMAGE);
             stateManager.setQuestionID(questionID);
             gb_stats.Text = "Question Statistics for #id: " + questionID;
-
 
             dbManager.incrementQuestionDisplay(stateManager.getUserID(), stateManager.getQuestionID());
         }
@@ -284,6 +285,10 @@ namespace PICKTrainingInc
             pb_question.Image = Image.FromFile(imageLocation);
         }
 
+        /**
+         * Populate our answers button with the array of answers, and record
+         * where the correct position is
+         */
         private void populateAnswers(ArrayList answers, int correctAnswerPosition)
         {
             tbl_answers.Controls.Clear();
@@ -294,13 +299,13 @@ namespace PICKTrainingInc
             foreach(string answer in answers)
             {
                 addButton(answer, i == correctAnswerPosition);
-
-
-
                 i++;
             }
         }
 
+        /**
+         * Add an answer button to the screen, is it the correct button? 
+         */
         private void addButton(string buttonText, bool markAsCorrect)
         {
             Button b = new Button();
@@ -313,6 +318,9 @@ namespace PICKTrainingInc
             if (markAsCorrect) correctButton = b;
         }
 
+        /*
+         * Read a list of possible wrong answers into an array
+         * */
         private ArrayList getRandomWrongAnswers(string correctAnswer)
         {
             string trainingName = stateManager.getTrainingName();
@@ -360,10 +368,17 @@ namespace PICKTrainingInc
             string trainingName = stateManager.getTrainingName();
             string dirName = @"..\..\TrainingData\" + trainingName;
             string[] dirNames = Directory.GetDirectories(dirName);
-            string answerDir = dirNames[random.Next(dirNames.Length-1)];
-            string[] fileNamesInDir = Directory.GetFiles(dirName);
 
-            string randImage = Directory.GetFiles(answerDir)[random.Next(fileNamesInDir.Length-1)];
+            int randIndex = random.Next(dirNames.Length - 1);
+
+            string answerDir = dirNames[randIndex];
+            string[] answerNamesInDir = Directory.GetFiles(dirName);
+
+            string[] allQuestions = Directory.GetFiles(answerDir);
+
+            randIndex = random.Next(allQuestions.Length - 1);
+
+            string randImage = allQuestions[randIndex];
 
             answerDir = answerDir.Substring(answerDir.LastIndexOf("\\") + 1);
             answerDir = answerDir.Replace("_", " ");
@@ -398,6 +413,9 @@ namespace PICKTrainingInc
 
         }
 
+        /**
+         * Called when user clicks the "go back" button.
+         * */
         private void goback_btn_Click(object sender, EventArgs e)
         {
             closeProgram = false;
@@ -407,6 +425,10 @@ namespace PICKTrainingInc
             tp.Show();
         }
 
+        /**
+         *  Causes a given button to blink a given color the given number of times
+         *  then causes the form to reload when done blinking, or not.
+         *  */
         private async void blinkButton(Button b, Color colorToBlink, int numTimes, bool reloadForm)
         {
             if (numTimes == 0) numTimes = 999999999;
@@ -434,6 +456,17 @@ namespace PICKTrainingInc
                 statusStrip1.Text = "Loading Next Question Now...";
                 await Task.Delay(2000);
                 load();
+            }
+        }
+
+        /**
+         * Grays out all the answer buttons so they are no longer clickable
+         */
+        private void grayAllAnswers()
+        {
+            foreach(Button b in tbl_answers.Controls)
+            {
+                b.Enabled = false;
             }
         }
 
@@ -498,6 +531,9 @@ namespace PICKTrainingInc
          * feedback, record this, and load the next question. */
         void setQuestionAnsweredCorrect(Button b)
         {
+            //gray out all buttons
+            grayAllAnswers();
+
             //We'll record this to the database
             recordCorrectQuestion();
 
