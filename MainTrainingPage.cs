@@ -312,6 +312,7 @@ namespace PICKTrainingInc
             b.Text = buttonText;
             b.Size = new Size(150, 50);
             b.Click += button_Click;
+             b.Font = new Font(b.Font.FontFamily, 8, FontStyle.Bold);
             tbl_answers.Controls.Add(b);
 
             // If this is the button to the correct answer, save it for comparison.
