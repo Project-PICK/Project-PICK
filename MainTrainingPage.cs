@@ -249,7 +249,8 @@ namespace PICKTrainingInc
 
             string image = answerAndImage[1];
             ArrayList answers = getRandomWrongAnswers(correctAnswer);
-            int correctAnswerPosition = random.Next(TOTAL_ANSWERS);
+
+            int correctAnswerPosition = random.Next(answers.Count-1);
             answers.Insert(correctAnswerPosition, correctAnswer); //TODO: Argument out of range exception
 
             // Setup the gui with the correct questions and answers.
