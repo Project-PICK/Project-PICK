@@ -128,6 +128,9 @@ namespace PICKTrainingInc
          */
         public int saveQuestion(string question, string correctAnswer, ArrayList allAnswers, StateManager stateManager, QA_TYPE questionType)
         {
+            // check if allAnswers is shorter than 15, if it is, we'll fill it in with blanks
+            while (allAnswers.Count < 15) allAnswers.Add("");
+
             string tquery = "INSERT INTO question (question, correctAnswer, answer1, answer2, answer3, answer4, answer5, answer6, " +
                                                  "answer7, answer8, answer9, answer10, answer11, answer12, answer13, answer14," + 
                                                  "answer15, trainingName  ) VALUES('" + question + "', '" + correctAnswer + "', '" +
@@ -222,7 +225,18 @@ namespace PICKTrainingInc
             string queryString = "select sum(numAttempt) AS totalAttempts from user_answers_question WHERE questionID = '"+questionID+"';";
             List<NameValueCollection> results = query(queryString);
             NameValueCollection result = results[0];
-            int numAttempts = int.Parse(result["totalAttempts"]);
+
+            //Check if result["totalAttempts"] is a blank string
+            int numAttempts;
+
+            if(result["totalAttempts"] == "")
+            {
+                numAttempts = 0;
+            }
+            else
+            {
+                numAttempts = int.Parse(result["totalAttempts"]);
+            }
 
             return numAttempts;
         }
