@@ -63,21 +63,20 @@
             this.userOptionsToolStripMenuItem});
             this.menuOptions.Location = new System.Drawing.Point(0, 0);
             this.menuOptions.Name = "menuOptions";
-            this.menuOptions.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuOptions.Size = new System.Drawing.Size(1286, 36);
+            this.menuOptions.Size = new System.Drawing.Size(1286, 33);
             this.menuOptions.TabIndex = 8;
             this.menuOptions.Text = "menuStrip2";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(60, 32);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(60, 29);
             this.exitToolStripMenuItem.Text = "Exit ";
             // 
             // userOptionsToolStripMenuItem
             // 
             this.userOptionsToolStripMenuItem.Name = "userOptionsToolStripMenuItem";
-            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 32);
+            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 29);
             this.userOptionsToolStripMenuItem.Text = "User Options";
             // 
             // statusStrip1
@@ -139,17 +138,18 @@
             // 
             this.tp_training.ColumnCount = 3;
             this.tp_training.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tp_training.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tp_training.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tp_training.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tp_training.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tp_training.Controls.Add(this.gb_training1, 0, 0);
             this.tp_training.Dock = System.Windows.Forms.DockStyle.Top;
             this.tp_training.Location = new System.Drawing.Point(0, 0);
             this.tp_training.Name = "tp_training";
-            this.tp_training.RowCount = 4;
-            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.3369F));
-            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.6631F));
-            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 229F));
-            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 292F));
+            this.tp_training.RowCount = 5;
+            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tp_training.Size = new System.Drawing.Size(1216, 1023);
             this.tp_training.TabIndex = 0;
             // 
