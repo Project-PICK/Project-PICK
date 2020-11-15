@@ -91,6 +91,23 @@ namespace PICKTrainingInc
             {
                 returnVal = true;
                 stateManager.setUserName(userName, password);
+                stateManager.setFirstName(queryResult[0]["firstName"]);
+                stateManager.setLastName(queryResult[0]["lastName"]);
+                stateManager.setPassword(password);
+                string str_isAdmin = queryResult[0]["isAdmin"];
+
+                bool isAdmin;
+
+                if (str_isAdmin == "") {
+                    isAdmin = false;
+                }
+                else
+                {
+                  isAdmin  = bool.Parse(queryResult[0]["isAdmin"]);
+                }
+                
+                
+                stateManager.setIsAdmin(isAdmin);
             }
             else
             {

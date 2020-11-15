@@ -598,6 +598,9 @@ namespace PICKTrainingInc
             tp.Show();
         }
 
+        /**
+         * User clicked exit button on menu
+         */
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Show a dialog box.
@@ -622,7 +625,7 @@ namespace PICKTrainingInc
             closeProgram = false;
 
             this.Close();
-            UserDashBoard dashboard = new UserDashBoard(dbManager, stateManager);
+            Dashboard dashboard = new Dashboard(dbManager, stateManager);
             dashboard.Show();
         }
 
@@ -638,6 +641,9 @@ namespace PICKTrainingInc
             lp.Show();
         }
 
+        /**
+         * User Clicked "choose training" on menu.
+         * */
         private void chooseTrainingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             closeProgram = false;

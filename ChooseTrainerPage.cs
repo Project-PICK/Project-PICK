@@ -296,7 +296,7 @@ namespace PICKTrainingInc
             closeProgram = false;
 
             this.Close();
-            UserDashBoard dashboard = new UserDashBoard(dbManager, stateManager);
+            Dashboard dashboard = new Dashboard(dbManager, stateManager);
             dashboard.Show();
         }
 
