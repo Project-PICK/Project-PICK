@@ -42,9 +42,9 @@
             this.pb_training1 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.gb_training = new System.Windows.Forms.GroupBox();
-            this.goback_btn2 = new ePOSOne.btnProduct.Button_WOC();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goback_btn2 = new ePOSOne.btnProduct.Button_WOC();
             this.menuOptions.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -58,6 +58,7 @@
             // 
             // menuOptions
             // 
+            this.menuOptions.BackColor = System.Drawing.SystemColors.Control;
             this.menuOptions.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuOptions.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -201,6 +202,20 @@
             this.gb_training.TabStop = false;
             this.gb_training.Text = "Choose Your Training Course";
             // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(202, 34);
+            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(202, 34);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
             // goback_btn2
             // 
             this.goback_btn2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -221,20 +236,6 @@
             this.goback_btn2.TextColor = System.Drawing.Color.Black;
             this.goback_btn2.UseVisualStyleBackColor = false;
             this.goback_btn2.Click += new System.EventHandler(this.goback_btn2_Click);
-            // 
-            // dashboardToolStripMenuItem
-            // 
-            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.dashboardToolStripMenuItem.Text = "Dashboard";
-            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // ChooseTrainerPage
             // 

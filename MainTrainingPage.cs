@@ -597,5 +597,54 @@ namespace PICKTrainingInc
             ChooseTrainerPage tp = new ChooseTrainerPage(dbManager, stateManager);
             tp.Show();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Show a dialog box.
+            DialogResult d = MessageBox.Show("Are You Sure You Want To Exit?", "Project PICK", MessageBoxButtons.YesNo);
+            if (d == DialogResult.No)
+            {
+
+                // don't do anything
+            }
+            else
+            {
+                closeProgram = true;
+                System.Environment.Exit(1);
+            }
+        }
+
+        /**
+          * User clicked the dashboard button on the menu
+          * */
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            UserDashBoard dashboard = new UserDashBoard(dbManager, stateManager);
+            dashboard.Show();
+        }
+
+        /**
+         * User Clicked the logout button on the menuj
+         * */
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            LoginPage lp = new LoginPage(dbManager, stateManager);
+            lp.Show();
+        }
+
+        private void chooseTrainingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            ChooseTrainerPage lp = new ChooseTrainerPage(dbManager, stateManager);
+            lp.Show();
+        }
     }
 }
