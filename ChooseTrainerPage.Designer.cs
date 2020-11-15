@@ -43,6 +43,8 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.gb_training = new System.Windows.Forms.GroupBox();
             this.goback_btn2 = new ePOSOne.btnProduct.Button_WOC();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuOptions.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -76,6 +78,9 @@
             // 
             // navigationToolStripMenuItem
             // 
+            this.navigationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.navigationToolStripMenuItem.Name = "navigationToolStripMenuItem";
             this.navigationToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
             this.navigationToolStripMenuItem.Text = "Navigation";
@@ -217,6 +222,20 @@
             this.goback_btn2.UseVisualStyleBackColor = false;
             this.goback_btn2.Click += new System.EventHandler(this.goback_btn2_Click);
             // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
             // ChooseTrainerPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -264,5 +283,7 @@
         private System.Windows.Forms.GroupBox gb_training1;
         private System.Windows.Forms.PictureBox pb_training1;
         private ePOSOne.btnProduct.Button_WOC goback_btn2;
+        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

@@ -193,18 +193,6 @@
     <Compile Include="MainTrainingPage.Designer.cs">
       <DependentUpon>MainTrainingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="prototypes\isaac\DataSet1.cs">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="prototypes\isaac\DataSet1.Designer.cs">
-      <DependentUpon>DataSet1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="prototypes\isaac\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="prototypes\isaac\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="StateManager.cs" />
     <Compile Include="UserDashBoard.cs">
       <SubType>Form</SubType>
@@ -270,9 +258,6 @@
     <EmbeddedResource Include="MainTrainingPage.resx">
       <DependentUpon>MainTrainingPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="prototypes\isaac\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RegisterPage.resx">
       <DependentUpon>RegisterPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,18 +304,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="prototypes\database_registry.db" />
-    <None Include="prototypes\isaac\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="prototypes\isaac\DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet11.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="prototypes\isaac\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

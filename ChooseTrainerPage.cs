@@ -83,10 +83,11 @@ namespace PICKTrainingInc
 
             // Add the training Boxes.
             addTrainingBoxes(trainingDirectories, trainingNames, coverImageLocations);
-
-
         }
 
+        /**
+         * Adds the needed training boxes based on the file system datasets that are setup.
+         * */
         private void addTrainingBoxes(ArrayList trainingDirectories, ArrayList trainingNames, ArrayList coverImageLocations){
             for(int i = 0; i < trainingDirectories.Count; i++) {
                 string imageLoc = (string)coverImageLocations[i];
@@ -99,10 +100,7 @@ namespace PICKTrainingInc
                 picBox.Location = new System.Drawing.Point(10, 20);
                 picBox.MinimumSize = new System.Drawing.Size(240, 130);
                 picBox.Name = trainingName;
-
                 picBox.Visible = true;
-
-               
                 picBox.Click += new System.EventHandler(this.training_CLICK);
 
                 GroupBox groupBox = new GroupBox();
@@ -116,16 +114,6 @@ namespace PICKTrainingInc
                 tp_training.Controls.Add(groupBox);
 
             }
-           // pb_training1.Image = Image.FromFile((string)coverImageLocations[0]);
-            //gb_training1.Text = (string)trainingNames[0];
-
-            //tp_training.Controls.Add(gb_training1.);
-
-
-           
-
-            
-            //tp_training.Refresh();//
         }
 
         private ArrayList getCoverImageLocations(ArrayList trainingDirectories)
@@ -190,9 +178,11 @@ namespace PICKTrainingInc
 
         }
 
+        /**
+         * We're trying to close this form, and the program
+         * */
         private void closeForm(Object sender, FormClosingEventArgs e)
         {
-
             // Only prompt the user if we are pressing the close button.
             if (closeProgram)
             {
@@ -210,9 +200,11 @@ namespace PICKTrainingInc
                     System.Environment.Exit(1);
                 }
             }
-
         }
 
+        /**
+         * User clicked a specific training class
+         * */
         private void training_CLICK(object sender, EventArgs e)
         {
             // Keeps the, are you sure you want to close popup from happening.
@@ -224,14 +216,13 @@ namespace PICKTrainingInc
             stateManager.setTrainingName(trainingName);
 
             MainTrainingPage mtp = new MainTrainingPage(dbManager, stateManager);
-
             mtp.Show();
-
             this.Hide();
-
-            
         }
 
+        /**
+         * User clicked the original goback button, kept for backwards capatibility
+         * */
         private void goback_btn_Click(object sender, EventArgs e)
         {
             closeProgram = false;
@@ -241,22 +232,34 @@ namespace PICKTrainingInc
             lp.Show();
         }
 
+        /**
+         * Test Functionm
+         * */
         private void statusBar_Click(object sender, EventArgs e)
         {
 
         }
 
+        /**
+         * Just a test function
+         */
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Hello");
             statusBar.Text = "Hello";
         }
 
+        /**
+         * Sets the status bar to welcome back the user
+         */
         private void setStatusBar(string name)
         {
             statusBar.Text = "Welcome back, " + name + "!";
         }
 
+        /**
+         * User clicked the goback button
+         */
         private void goback_btn2_Click(object sender, EventArgs e)
         {
             closeProgram = false;
@@ -266,6 +269,9 @@ namespace PICKTrainingInc
             lp.Show();
         }
 
+        /**
+         * User Clicked the "Exit" Button on the menu"
+         */
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Show a dialog box.
@@ -280,6 +286,30 @@ namespace PICKTrainingInc
                 closeProgram = true;
                 System.Environment.Exit(1);
             }
+        }
+
+        /**
+         * User clicked the dashboard button on the menu
+         * */
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            UserDashBoard dashboard = new UserDashBoard(dbManager, stateManager);
+            dashboard.Show();
+        }
+
+        /**
+         * User Clicked the logout button on the menuj
+         * */
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeProgram = false; 
+
+            this.Close();
+            LoginPage lp = new LoginPage(dbManager, stateManager);
+            lp.Show();
         }
     }
 }
