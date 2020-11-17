@@ -597,5 +597,15 @@ namespace PICKTrainingInc
             ChooseTrainerPage tp = new ChooseTrainerPage(dbManager, stateManager);
             tp.Show();
         }
+
+        private void gitHubButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Project-PICK/Project-PICK%22%22");
+        }
+
+        private void usernameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
