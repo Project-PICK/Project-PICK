@@ -18,25 +18,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms.VisualStyles;
+using System.Collections.Specialized;
 
 namespace PICKTrainingInc
 {
+    /**
+     * Used to allow us to have two types of questions, an image question or a text question
+     */
+    public enum QA_TYPE
+    {
+        IMAGE,
+        TEXT
+    }
+
+    /* *
+     * This is our Main Training Form
+     */
     public partial class MainTrainingPage : Form
     {
-
         /* FIELD VARIABLES */
-        DataBaseManager dbManager;
-        StateManager stateManager;
-        Random random;
-        bool closeProgram = true;
-        Button correctButton = null; //Whenever a correct answer is set, the correct button will be here for comparisons.
-
-        int TOTAL_ANSWERS = 15;
+        DataBaseManager dbManager;      /* Used to manage the DB */
+        StateManager stateManager;      /* Used to keep track of state */
+        Random random;                  /* Generates random numbers. */
+        bool closeProgram = true;       /* Are we currently trying to close the program with our button press? */
+        Button correctButton = null;    /* Whenever a correct answer is set, the correct button will be here for comparisons. */
 
         /* CONSTRUCTORS */
         public MainTrainingPage(DataBaseManager dbManager, StateManager stateManager)
         {
-            InitializeComponent();
+            InitializeComponent(); 
             this.dbManager = dbManager;
             this.stateManager = stateManager;
             random  = new Random();
@@ -58,22 +69,212 @@ namespace PICKTrainingInc
             
         }
 
+        /**
+         * Called When the MainTrainingPage is loaded.
+         * Generate a question, either from the file system, or from the
+         * database, and show that to the user. If a question is generated
+         * it is also saved to the database.
+         * */
         private void load()
         {
-            //Set the welcome label
+            // Set the welcome label
             lbl_welcome.Text = stateManager.getTrainingName() + " for " + stateManager.getUserName();
+
+            // Load a question for the current training
+            loadQuestion();
+
+            
+        }
+
+        /**
+         * Load's a questions for the current training.
+         * Will query the DB for the 10 lowest scored questions in this training that the user has 
+         * attempted and randomly choose 1 of the 10. It will then decide whether to show this
+         * question to the user again, or to generate a brand new question. With likelyhood
+         * 1 - (correctAnswer/totalAnswer)*/
+        private void loadQuestion()
+        {
+            //Get our Worst question to deal with
+            List<NameValueCollection> tenWorstQuestions = dbManager.getWorstQuestions(stateManager, 10);
+
+            // If we don't have any questions returned, this means this is the users first question generated, ever!
+            if (tenWorstQuestions.Count == 0)
+            {
+                generateNewQuestion();
+                return;
+            }
+
+            int index = random.Next(tenWorstQuestions.Count - 1);
+            NameValueCollection worstQuestion = tenWorstQuestions[index];
+
+            // Calculate likelyhood of showing this question, vs generating new question
+                
+            double correctPCT = double.Parse(worstQuestion["pctCorrect"]);
+            string correctAnswer = worstQuestion["correctAnswer"];
+
+            // Likelyhood of showing this question is inverse to it's correctPCT
+            double likelyhood = 1 - correctPCT;
+
+            double randomDouble = random.NextDouble();
+
+            // showOldQuestion should be true exactly likelyhood% of the time.
+            bool showOldQuestion = randomDouble < likelyhood;
+
+            if(showOldQuestion)
+            {
+                generateOldQuestion(worstQuestion);
+            }
+            else if(randomDouble > .90) //10% of the time, just choose a random pre-generated question
+            {
+                string questionID = dbManager.getRandomQuestionID(stateManager);
+                generateOldQuestionFromID(questionID);
+            }
+            else
+            {
+                generateNewQuestion();
+            }
+        }
+
+        /**
+         * Sets up a question with all answers from the DB, by referencing it's DB ID Number
+         * */
+        private void generateOldQuestionFromID(string questionID)
+        {
+            string queryString = "SELECT * from question WHERE id = '"+questionID+"';";
+            NameValueCollection question = dbManager.query(queryString)[0];
+
+            string correctAnswer = question["correctAnswer"];
+            ArrayList answers = new ArrayList();
+            answers.Add(question["answer1"]);
+            answers.Add(question["answer2"]);
+            answers.Add(question["answer3"]);
+            answers.Add(question["answer4"]);
+            answers.Add(question["answer5"]);
+            answers.Add(question["answer6"]);
+            answers.Add(question["answer7"]);
+            answers.Add(question["answer8"]);
+            answers.Add(question["answer9"]);
+            answers.Add(question["answer10"]);
+            answers.Add(question["answer11"]);
+            answers.Add(question["answer12"]);
+            answers.Add(question["answer13"]);
+            answers.Add(question["answer14"]);
+            answers.Add(question["answer15"]);
+
+            string image = question["question"];
+
+            int correctAnswerPosition = answers.IndexOf(correctAnswer);
+
+            // Setup the gui with the correct questions and answers.
+            populateQuestionImage(image);
+            populateAnswers(answers, correctAnswerPosition);
+
+            int totalAttempts = dbManager.getQuestionAttempts(question["id"]);
+            int totalCorrect = dbManager.getQuestionCorrect(question["id"]);
+            int totalWrong = dbManager.getQuestionWrong(question["id"]);
+            int numAttempt = dbManager.getQuestionAttemptsByUser(question["id"], stateManager.getUserID());
+            int numCorrect = dbManager.getQuestionCorrectByUser(question["id"], stateManager.getUserID());
+            int numWrong = dbManager.getQuestionWrongByUser(question["id"], stateManager.getUserID());
+
+            //increment display labels
+            currentUserTotal.Text = numAttempt.ToString();
+            currentUserCorrect.Text = numCorrect.ToString();
+            currentUserWrong.Text = numWrong.ToString();
+
+            allUserCorrect.Text = totalCorrect.ToString();
+            allUserTotal.Text = totalAttempts.ToString();
+            allUserWrong.Text = totalWrong.ToString();
+
+            gb_stats.Text = "Question Statistics for #id: " + question["id"];
+
+            stateManager.setQuestionID(int.Parse(question["id"]));
+            dbManager.incrementQuestionDisplay(stateManager.getUserID(), stateManager.getQuestionID());
+        }
+
+        /**
+         * Sets the GUI up with a preloaded question.
+         * */
+        private void generateOldQuestion(NameValueCollection question)
+        {
+            string correctAnswer = question["correctAnswer"];
+            ArrayList answers = new ArrayList();
+            answers.Add(question["answer1"]);
+            answers.Add(question["answer2"]);
+            answers.Add(question["answer3"]);
+            answers.Add(question["answer4"]);
+            answers.Add(question["answer5"]);
+            answers.Add(question["answer6"]);
+            answers.Add(question["answer7"]);
+            answers.Add(question["answer8"]);
+            answers.Add(question["answer9"]);
+            answers.Add(question["answer10"]);
+            answers.Add(question["answer11"]);
+            answers.Add(question["answer12"]);
+            answers.Add(question["answer13"]);
+            answers.Add(question["answer14"]);
+            answers.Add(question["answer15"]);
+
+            string image = question["question"];
+
+            int correctAnswerPosition = answers.IndexOf(correctAnswer);
+
+            // Setup the gui with the correct questions and answers.
+            populateQuestionImage(image);
+            populateAnswers(answers, correctAnswerPosition);
+
+            int totalAttempts = dbManager.getQuestionAttempts(question["questionID"]);
+            int totalCorrect = dbManager.getQuestionCorrect(question["questionID"]);
+            int totalWrong = dbManager.getQuestionWrong(question["questionID"]);
+
+            //increment display labels
+            currentUserTotal.Text = question["numAttempt"];
+            currentUserCorrect.Text = question["numCorrect"];
+            currentUserWrong.Text = question["numWrong"];
+
+            allUserCorrect.Text = totalCorrect.ToString(); 
+            allUserTotal.Text = totalAttempts.ToString();
+            allUserWrong.Text = totalWrong.ToString();
+            gb_stats.Text = "Question Statistics for #id: " + question["questionID"];
+
+            
+            stateManager.setQuestionID(int.Parse(question["questionID"]));
+            dbManager.incrementQuestionDisplay(stateManager.getUserID(), stateManager.getQuestionID());
+        }
+
+        /**
+         * Generates a new question and all related answers from the file system
+         * displays question and saves to database.
+         * */
+        private void generateNewQuestion()
+        {
+            //Load the question and answers
             string[] answerAndImage = getRandomQuestionImage();
             string correctAnswer = answerAndImage[0];
 
             string image = answerAndImage[1];
             ArrayList answers = getRandomWrongAnswers(correctAnswer);
-            int correctAnswerPosition = random.Next(TOTAL_ANSWERS);
+
+            int correctAnswerPosition = random.Next(answers.Count-1);
             answers.Insert(correctAnswerPosition, correctAnswer); //TODO: Argument out of range exception
 
+            // Setup the gui with the correct questions and answers.
             populateQuestionImage(image);
             populateAnswers(answers, correctAnswerPosition);
 
-            
+            //set labels
+            //increment display labels
+            currentUserTotal.Text = "0";
+            currentUserCorrect.Text = "0";
+            currentUserWrong.Text = "0";
+            allUserCorrect.Text = "0";
+            allUserTotal.Text = "0";
+            allUserWrong.Text = "0";
+
+            int questionID = dbManager.saveQuestion(image, correctAnswer, answers, stateManager, QA_TYPE.IMAGE);
+            stateManager.setQuestionID(questionID);
+            gb_stats.Text = "Question Statistics for #id: " + questionID;
+
+            dbManager.incrementQuestionDisplay(stateManager.getUserID(), stateManager.getQuestionID());
         }
 
         /**
@@ -84,6 +285,10 @@ namespace PICKTrainingInc
             pb_question.Image = Image.FromFile(imageLocation);
         }
 
+        /**
+         * Populate our answers button with the array of answers, and record
+         * where the correct position is
+         */
         private void populateAnswers(ArrayList answers, int correctAnswerPosition)
         {
             tbl_answers.Controls.Clear();
@@ -94,25 +299,29 @@ namespace PICKTrainingInc
             foreach(string answer in answers)
             {
                 addButton(answer, i == correctAnswerPosition);
-
-
-
                 i++;
             }
         }
 
+        /**
+         * Add an answer button to the screen, is it the correct button? 
+         */
         private void addButton(string buttonText, bool markAsCorrect)
         {
             Button b = new Button();
             b.Text = buttonText;
             b.Size = new Size(150, 50);
             b.Click += button_Click;
+            b.Font = new Font(b.Font.FontFamily, 8, FontStyle.Bold);
             tbl_answers.Controls.Add(b);
 
             // If this is the button to the correct answer, save it for comparison.
             if (markAsCorrect) correctButton = b;
         }
 
+        /*
+         * Read a list of possible wrong answers into an array
+         * */
         private ArrayList getRandomWrongAnswers(string correctAnswer)
         {
             string trainingName = stateManager.getTrainingName();
@@ -160,10 +369,17 @@ namespace PICKTrainingInc
             string trainingName = stateManager.getTrainingName();
             string dirName = @"..\..\TrainingData\" + trainingName;
             string[] dirNames = Directory.GetDirectories(dirName);
-            string answerDir = dirNames[random.Next(dirNames.Length-1)];
-            string[] fileNamesInDir = Directory.GetFiles(dirName);
 
-            string randImage = Directory.GetFiles(answerDir)[random.Next(fileNamesInDir.Length-1)];
+            int randIndex = random.Next(dirNames.Length - 1);
+
+            string answerDir = dirNames[randIndex];
+            string[] answerNamesInDir = Directory.GetFiles(dirName);
+
+            string[] allQuestions = Directory.GetFiles(answerDir);
+
+            randIndex = random.Next(allQuestions.Length - 1);
+
+            string randImage = allQuestions[randIndex];
 
             answerDir = answerDir.Substring(answerDir.LastIndexOf("\\") + 1);
             answerDir = answerDir.Replace("_", " ");
@@ -198,6 +414,9 @@ namespace PICKTrainingInc
 
         }
 
+        /**
+         * Called when user clicks the "go back" button.
+         * */
         private void goback_btn_Click(object sender, EventArgs e)
         {
             closeProgram = false;
@@ -207,6 +426,10 @@ namespace PICKTrainingInc
             tp.Show();
         }
 
+        /**
+         *  Causes a given button to blink a given color the given number of times
+         *  then causes the form to reload when done blinking, or not.
+         *  */
         private async void blinkButton(Button b, Color colorToBlink, int numTimes, bool reloadForm)
         {
             if (numTimes == 0) numTimes = 999999999;
@@ -238,12 +461,42 @@ namespace PICKTrainingInc
         }
 
         /**
+         * Grays out all the answer buttons so they are no longer clickable
+         */
+        private void grayAllAnswers()
+        {
+            foreach(Button b in tbl_answers.Controls)
+            {
+                b.Enabled = false;
+            }
+        }
+
+        /**
          * Records the fact that the user just answered this question correctly
          * to the database.
          */
         void recordCorrectQuestion()
         {
-            //TODO
+            dbManager.incrementQuestionAttempt(stateManager.getUserID(), stateManager.getQuestionID());
+            dbManager.incrementQuestionCorrect(stateManager.getUserID(), stateManager.getQuestionID());
+
+            //increment display labels
+            int total = int.Parse(currentUserTotal.Text);
+            total = total + 1;
+            currentUserTotal.Text = total.ToString();
+
+            total = int.Parse(currentUserCorrect.Text);
+            total = total + 1;
+            currentUserCorrect.Text = total.ToString();
+
+            //increment display labels
+            total = int.Parse(allUserTotal.Text);
+            total = total + 1;
+            allUserTotal.Text = total.ToString();
+
+            total = int.Parse(allUserCorrect.Text);
+            total = total + 1;
+            allUserCorrect.Text = total.ToString();
         }
 
         /**
@@ -252,7 +505,26 @@ namespace PICKTrainingInc
         */
         void recordWrongQuestion()
         {
-            //TODO
+            dbManager.incrementQuestionAttempt(stateManager.getUserID(), stateManager.getQuestionID());
+            dbManager.incrementQuestionWrong(stateManager.getUserID(), stateManager.getQuestionID());
+
+            //increment display labels
+            int total = int.Parse(currentUserTotal.Text);
+            total = total + 1;
+            currentUserTotal.Text = total.ToString();
+
+            total = int.Parse(currentUserWrong.Text);
+            total = total + 1;
+            currentUserWrong.Text = total.ToString();
+
+            //increment display labels
+            total = int.Parse(allUserTotal.Text);
+            total = total + 1;
+            allUserTotal.Text = total.ToString();
+
+            total = int.Parse(allUserWrong.Text);
+            total = total + 1;
+            allUserWrong.Text = total.ToString();
         }
 
         /**
@@ -260,6 +532,9 @@ namespace PICKTrainingInc
          * feedback, record this, and load the next question. */
         void setQuestionAnsweredCorrect(Button b)
         {
+            //gray out all buttons
+            grayAllAnswers();
+
             //We'll record this to the database
             recordCorrectQuestion();
 
@@ -312,6 +587,70 @@ namespace PICKTrainingInc
                 setQuestionAnsweredWrong(b);
             }
             
+        }
+
+        private void goback_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            ChooseTrainerPage tp = new ChooseTrainerPage(dbManager, stateManager);
+            tp.Show();
+        }
+
+        /**
+         * User clicked exit button on menu
+         */
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Show a dialog box.
+            DialogResult d = MessageBox.Show("Are You Sure You Want To Exit?", "Project PICK", MessageBoxButtons.YesNo);
+            if (d == DialogResult.No)
+            {
+
+                // don't do anything
+            }
+            else
+            {
+                closeProgram = true;
+                System.Environment.Exit(1);
+            }
+        }
+
+        /**
+          * User clicked the dashboard button on the menu
+          * */
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            Dashboard dashboard = new Dashboard(dbManager, stateManager);
+            dashboard.Show();
+        }
+
+        /**
+         * User Clicked the logout button on the menuj
+         * */
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            LoginPage lp = new LoginPage(dbManager, stateManager);
+            lp.Show();
+        }
+
+        /**
+         * User Clicked "choose training" on menu.
+         * */
+        private void chooseTrainingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            ChooseTrainerPage lp = new ChooseTrainerPage(dbManager, stateManager);
+            lp.Show();
         }
     }
 }

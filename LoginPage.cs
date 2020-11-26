@@ -84,10 +84,30 @@ namespace PICKTrainingInc
 
             // Execute the Query, checking for username and password.
             queryResult = dbManager.query("SELECT * FROM user WHERE userName = '" + userName + "' AND password = '" + password + "'");
+
+            //queryResult = dbManager.query("SELECT * FROM user WHERE userName = @user_name AND password = @pass_word");
+
             if (queryResult.Count >= 1)
             {
                 returnVal = true;
-                stateManager.setUserName(userName);
+                stateManager.setUserName(userName, password);
+                stateManager.setFirstName(queryResult[0]["firstName"]);
+                stateManager.setLastName(queryResult[0]["lastName"]);
+                stateManager.setPassword(password);
+                string str_isAdmin = queryResult[0]["isAdmin"];
+
+                bool isAdmin;
+
+                if (str_isAdmin == "") {
+                    isAdmin = false;
+                }
+                else
+                {
+                  isAdmin  = bool.Parse(queryResult[0]["isAdmin"]);
+                }
+                
+                
+                stateManager.setIsAdmin(isAdmin);
             }
             else
             {
@@ -171,6 +191,46 @@ namespace PICKTrainingInc
             this.Close();
             SplashPage sp = new SplashPage(dbManager, stateManager);
             sp.Show(); 
+        }
+
+        private void goback_btn1_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            SplashPage sp = new SplashPage(dbManager, stateManager);
+            sp.Show();
+        }
+
+        private void register_button_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            RegisterPage rp = new RegisterPage(dbManager, stateManager);
+            this.Close();
+
+            rp.Show();
+        }
+
+        private void submit_button_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+            //  Check if the user properly logged in
+            if (checkLogin())
+            {
+
+                // Close this form
+                this.Close();
+
+                // Open the choose trainer form
+                ChooseTrainerPage tp = new ChooseTrainerPage(dbManager, stateManager);
+                tp.Show();
+            }
+            else
+            {
+                statusStrip.Text = "Wrong Username/Password!";
+                //statusStrip1.Refresh();
+            }
         }
     }
 }

@@ -13,12 +13,19 @@ namespace PICKTrainingInc
     {
         /* FIELD VARIABLES */
         string userName = null;
-        string trainingName = null;
+        string firstName = null;
+        string lastName = null;
+        string password = null;
+        private bool isAnAdmin = false;
+        int userID = -1; //the userID of this user as it is in the DB
+        int questionID = -1; //the questionID of the last question asked.
+        string trainingName = null; //the current training name 
+        DataBaseManager dbManager;
 
         /* Constructor */
-        public StateManager()
+        public StateManager(DataBaseManager dbManager)
         {
-            //do we need to do anything here?
+            this.dbManager = dbManager;
         }
 
         /* PRIVATE METHODS */
@@ -28,9 +35,16 @@ namespace PICKTrainingInc
         /**
          * Sets the states username variable
          */
-        public void setUserName(string userName)
+        public void setUserName(string userName, string password)
         {
+            // Set the Username
             this.userName = userName;
+
+            // Get the users ID from the DB
+            int userID = dbManager.getUserID(userName, password);
+
+            // And save that userID
+            setUserID(userID);
         }
 
         /*
@@ -56,5 +70,79 @@ namespace PICKTrainingInc
         {
             this.trainingName = trainingName;
         }
+
+        /**
+         * Set the states current user ID
+         */
+        public void setUserID(int userID)
+        {
+            this.userID = userID;
+        }
+
+        /**
+         * Returns the current user id
+         */
+        public int getUserID()
+        {
+            return userID;
+        }
+
+        /**
+         * Set the states current questionID ID
+         */
+        public void setQuestionID(int questionID)
+        {
+            this.questionID = questionID;
+        }
+
+        /**
+         * Returns the current user id
+         */
+        public int getQuestionID()
+        {
+            return questionID;
+        }
+
+        public void setIsAdmin(bool isAnAdmin)
+        {
+            this.isAnAdmin = isAnAdmin;
+        }
+
+        public bool isAdmin()
+        {
+            return isAnAdmin;
+        }
+
+        public void setFirstName(string name)
+        {
+            this.firstName = name;
+        }
+
+        public string getFirstName()
+        {
+            return firstName;
+        }
+
+        public void setLastName(string name)
+        {
+            this.lastName = name;
+        }
+
+        public string getLastName()
+        {
+            return lastName;
+        }
+
+        public void setPassword(string password)
+        {
+            this.password = password;
+        }
+
+        public string getPassword()
+        {
+            return password;
+        }
+
+
     }
 }
