@@ -13,9 +13,13 @@ namespace PICKTrainingInc
     {
         /* FIELD VARIABLES */
         string userName = null;
+        string firstName = null;
+        string lastName = null;
+        string password = null;
+        private bool isAnAdmin = false;
         int userID = -1; //the userID of this user as it is in the DB
-        int questionID = -1;
-        string trainingName = null;
+        int questionID = -1; //the questionID of the last question asked.
+        string trainingName = null; //the current training name 
         DataBaseManager dbManager;
 
         /* Constructor */
@@ -97,6 +101,46 @@ namespace PICKTrainingInc
         public int getQuestionID()
         {
             return questionID;
+        }
+
+        public void setIsAdmin(bool isAnAdmin)
+        {
+            this.isAnAdmin = isAnAdmin;
+        }
+
+        public bool isAdmin()
+        {
+            return isAnAdmin;
+        }
+
+        public void setFirstName(string name)
+        {
+            this.firstName = name;
+        }
+
+        public string getFirstName()
+        {
+            return firstName;
+        }
+
+        public void setLastName(string name)
+        {
+            this.lastName = name;
+        }
+
+        public string getLastName()
+        {
+            return lastName;
+        }
+
+        public void setPassword(string password)
+        {
+            this.password = password;
+        }
+
+        public string getPassword()
+        {
+            return password;
         }
 
 

@@ -31,7 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseTrainerPage));
             this.menuOptions = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.navigationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.Logo = new System.Windows.Forms.PictureBox();
@@ -56,11 +58,12 @@
             // 
             // menuOptions
             // 
+            this.menuOptions.BackColor = System.Drawing.SystemColors.Control;
             this.menuOptions.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuOptions.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem,
-            this.userOptionsToolStripMenuItem});
+            this.navigationToolStripMenuItem});
             this.menuOptions.Location = new System.Drawing.Point(0, 0);
             this.menuOptions.Name = "menuOptions";
             this.menuOptions.Size = new System.Drawing.Size(1286, 33);
@@ -72,12 +75,30 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(60, 29);
             this.exitToolStripMenuItem.Text = "Exit ";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // userOptionsToolStripMenuItem
+            // navigationToolStripMenuItem
             // 
-            this.userOptionsToolStripMenuItem.Name = "userOptionsToolStripMenuItem";
-            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 29);
-            this.userOptionsToolStripMenuItem.Text = "User Options";
+            this.navigationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardToolStripMenuItem,
+            this.logoutToolStripMenuItem});
+            this.navigationToolStripMenuItem.Name = "navigationToolStripMenuItem";
+            this.navigationToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
+            this.navigationToolStripMenuItem.Text = "Navigation";
+            // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(202, 34);
+            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(202, 34);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -252,7 +273,7 @@
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.MenuStrip menuOptions;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem userOptionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem navigationToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusBar;
         private System.Windows.Forms.Label chooseTrainingLabel;
@@ -263,5 +284,7 @@
         private System.Windows.Forms.GroupBox gb_training1;
         private System.Windows.Forms.PictureBox pb_training1;
         private ePOSOne.btnProduct.Button_WOC goback_btn2;
+        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

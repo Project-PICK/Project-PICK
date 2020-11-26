@@ -185,6 +185,12 @@ namespace PICKTrainingInc
             return insert(query);
         }
 
+        public NameValueCollection getUserByID(int userID)
+        {
+            string queryString = "SELECT * from user WHERE id = " + userID
+;           return query(queryString)[0];
+        }
+
         public List<NameValueCollection> getWorstQuestions(StateManager stateManager, int numQuestions)
         {
             string userName = stateManager.getUserName();

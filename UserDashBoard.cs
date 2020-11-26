@@ -12,9 +12,18 @@ namespace PICKTrainingInc
 {
     public partial class UserDashBoard : Form
     {
-        public UserDashBoard()
+        /* Field Variables and Object */
+        protected DataBaseManager databaseManager;
+        protected StateManager stateManager;
+
+        /**
+         * Consltructor
+         * */
+        public UserDashBoard(DataBaseManager dbManager, StateManager sManager)
         {
             InitializeComponent();
+            databaseManager = dbManager;
+            stateManager = sManager;
         }
 
         private void userInfoButton_Click(object sender, EventArgs e)

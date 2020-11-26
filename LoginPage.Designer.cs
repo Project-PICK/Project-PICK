@@ -33,6 +33,8 @@ namespace PICKTrainingInc
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.SignIn = new System.Windows.Forms.GroupBox();
+            this.submit_button = new ePOSOne.btnProduct.Button_WOC();
+            this.register_button = new ePOSOne.btnProduct.Button_WOC();
             this.showPassword = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tb_password = new System.Windows.Forms.TextBox();
@@ -41,19 +43,11 @@ namespace PICKTrainingInc
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusStrip = new System.Windows.Forms.ToolStripStatusLabel();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.goback_btn1 = new ePOSOne.btnProduct.Button_WOC();
-            this.register_button = new ePOSOne.btnProduct.Button_WOC();
-            this.submit_button = new ePOSOne.btnProduct.Button_WOC();
             this.SignIn.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +78,46 @@ namespace PICKTrainingInc
             this.SignIn.TabIndex = 3;
             this.SignIn.TabStop = false;
             this.SignIn.Text = "Sign-In";
+            // 
+            // submit_button
+            // 
+            this.submit_button.BackColor = System.Drawing.Color.Transparent;
+            this.submit_button.BorderColor = System.Drawing.Color.Transparent;
+            this.submit_button.ButtonColor = System.Drawing.Color.RoyalBlue;
+            this.submit_button.FlatAppearance.BorderSize = 0;
+            this.submit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submit_button.ForeColor = System.Drawing.Color.Transparent;
+            this.submit_button.Location = new System.Drawing.Point(445, 258);
+            this.submit_button.Name = "submit_button";
+            this.submit_button.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.submit_button.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.submit_button.OnHoverTextColor = System.Drawing.Color.Black;
+            this.submit_button.Size = new System.Drawing.Size(145, 54);
+            this.submit_button.TabIndex = 18;
+            this.submit_button.Text = "Submit";
+            this.submit_button.TextColor = System.Drawing.Color.Black;
+            this.submit_button.UseVisualStyleBackColor = false;
+            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
+            // 
+            // register_button
+            // 
+            this.register_button.BackColor = System.Drawing.Color.Transparent;
+            this.register_button.BorderColor = System.Drawing.Color.Transparent;
+            this.register_button.ButtonColor = System.Drawing.Color.DarkGoldenrod;
+            this.register_button.FlatAppearance.BorderSize = 0;
+            this.register_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.register_button.ForeColor = System.Drawing.Color.Transparent;
+            this.register_button.Location = new System.Drawing.Point(9, 227);
+            this.register_button.Name = "register_button";
+            this.register_button.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.register_button.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.register_button.OnHoverTextColor = System.Drawing.Color.Black;
+            this.register_button.Size = new System.Drawing.Size(145, 54);
+            this.register_button.TabIndex = 17;
+            this.register_button.Text = "Register";
+            this.register_button.TextColor = System.Drawing.Color.Black;
+            this.register_button.UseVisualStyleBackColor = false;
+            this.register_button.Click += new System.EventHandler(this.register_button_Click);
             // 
             // showPassword
             // 
@@ -162,49 +196,6 @@ namespace PICKTrainingInc
             this.statusStrip.Size = new System.Drawing.Size(110, 25);
             this.statusStrip.Text = "Login Please";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem,
-            this.userOptionsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1068, 33);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quitToolStripMenuItem});
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // quitToolStripMenuItem
-            // 
-            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(148, 34);
-            this.quitToolStripMenuItem.Text = "Quit";
-            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
-            // 
-            // userOptionsToolStripMenuItem
-            // 
-            this.userOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem});
-            this.userOptionsToolStripMenuItem.Name = "userOptionsToolStripMenuItem";
-            this.userOptionsToolStripMenuItem.Size = new System.Drawing.Size(132, 29);
-            this.userOptionsToolStripMenuItem.Text = "User Options";
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
-            this.adminToolStripMenuItem.Text = "Admin";
-            // 
             // Logo
             // 
             this.Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -239,46 +230,6 @@ namespace PICKTrainingInc
             this.goback_btn1.UseVisualStyleBackColor = false;
             this.goback_btn1.Click += new System.EventHandler(this.goback_btn1_Click);
             // 
-            // register_button
-            // 
-            this.register_button.BackColor = System.Drawing.Color.Transparent;
-            this.register_button.BorderColor = System.Drawing.Color.Transparent;
-            this.register_button.ButtonColor = System.Drawing.Color.DarkGoldenrod;
-            this.register_button.FlatAppearance.BorderSize = 0;
-            this.register_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.register_button.ForeColor = System.Drawing.Color.Transparent;
-            this.register_button.Location = new System.Drawing.Point(9, 227);
-            this.register_button.Name = "register_button";
-            this.register_button.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.register_button.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.register_button.OnHoverTextColor = System.Drawing.Color.Black;
-            this.register_button.Size = new System.Drawing.Size(145, 54);
-            this.register_button.TabIndex = 17;
-            this.register_button.Text = "Register";
-            this.register_button.TextColor = System.Drawing.Color.Black;
-            this.register_button.UseVisualStyleBackColor = false;
-            this.register_button.Click += new System.EventHandler(this.register_button_Click);
-            // 
-            // submit_button
-            // 
-            this.submit_button.BackColor = System.Drawing.Color.Transparent;
-            this.submit_button.BorderColor = System.Drawing.Color.Transparent;
-            this.submit_button.ButtonColor = System.Drawing.Color.RoyalBlue;
-            this.submit_button.FlatAppearance.BorderSize = 0;
-            this.submit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submit_button.ForeColor = System.Drawing.Color.Transparent;
-            this.submit_button.Location = new System.Drawing.Point(445, 258);
-            this.submit_button.Name = "submit_button";
-            this.submit_button.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.submit_button.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.submit_button.OnHoverTextColor = System.Drawing.Color.Black;
-            this.submit_button.Size = new System.Drawing.Size(145, 54);
-            this.submit_button.TabIndex = 18;
-            this.submit_button.Text = "Submit";
-            this.submit_button.TextColor = System.Drawing.Color.Black;
-            this.submit_button.UseVisualStyleBackColor = false;
-            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
-            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -286,11 +237,9 @@ namespace PICKTrainingInc
             this.ClientSize = new System.Drawing.Size(1068, 625);
             this.Controls.Add(this.goback_btn1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.SignIn);
             this.Controls.Add(this.Logo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginPage";
             this.Text = "User Login Page";
@@ -302,8 +251,6 @@ namespace PICKTrainingInc
             this.tableLayoutPanel1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -324,12 +271,7 @@ namespace PICKTrainingInc
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusStrip;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem userOptionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.CheckBox showPassword;
-        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private ePOSOne.btnProduct.Button_WOC goback_btn1;
         private ePOSOne.btnProduct.Button_WOC submit_button;
         private ePOSOne.btnProduct.Button_WOC register_button;
