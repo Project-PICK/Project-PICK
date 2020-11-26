@@ -135,5 +135,32 @@ namespace PICKTrainingInc
         {
 
         }
+
+        private void goback_btn1_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            ChooseTrainerPage sp = new ChooseTrainerPage(dbManager, stateManager);
+            sp.Show();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            {
+                // Show a dialog box.
+                DialogResult d = MessageBox.Show("Are You Sure You Want To Exit?", "Project PICK", MessageBoxButtons.YesNo);
+                if (d == DialogResult.No)
+                {
+
+                    // don't do anything
+                }
+                else
+                {
+                    closeProgram = true;
+                    System.Environment.Exit(1);
+                }
+            }
+        }
     }
 }

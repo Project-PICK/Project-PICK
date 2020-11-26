@@ -82,23 +82,32 @@ namespace PICKTrainingInc
         {
             
             //Setup our async timer, on the UI Thread.
-            timer.Interval = 3000;
-            timer.Enabled = true;
-            timer.Tick += new EventHandler(continueToLogin);
-            timer.Start();
+           // timer.Interval = 3000;
+           // timer.Enabled = true;
+           // timer.Tick += new EventHandler(continueToLogin);
+            //timer.Start();
         }
 
         private async void continueToLogin(Object myObject, EventArgs myEventArgs)
         {
             // Hides this form
-            this.Hide();
+            //this.Hide();
 
             // Start our next form.
-            LoginPage lp = new LoginPage(dbManager, stateManager);
-            lp.Show();
+            //LoginPage lp = new LoginPage(dbManager, stateManager);
+           // lp.Show();
 
             // Stop the timer.
-            timer.Stop();
+           // timer.Stop();
+        }
+
+        private void goback_btn1_Click(object sender, EventArgs e)
+        {
+           // closeProgram = false;
+
+            this.Hide();
+            LoginPage sp = new LoginPage(dbManager, stateManager);
+            sp.Show();
         }
     }
 }
