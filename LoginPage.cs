@@ -232,5 +232,42 @@ namespace PICKTrainingInc
                 //statusStrip1.Refresh();
             }
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            {
+                // Show a dialog box.
+                DialogResult d = MessageBox.Show("Are You Sure You Want To Exit?", "Project PICK", MessageBoxButtons.YesNo);
+                if (d == DialogResult.No)
+                {
+
+                    // don't do anything
+                }
+                else
+                {
+                    closeProgram = true;
+                    System.Environment.Exit(1);
+                }
+            }
+        }
+
+        private void button_WOC1_Click(object sender, EventArgs e)
+        {
+            {
+                // Show a dialog box.
+                DialogResult d = MessageBox.Show("Are You Sure You Want To Change Your Password?", "Project PICK", MessageBoxButtons.YesNo);
+                if (d == DialogResult.No)
+                {
+                    DialogResult a = MessageBox.Show("You will now be redirected to the Login Screen");
+                    // don't do anything
+                }
+                else
+                {
+                    DialogResult a = MessageBox.Show("The Administrator has been contacted, please wait for an email.");
+                    closeProgram = true;
+                    System.Environment.Exit(1);
+                }
+            }
+        }
     }
 }
