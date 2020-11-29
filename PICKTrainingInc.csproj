@@ -199,12 +199,6 @@
     <Compile Include="ImageLoader.Designer.cs">
       <DependentUpon>ImageLoader.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminConsole.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminConsole.Designer.cs">
-      <DependentUpon>AdminConsole.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChooseTrainerPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,9 +235,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImageLoader.resx">
       <DependentUpon>ImageLoader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminConsole.resx">
-      <DependentUpon>AdminConsole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseTrainerPage.resx">
       <DependentUpon>ChooseTrainerPage.cs</DependentUpon>

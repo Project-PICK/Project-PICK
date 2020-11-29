@@ -49,8 +49,8 @@
             this.github_button = new System.Windows.Forms.PictureBox();
             this.userTypeLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
+            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.menuOptions.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -75,7 +75,7 @@
             this.menuOptions.Location = new System.Drawing.Point(0, 0);
             this.menuOptions.Name = "menuOptions";
             this.menuOptions.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuOptions.Size = new System.Drawing.Size(945, 24);
+            this.menuOptions.Size = new System.Drawing.Size(987, 24);
             this.menuOptions.TabIndex = 8;
             this.menuOptions.Text = "menuStrip2";
             // 
@@ -114,9 +114,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 450);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 440);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(945, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(987, 22);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -159,7 +159,7 @@
             this.fillPanel.Location = new System.Drawing.Point(2, 21);
             this.fillPanel.Margin = new System.Windows.Forms.Padding(2);
             this.fillPanel.Name = "fillPanel";
-            this.fillPanel.Size = new System.Drawing.Size(754, 238);
+            this.fillPanel.Size = new System.Drawing.Size(812, 228);
             this.fillPanel.TabIndex = 11;
             // 
             // tp_training
@@ -179,7 +179,7 @@
             this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tp_training.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tp_training.Size = new System.Drawing.Size(737, 665);
+            this.tp_training.Size = new System.Drawing.Size(795, 665);
             this.tp_training.TabIndex = 0;
             // 
             // gb_training1
@@ -218,7 +218,7 @@
             this.gb_training.Margin = new System.Windows.Forms.Padding(2);
             this.gb_training.Name = "gb_training";
             this.gb_training.Padding = new System.Windows.Forms.Padding(2);
-            this.gb_training.Size = new System.Drawing.Size(758, 261);
+            this.gb_training.Size = new System.Drawing.Size(816, 251);
             this.gb_training.TabIndex = 12;
             this.gb_training.TabStop = false;
             this.gb_training.Text = "Choose Your Training Course";
@@ -259,7 +259,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(945, 126);
+            this.panel2.Size = new System.Drawing.Size(987, 126);
             this.panel2.TabIndex = 16;
             // 
             // discord_button
@@ -291,9 +291,9 @@
             this.userTypeLabel.ForeColor = System.Drawing.Color.Silver;
             this.userTypeLabel.Location = new System.Drawing.Point(837, 19);
             this.userTypeLabel.Name = "userTypeLabel";
-            this.userTypeLabel.Size = new System.Drawing.Size(94, 17);
+            this.userTypeLabel.Size = new System.Drawing.Size(80, 17);
             this.userTypeLabel.TabIndex = 3;
-            this.userTypeLabel.Text = "Administrator";
+            this.userTypeLabel.Text = "Contact Us";
             // 
             // panel1
             // 
@@ -305,32 +305,8 @@
             this.panel1.Location = new System.Drawing.Point(0, 150);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(155, 300);
+            this.panel1.Size = new System.Drawing.Size(155, 290);
             this.panel1.TabIndex = 17;
-            // 
-            // button_WOC1
-            // 
-            this.button_WOC1.BackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.ButtonColor = System.Drawing.Color.Coral;
-            this.button_WOC1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.button_WOC1.FlatAppearance.BorderSize = 0;
-            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC1.ForeColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.Location = new System.Drawing.Point(24, 33);
-            this.button_WOC1.Margin = new System.Windows.Forms.Padding(2);
-            this.button_WOC1.Name = "button_WOC1";
-            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Black;
-            this.button_WOC1.Size = new System.Drawing.Size(97, 35);
-            this.button_WOC1.TabIndex = 16;
-            this.button_WOC1.Text = "Dashboard";
-            this.button_WOC1.TextColor = System.Drawing.Color.Black;
-            this.button_WOC1.UseVisualStyleBackColor = false;
-            this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click);
             // 
             // button_WOC2
             // 
@@ -356,12 +332,36 @@
             this.button_WOC2.UseVisualStyleBackColor = false;
             this.button_WOC2.Click += new System.EventHandler(this.button_WOC2_Click);
             // 
+            // button_WOC1
+            // 
+            this.button_WOC1.BackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.ButtonColor = System.Drawing.Color.Coral;
+            this.button_WOC1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC1.FlatAppearance.BorderSize = 0;
+            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC1.ForeColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.Location = new System.Drawing.Point(24, 33);
+            this.button_WOC1.Margin = new System.Windows.Forms.Padding(2);
+            this.button_WOC1.Name = "button_WOC1";
+            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Black;
+            this.button_WOC1.Size = new System.Drawing.Size(97, 35);
+            this.button_WOC1.TabIndex = 16;
+            this.button_WOC1.Text = "Dashboard";
+            this.button_WOC1.TextColor = System.Drawing.Color.Black;
+            this.button_WOC1.UseVisualStyleBackColor = false;
+            this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click);
+            // 
             // ChooseTrainerPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(945, 472);
+            this.ClientSize = new System.Drawing.Size(987, 462);
             this.Controls.Add(this.gb_training);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
