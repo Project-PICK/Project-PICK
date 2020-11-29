@@ -69,7 +69,7 @@
             this.sloganLabel2.AutoSize = true;
             this.sloganLabel2.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sloganLabel2.ForeColor = System.Drawing.Color.Coral;
-            this.sloganLabel2.Location = new System.Drawing.Point(244, 48);
+            this.sloganLabel2.Location = new System.Drawing.Point(325, 43);
             this.sloganLabel2.Name = "sloganLabel2";
             this.sloganLabel2.Size = new System.Drawing.Size(382, 35);
             this.sloganLabel2.TabIndex = 2;
@@ -80,7 +80,7 @@
             this.goback_btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.goback_btn1.BackColor = System.Drawing.Color.Transparent;
             this.goback_btn1.BorderColor = System.Drawing.Color.Transparent;
-            this.goback_btn1.ButtonColor = System.Drawing.Color.YellowGreen;
+            this.goback_btn1.ButtonColor = System.Drawing.Color.Coral;
             this.goback_btn1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.goback_btn1.FlatAppearance.BorderSize = 0;
             this.goback_btn1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -89,7 +89,7 @@
             this.goback_btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goback_btn1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goback_btn1.ForeColor = System.Drawing.Color.Transparent;
-            this.goback_btn1.Location = new System.Drawing.Point(74, 198);
+            this.goback_btn1.Location = new System.Drawing.Point(463, 187);
             this.goback_btn1.Margin = new System.Windows.Forms.Padding(2);
             this.goback_btn1.Name = "goback_btn1";
             this.goback_btn1.OnHoverBorderColor = System.Drawing.Color.DarkGreen;

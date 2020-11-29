@@ -162,5 +162,15 @@ namespace PICKTrainingInc
                 }
             }
         }
+
+        private void gb_questionsAnswered_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
