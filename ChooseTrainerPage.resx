@@ -5378,7 +5378,7 @@
         9UtQ8OeG9cjeb+z4lMvV4hhgfwr0KNaWCjBLDwXI7pJa36N8zu32vb0Im6tWMrydpH//2Q==
 </value>
   </data>
-  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="discord_button.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAACGZJREFUeF7t
         mnlQVecZh2/b1Fbb2qY2Tas0MXrZueyyuOASFSG4RIIYmrDvarXRiNrE4Jr8EavjZIxGSSXjSsTIaixE
@@ -5420,7 +5420,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="github_button.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAC1ZJREFUeF7t
         m3tUVWUaxnEax6bGyqb5Y6aVZcpF8IIgpImBZBCmWBCWLlRQJIXIW9iAN0pLTUHD8pZmTeYFBeR+lcPl

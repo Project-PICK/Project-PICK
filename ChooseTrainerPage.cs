@@ -311,5 +311,47 @@ namespace PICKTrainingInc
             LoginPage lp = new LoginPage(dbManager, stateManager);
             lp.Show();
         }
+
+        private void gb_training_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_WOC1_Click(object sender, EventArgs e)
+        {
+            closeProgram = false;
+
+            this.Close();
+            Dashboard dashboard = new Dashboard(dbManager, stateManager);
+            dashboard.Show();
+        }
+
+        private void button_WOC2_Click(object sender, EventArgs e)
+        {
+            
+                // Show a dialog box.
+                DialogResult d = MessageBox.Show("Are You Sure You Want To Exit?", "Project PICK", MessageBoxButtons.YesNo);
+                if (d == DialogResult.No)
+                {
+
+                    // don't do anything
+                }
+                else
+                {
+                    closeProgram = true;
+                    System.Environment.Exit(1);
+                }
+            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Project-PICK/Project-PICK");
+        }
+
+        private void discord_button_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://discord.gg/TchN36rp");
+        }
     }
 }

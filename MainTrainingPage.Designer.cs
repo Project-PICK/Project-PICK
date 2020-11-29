@@ -51,7 +51,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbl_welcome = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.goback = new ePOSOne.btnProduct.Button_WOC();
             this.menuOptions = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,11 +71,10 @@
             // 
             // Logo
             // 
-            this.Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
-            this.Logo.Location = new System.Drawing.Point(12, 40);
+            this.Logo.Location = new System.Drawing.Point(33, 64);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(93, 85);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -85,13 +83,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.tbl_answers);
             this.groupBox1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Coral;
-            this.groupBox1.Location = new System.Drawing.Point(523, 50);
+            this.groupBox1.Location = new System.Drawing.Point(716, 156);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 409);
+            this.groupBox1.Size = new System.Drawing.Size(323, 377);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select Your Answer";
@@ -115,7 +113,7 @@
             this.tbl_answers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tbl_answers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tbl_answers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tbl_answers.Size = new System.Drawing.Size(290, 369);
+            this.tbl_answers.Size = new System.Drawing.Size(290, 337);
             this.tbl_answers.TabIndex = 0;
             // 
             // button1
@@ -124,7 +122,7 @@
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(3, 13);
+            this.button1.Location = new System.Drawing.Point(3, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 46);
             this.button1.TabIndex = 0;
@@ -133,12 +131,11 @@
             // 
             // gb_stats
             // 
-            this.gb_stats.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gb_stats.BackColor = System.Drawing.Color.White;
             this.gb_stats.Controls.Add(this.tableLayoutPanel2);
             this.gb_stats.Font = new System.Drawing.Font("Rockwell", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_stats.ForeColor = System.Drawing.Color.Black;
-            this.gb_stats.Location = new System.Drawing.Point(110, 50);
+            this.gb_stats.Location = new System.Drawing.Point(131, 74);
             this.gb_stats.Name = "gb_stats";
             this.gb_stats.Size = new System.Drawing.Size(391, 75);
             this.gb_stats.TabIndex = 5;
@@ -164,7 +161,7 @@
             this.tableLayoutPanel2.Controls.Add(this.allUserWrong, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.allUserTotal, 2, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 18);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -308,13 +305,15 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.pb_question);
             this.groupBox3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Coral;
-            this.groupBox3.Location = new System.Drawing.Point(12, 131);
+            this.groupBox3.Location = new System.Drawing.Point(32, 156);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(494, 328);
+            this.groupBox3.Size = new System.Drawing.Size(644, 505);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Question";
@@ -322,71 +321,59 @@
             // pb_question
             // 
             this.pb_question.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pb_question.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pb_question.Image = ((System.Drawing.Image)(resources.GetObject("pb_question.Image")));
             this.pb_question.InitialImage = ((System.Drawing.Image)(resources.GetObject("pb_question.InitialImage")));
-            this.pb_question.Location = new System.Drawing.Point(15, 25);
+            this.pb_question.Location = new System.Drawing.Point(3, 22);
             this.pb_question.Name = "pb_question";
-            this.pb_question.Size = new System.Drawing.Size(474, 297);
+            this.pb_question.Size = new System.Drawing.Size(638, 480);
             this.pb_question.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_question.TabIndex = 4;
             this.pb_question.TabStop = false;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 448);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 688);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(160, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1051, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(143, 17);
             this.toolStripStatusLabel1.Text = "Welcome to Your Training";
             // 
             // lbl_welcome
             // 
-            this.lbl_welcome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.lbl_welcome.ForeColor = System.Drawing.Color.Coral;
-            this.lbl_welcome.Location = new System.Drawing.Point(150, 25);
+            this.lbl_welcome.Location = new System.Drawing.Point(171, 49);
             this.lbl_welcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_welcome.Name = "lbl_welcome";
             this.lbl_welcome.Size = new System.Drawing.Size(328, 23);
             this.lbl_welcome.TabIndex = 8;
             this.lbl_welcome.Text = "Test Class Training For Test User";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(929, 482);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Project PICK";
-            // 
             // goback
             // 
-            this.goback.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.goback.BackColor = System.Drawing.Color.Transparent;
             this.goback.BorderColor = System.Drawing.Color.Transparent;
-            this.goback.ButtonColor = System.Drawing.Color.YellowGreen;
+            this.goback.ButtonColor = System.Drawing.Color.Coral;
             this.goback.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.goback.FlatAppearance.BorderSize = 0;
             this.goback.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.goback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.goback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goback.ForeColor = System.Drawing.Color.Transparent;
-            this.goback.Location = new System.Drawing.Point(734, 25);
-            this.goback.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.goback.Location = new System.Drawing.Point(551, 74);
+            this.goback.Margin = new System.Windows.Forms.Padding(2);
             this.goback.Name = "goback";
             this.goback.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
             this.goback.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
@@ -407,7 +394,7 @@
             this.menuOptions.Location = new System.Drawing.Point(0, 0);
             this.menuOptions.Name = "menuOptions";
             this.menuOptions.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuOptions.Size = new System.Drawing.Size(856, 24);
+            this.menuOptions.Size = new System.Drawing.Size(1051, 24);
             this.menuOptions.TabIndex = 18;
             this.menuOptions.Text = "menuStrip2";
             // 
@@ -431,21 +418,21 @@
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // chooseTrainingToolStripMenuItem
             // 
             this.chooseTrainingToolStripMenuItem.Name = "chooseTrainingToolStripMenuItem";
-            this.chooseTrainingToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.chooseTrainingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.chooseTrainingToolStripMenuItem.Text = "Choose Training";
             this.chooseTrainingToolStripMenuItem.Click += new System.EventHandler(this.chooseTrainingToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -454,10 +441,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(856, 482);
+            this.ClientSize = new System.Drawing.Size(1051, 710);
             this.Controls.Add(this.menuOptions);
             this.Controls.Add(this.goback);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_welcome);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox3);
@@ -497,7 +483,6 @@
         //private System.Windows.Forms.BindingSource userBindingSource;
         //private System.Windows.Forms.BindingSource dataSet1BindingSource;
         private System.Windows.Forms.Label lbl_welcome;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label totalWrong;
         private System.Windows.Forms.Label totalAnswered;

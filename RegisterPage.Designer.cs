@@ -33,14 +33,14 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.Register = new System.Windows.Forms.GroupBox();
+            this.exitButton = new ePOSOne.btnProduct.Button_WOC();
+            this.goback_btn1 = new ePOSOne.btnProduct.Button_WOC();
+            this.submit_button2 = new ePOSOne.btnProduct.Button_WOC();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tb_password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.tb_userName = new System.Windows.Forms.TextBox();
-            this.submit_button2 = new ePOSOne.btnProduct.Button_WOC();
-            this.goback_btn1 = new ePOSOne.btnProduct.Button_WOC();
-            this.exitButton = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.Register.SuspendLayout();
@@ -94,6 +94,81 @@
             this.Register.Text = "Register";
             this.Register.Enter += new System.EventHandler(this.SignIn_Enter);
             // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.Color.Transparent;
+            this.exitButton.BorderColor = System.Drawing.Color.Transparent;
+            this.exitButton.ButtonColor = System.Drawing.Color.Coral;
+            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.ForeColor = System.Drawing.Color.Transparent;
+            this.exitButton.Location = new System.Drawing.Point(186, 152);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.exitButton.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.exitButton.OnHoverTextColor = System.Drawing.Color.Black;
+            this.exitButton.Size = new System.Drawing.Size(113, 40);
+            this.exitButton.TabIndex = 19;
+            this.exitButton.Text = "Exit";
+            this.exitButton.TextColor = System.Drawing.Color.Black;
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // goback_btn1
+            // 
+            this.goback_btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.goback_btn1.BackColor = System.Drawing.Color.Transparent;
+            this.goback_btn1.BorderColor = System.Drawing.Color.Transparent;
+            this.goback_btn1.ButtonColor = System.Drawing.Color.Coral;
+            this.goback_btn1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.goback_btn1.FlatAppearance.BorderSize = 0;
+            this.goback_btn1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.goback_btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.goback_btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.goback_btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goback_btn1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goback_btn1.ForeColor = System.Drawing.Color.Transparent;
+            this.goback_btn1.Location = new System.Drawing.Point(7, 149);
+            this.goback_btn1.Margin = new System.Windows.Forms.Padding(2);
+            this.goback_btn1.Name = "goback_btn1";
+            this.goback_btn1.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.goback_btn1.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.goback_btn1.OnHoverTextColor = System.Drawing.Color.Black;
+            this.goback_btn1.Size = new System.Drawing.Size(113, 40);
+            this.goback_btn1.TabIndex = 17;
+            this.goback_btn1.Text = "Go Back";
+            this.goback_btn1.TextColor = System.Drawing.Color.Black;
+            this.goback_btn1.UseVisualStyleBackColor = false;
+            this.goback_btn1.Click += new System.EventHandler(this.goback_btn1_Click);
+            // 
+            // submit_button2
+            // 
+            this.submit_button2.BackColor = System.Drawing.Color.Transparent;
+            this.submit_button2.BorderColor = System.Drawing.Color.Transparent;
+            this.submit_button2.ButtonColor = System.Drawing.Color.Coral;
+            this.submit_button2.FlatAppearance.BorderSize = 0;
+            this.submit_button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submit_button2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submit_button2.ForeColor = System.Drawing.Color.Transparent;
+            this.submit_button2.Location = new System.Drawing.Point(364, 152);
+            this.submit_button2.Margin = new System.Windows.Forms.Padding(2);
+            this.submit_button2.Name = "submit_button2";
+            this.submit_button2.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.submit_button2.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.submit_button2.OnHoverTextColor = System.Drawing.Color.Black;
+            this.submit_button2.Size = new System.Drawing.Size(97, 35);
+            this.submit_button2.TabIndex = 16;
+            this.submit_button2.Text = "Submit";
+            this.submit_button2.TextColor = System.Drawing.Color.Black;
+            this.submit_button2.UseVisualStyleBackColor = false;
+            this.submit_button2.Click += new System.EventHandler(this.submit_button2_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -146,81 +221,6 @@
             this.tb_userName.Name = "tb_userName";
             this.tb_userName.Size = new System.Drawing.Size(222, 30);
             this.tb_userName.TabIndex = 4;
-            // 
-            // submit_button2
-            // 
-            this.submit_button2.BackColor = System.Drawing.Color.Transparent;
-            this.submit_button2.BorderColor = System.Drawing.Color.Transparent;
-            this.submit_button2.ButtonColor = System.Drawing.Color.RoyalBlue;
-            this.submit_button2.FlatAppearance.BorderSize = 0;
-            this.submit_button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submit_button2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submit_button2.ForeColor = System.Drawing.Color.Transparent;
-            this.submit_button2.Location = new System.Drawing.Point(364, 152);
-            this.submit_button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.submit_button2.Name = "submit_button2";
-            this.submit_button2.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.submit_button2.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.submit_button2.OnHoverTextColor = System.Drawing.Color.Black;
-            this.submit_button2.Size = new System.Drawing.Size(97, 35);
-            this.submit_button2.TabIndex = 16;
-            this.submit_button2.Text = "Submit";
-            this.submit_button2.TextColor = System.Drawing.Color.Black;
-            this.submit_button2.UseVisualStyleBackColor = false;
-            this.submit_button2.Click += new System.EventHandler(this.submit_button2_Click);
-            // 
-            // goback_btn1
-            // 
-            this.goback_btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.goback_btn1.BackColor = System.Drawing.Color.Transparent;
-            this.goback_btn1.BorderColor = System.Drawing.Color.Transparent;
-            this.goback_btn1.ButtonColor = System.Drawing.Color.YellowGreen;
-            this.goback_btn1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.goback_btn1.FlatAppearance.BorderSize = 0;
-            this.goback_btn1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.goback_btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.goback_btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.goback_btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.goback_btn1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goback_btn1.ForeColor = System.Drawing.Color.Transparent;
-            this.goback_btn1.Location = new System.Drawing.Point(7, 149);
-            this.goback_btn1.Margin = new System.Windows.Forms.Padding(2);
-            this.goback_btn1.Name = "goback_btn1";
-            this.goback_btn1.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.goback_btn1.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.goback_btn1.OnHoverTextColor = System.Drawing.Color.Black;
-            this.goback_btn1.Size = new System.Drawing.Size(113, 40);
-            this.goback_btn1.TabIndex = 17;
-            this.goback_btn1.Text = "Go Back";
-            this.goback_btn1.TextColor = System.Drawing.Color.Black;
-            this.goback_btn1.UseVisualStyleBackColor = false;
-            this.goback_btn1.Click += new System.EventHandler(this.goback_btn1_Click);
-            // 
-            // exitButton
-            // 
-            this.exitButton.BackColor = System.Drawing.Color.Transparent;
-            this.exitButton.BorderColor = System.Drawing.Color.Transparent;
-            this.exitButton.ButtonColor = System.Drawing.Color.DarkGoldenrod;
-            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.ForeColor = System.Drawing.Color.Transparent;
-            this.exitButton.Location = new System.Drawing.Point(186, 152);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.exitButton.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.exitButton.OnHoverTextColor = System.Drawing.Color.Black;
-            this.exitButton.Size = new System.Drawing.Size(113, 40);
-            this.exitButton.TabIndex = 19;
-            this.exitButton.Text = "Exit";
-            this.exitButton.TextColor = System.Drawing.Color.Black;
-            this.exitButton.UseVisualStyleBackColor = false;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // RegisterPage
             // 

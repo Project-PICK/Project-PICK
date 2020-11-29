@@ -33,6 +33,8 @@ namespace PICKTrainingInc
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.SignIn = new System.Windows.Forms.GroupBox();
+            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
+            this.submit_button = new ePOSOne.btnProduct.Button_WOC();
             this.showPassword = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tb_password = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@ namespace PICKTrainingInc
             this.exitButton = new ePOSOne.btnProduct.Button_WOC();
             this.goback_btn1 = new ePOSOne.btnProduct.Button_WOC();
             this.register_button = new ePOSOne.btnProduct.Button_WOC();
-            this.submit_button = new ePOSOne.btnProduct.Button_WOC();
-            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.SignIn.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -78,6 +78,58 @@ namespace PICKTrainingInc
             this.SignIn.TabIndex = 3;
             this.SignIn.TabStop = false;
             this.SignIn.Text = "Sign-In";
+            // 
+            // button_WOC1
+            // 
+            this.button_WOC1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_WOC1.BackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.ButtonColor = System.Drawing.Color.Coral;
+            this.button_WOC1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC1.FlatAppearance.BorderSize = 0;
+            this.button_WOC1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC1.ForeColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.Location = new System.Drawing.Point(145, 162);
+            this.button_WOC1.Margin = new System.Windows.Forms.Padding(2);
+            this.button_WOC1.Name = "button_WOC1";
+            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Black;
+            this.button_WOC1.Size = new System.Drawing.Size(113, 40);
+            this.button_WOC1.TabIndex = 19;
+            this.button_WOC1.Text = "Forgot Password";
+            this.button_WOC1.TextColor = System.Drawing.Color.Black;
+            this.button_WOC1.UseVisualStyleBackColor = false;
+            this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click);
+            // 
+            // submit_button
+            // 
+            this.submit_button.BackColor = System.Drawing.Color.Transparent;
+            this.submit_button.BorderColor = System.Drawing.Color.Transparent;
+            this.submit_button.ButtonColor = System.Drawing.Color.Coral;
+            this.submit_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.submit_button.FlatAppearance.BorderSize = 0;
+            this.submit_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.submit_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.submit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submit_button.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submit_button.ForeColor = System.Drawing.Color.Transparent;
+            this.submit_button.Location = new System.Drawing.Point(425, 162);
+            this.submit_button.Margin = new System.Windows.Forms.Padding(2);
+            this.submit_button.Name = "submit_button";
+            this.submit_button.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.submit_button.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.submit_button.OnHoverTextColor = System.Drawing.Color.Black;
+            this.submit_button.Size = new System.Drawing.Size(113, 40);
+            this.submit_button.TabIndex = 18;
+            this.submit_button.Text = "Submit";
+            this.submit_button.TextColor = System.Drawing.Color.Black;
+            this.submit_button.UseVisualStyleBackColor = false;
+            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
             // 
             // showPassword
             // 
@@ -111,6 +163,7 @@ namespace PICKTrainingInc
             // 
             // tb_password
             // 
+            this.tb_password.AcceptsReturn = true;
             this.tb_password.Location = new System.Drawing.Point(270, 63);
             this.tb_password.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tb_password.Name = "tb_password";
@@ -170,9 +223,10 @@ namespace PICKTrainingInc
             // 
             // exitButton
             // 
+            this.exitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.exitButton.BackColor = System.Drawing.Color.Transparent;
             this.exitButton.BorderColor = System.Drawing.Color.Transparent;
-            this.exitButton.ButtonColor = System.Drawing.Color.DarkGoldenrod;
+            this.exitButton.ButtonColor = System.Drawing.Color.Coral;
             this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.exitButton.FlatAppearance.BorderSize = 0;
             this.exitButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -199,7 +253,7 @@ namespace PICKTrainingInc
             this.goback_btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.goback_btn1.BackColor = System.Drawing.Color.Transparent;
             this.goback_btn1.BorderColor = System.Drawing.Color.Transparent;
-            this.goback_btn1.ButtonColor = System.Drawing.Color.YellowGreen;
+            this.goback_btn1.ButtonColor = System.Drawing.Color.Coral;
             this.goback_btn1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.goback_btn1.FlatAppearance.BorderSize = 0;
             this.goback_btn1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -223,9 +277,10 @@ namespace PICKTrainingInc
             // 
             // register_button
             // 
+            this.register_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.register_button.BackColor = System.Drawing.Color.Transparent;
             this.register_button.BorderColor = System.Drawing.Color.Transparent;
-            this.register_button.ButtonColor = System.Drawing.Color.DarkGoldenrod;
+            this.register_button.ButtonColor = System.Drawing.Color.Coral;
             this.register_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.register_button.FlatAppearance.BorderSize = 0;
             this.register_button.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -247,59 +302,9 @@ namespace PICKTrainingInc
             this.register_button.UseVisualStyleBackColor = false;
             this.register_button.Click += new System.EventHandler(this.register_button_Click);
             // 
-            // submit_button
-            // 
-            this.submit_button.BackColor = System.Drawing.Color.Transparent;
-            this.submit_button.BorderColor = System.Drawing.Color.Transparent;
-            this.submit_button.ButtonColor = System.Drawing.Color.RoyalBlue;
-            this.submit_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.submit_button.FlatAppearance.BorderSize = 0;
-            this.submit_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.submit_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.submit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submit_button.ForeColor = System.Drawing.Color.Transparent;
-            this.submit_button.Location = new System.Drawing.Point(425, 171);
-            this.submit_button.Margin = new System.Windows.Forms.Padding(2);
-            this.submit_button.Name = "submit_button";
-            this.submit_button.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.submit_button.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.submit_button.OnHoverTextColor = System.Drawing.Color.Black;
-            this.submit_button.Size = new System.Drawing.Size(113, 40);
-            this.submit_button.TabIndex = 18;
-            this.submit_button.Text = "Submit";
-            this.submit_button.TextColor = System.Drawing.Color.Black;
-            this.submit_button.UseVisualStyleBackColor = false;
-            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
-            // 
-            // button_WOC1
-            // 
-            this.button_WOC1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_WOC1.BackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.ButtonColor = System.Drawing.Color.YellowGreen;
-            this.button_WOC1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.button_WOC1.FlatAppearance.BorderSize = 0;
-            this.button_WOC1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC1.ForeColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.Location = new System.Drawing.Point(145, 162);
-            this.button_WOC1.Margin = new System.Windows.Forms.Padding(2);
-            this.button_WOC1.Name = "button_WOC1";
-            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Black;
-            this.button_WOC1.Size = new System.Drawing.Size(113, 40);
-            this.button_WOC1.TabIndex = 19;
-            this.button_WOC1.Text = "Forgot Password";
-            this.button_WOC1.TextColor = System.Drawing.Color.Black;
-            this.button_WOC1.UseVisualStyleBackColor = false;
-            this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click);
-            // 
             // LoginPage
             // 
+            this.AcceptButton = this.submit_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));

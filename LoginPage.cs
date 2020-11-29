@@ -163,6 +163,15 @@ namespace PICKTrainingInc
 
         }
 
+        private void tb_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter || e.KeyChar == (char)Keys.Return)
+            {
+                e.Handled = true;
+                submit_button.PerformClick();
+            }
+        }
+
         /**
           * Called When the user selects to view their password in plain text
          */
@@ -269,5 +278,6 @@ namespace PICKTrainingInc
                 }
             }
         }
+
     }
 }
