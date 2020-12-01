@@ -273,8 +273,11 @@ namespace PICKTrainingInc
                 else
                 {
                     DialogResult a = MessageBox.Show("The Administrator has been contacted, please wait for an email.");
-                    closeProgram = true;
-                    System.Environment.Exit(1);
+                    closeProgram = false;
+
+                    this.Close();
+                    SplashPage sp = new SplashPage(dbManager, stateManager);
+                    sp.Show();
                 }
             }
         }

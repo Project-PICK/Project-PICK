@@ -37,6 +37,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gb_questionsAnswered = new System.Windows.Forms.GroupBox();
+            this.exitButton = new ePOSOne.btnProduct.Button_WOC();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -109,9 +110,11 @@
             this.label46 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.goback_btn1 = new ePOSOne.btnProduct.Button_WOC();
             this.gb_userinfo = new System.Windows.Forms.GroupBox();
             this.btn_submit = new ePOSOne.btnProduct.Button_WOC();
             this.cbIsAdmin = new System.Windows.Forms.CheckBox();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.tb_userName = new System.Windows.Forms.TextBox();
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.tbLastName = new System.Windows.Forms.TextBox();
@@ -120,13 +123,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_username = new System.Windows.Forms.Label();
-            this.Logo = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.goback_btn1 = new ePOSOne.btnProduct.Button_WOC();
-            this.exitButton = new ePOSOne.btnProduct.Button_WOC();
             this.menuOptions.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -162,7 +162,7 @@
             this.menuOptions.Location = new System.Drawing.Point(0, 0);
             this.menuOptions.Name = "menuOptions";
             this.menuOptions.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuOptions.Size = new System.Drawing.Size(1167, 24);
+            this.menuOptions.Size = new System.Drawing.Size(779, 24);
             this.menuOptions.TabIndex = 19;
             this.menuOptions.Text = "menuStrip2";
             // 
@@ -234,11 +234,37 @@
             this.gb_questionsAnswered.Margin = new System.Windows.Forms.Padding(2);
             this.gb_questionsAnswered.Name = "gb_questionsAnswered";
             this.gb_questionsAnswered.Padding = new System.Windows.Forms.Padding(2);
-            this.gb_questionsAnswered.Size = new System.Drawing.Size(766, 301);
+            this.gb_questionsAnswered.Size = new System.Drawing.Size(770, 301);
             this.gb_questionsAnswered.TabIndex = 19;
             this.gb_questionsAnswered.TabStop = false;
             this.gb_questionsAnswered.Text = "Question Statistics";
             this.gb_questionsAnswered.Enter += new System.EventHandler(this.gb_questionsAnswered_Enter);
+            // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.Color.Transparent;
+            this.exitButton.BorderColor = System.Drawing.Color.Transparent;
+            this.exitButton.ButtonColor = System.Drawing.Color.Coral;
+            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.ForeColor = System.Drawing.Color.Transparent;
+            this.exitButton.Location = new System.Drawing.Point(671, 267);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.exitButton.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.exitButton.OnHoverTextColor = System.Drawing.Color.Black;
+            this.exitButton.Size = new System.Drawing.Size(71, 20);
+            this.exitButton.TabIndex = 22;
+            this.exitButton.Text = "Exit";
+            this.exitButton.TextColor = System.Drawing.Color.Black;
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // tabControl2
             // 
@@ -248,7 +274,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(744, 249);
+            this.tabControl2.Size = new System.Drawing.Size(744, 239);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage3
@@ -258,7 +284,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(736, 220);
+            this.tabPage3.Size = new System.Drawing.Size(736, 210);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Mans Best Friend";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1198,14 +1224,41 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 23);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(736, 208);
+            this.tabPage4.Size = new System.Drawing.Size(736, 220);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Common Fish";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // goback_btn1
+            // 
+            this.goback_btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.goback_btn1.BackColor = System.Drawing.Color.Transparent;
+            this.goback_btn1.BorderColor = System.Drawing.Color.Transparent;
+            this.goback_btn1.ButtonColor = System.Drawing.Color.Coral;
+            this.goback_btn1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.goback_btn1.FlatAppearance.BorderSize = 0;
+            this.goback_btn1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.goback_btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.goback_btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.goback_btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goback_btn1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goback_btn1.ForeColor = System.Drawing.Color.Transparent;
+            this.goback_btn1.Location = new System.Drawing.Point(2, 268);
+            this.goback_btn1.Margin = new System.Windows.Forms.Padding(2);
+            this.goback_btn1.Name = "goback_btn1";
+            this.goback_btn1.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.goback_btn1.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.goback_btn1.OnHoverTextColor = System.Drawing.Color.Black;
+            this.goback_btn1.Size = new System.Drawing.Size(76, 22);
+            this.goback_btn1.TabIndex = 19;
+            this.goback_btn1.Text = "Go Back";
+            this.goback_btn1.TextColor = System.Drawing.Color.Black;
+            this.goback_btn1.UseVisualStyleBackColor = false;
+            this.goback_btn1.Click += new System.EventHandler(this.goback_btn1_Click);
             // 
             // gb_userinfo
             // 
@@ -1267,6 +1320,20 @@
             this.cbIsAdmin.TabIndex = 8;
             this.cbIsAdmin.Text = "Admin?";
             this.cbIsAdmin.UseVisualStyleBackColor = true;
+            // 
+            // Logo
+            // 
+            this.Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
+            this.Logo.Location = new System.Drawing.Point(5, 18);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(114, 71);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Logo.TabIndex = 4;
+            this.Logo.TabStop = false;
             // 
             // tb_userName
             // 
@@ -1340,20 +1407,6 @@
             this.lbl_username.TabIndex = 6;
             this.lbl_username.Text = "User Name";
             // 
-            // Logo
-            // 
-            this.Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
-            this.Logo.Location = new System.Drawing.Point(5, 18);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(114, 71);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Logo.TabIndex = 4;
-            this.Logo.TabStop = false;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.pictureBox1);
@@ -1384,9 +1437,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 569);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 442);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1167, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(779, 22);
             this.statusStrip1.TabIndex = 21;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1397,65 +1450,12 @@
             this.statusBar.Size = new System.Drawing.Size(60, 17);
             this.statusBar.Text = "View Stats";
             // 
-            // goback_btn1
-            // 
-            this.goback_btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.goback_btn1.BackColor = System.Drawing.Color.Transparent;
-            this.goback_btn1.BorderColor = System.Drawing.Color.Transparent;
-            this.goback_btn1.ButtonColor = System.Drawing.Color.Coral;
-            this.goback_btn1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.goback_btn1.FlatAppearance.BorderSize = 0;
-            this.goback_btn1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.goback_btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.goback_btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.goback_btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.goback_btn1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goback_btn1.ForeColor = System.Drawing.Color.Transparent;
-            this.goback_btn1.Location = new System.Drawing.Point(0, 268);
-            this.goback_btn1.Margin = new System.Windows.Forms.Padding(2);
-            this.goback_btn1.Name = "goback_btn1";
-            this.goback_btn1.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.goback_btn1.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.goback_btn1.OnHoverTextColor = System.Drawing.Color.Black;
-            this.goback_btn1.Size = new System.Drawing.Size(76, 22);
-            this.goback_btn1.TabIndex = 19;
-            this.goback_btn1.Text = "Go Back";
-            this.goback_btn1.TextColor = System.Drawing.Color.Black;
-            this.goback_btn1.UseVisualStyleBackColor = false;
-            this.goback_btn1.Click += new System.EventHandler(this.goback_btn1_Click);
-            // 
-            // exitButton
-            // 
-            this.exitButton.BackColor = System.Drawing.Color.Transparent;
-            this.exitButton.BorderColor = System.Drawing.Color.Transparent;
-            this.exitButton.ButtonColor = System.Drawing.Color.Coral;
-            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.ForeColor = System.Drawing.Color.Transparent;
-            this.exitButton.Location = new System.Drawing.Point(671, 267);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
-            this.exitButton.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.exitButton.OnHoverTextColor = System.Drawing.Color.Black;
-            this.exitButton.Size = new System.Drawing.Size(71, 20);
-            this.exitButton.TabIndex = 22;
-            this.exitButton.Text = "Exit";
-            this.exitButton.TextColor = System.Drawing.Color.Black;
-            this.exitButton.UseVisualStyleBackColor = false;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(1167, 591);
+            this.ClientSize = new System.Drawing.Size(779, 464);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuOptions);

@@ -37,14 +37,14 @@
             this.goback_btn1 = new ePOSOne.btnProduct.Button_WOC();
             this.submit_button2 = new ePOSOne.btnProduct.Button_WOC();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.tb_password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.tb_userName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.Register.SuspendLayout();
@@ -53,12 +53,15 @@
             // 
             // Logo
             // 
+            this.Logo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("Logo.InitialImage")));
             this.Logo.Location = new System.Drawing.Point(12, 12);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(157, 120);
+            this.Logo.Size = new System.Drawing.Size(327, 284);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 7;
             this.Logo.TabStop = false;
@@ -68,9 +71,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 396);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 339);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(781, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(825, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "Please Register to Continue with Project PICK Training";
             // 
@@ -84,16 +87,16 @@
             // 
             // Register
             // 
-            this.Register.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Register.Controls.Add(this.exitButton);
             this.Register.Controls.Add(this.goback_btn1);
             this.Register.Controls.Add(this.submit_button2);
             this.Register.Controls.Add(this.tableLayoutPanel1);
+            this.Register.Dock = System.Windows.Forms.DockStyle.Right;
             this.Register.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Register.ForeColor = System.Drawing.Color.Coral;
-            this.Register.Location = new System.Drawing.Point(233, 66);
+            this.Register.Location = new System.Drawing.Point(345, 0);
             this.Register.Name = "Register";
-            this.Register.Size = new System.Drawing.Size(480, 303);
+            this.Register.Size = new System.Drawing.Size(480, 339);
             this.Register.TabIndex = 9;
             this.Register.TabStop = false;
             this.Register.Text = "Register Here";
@@ -156,7 +159,10 @@
             this.submit_button2.BackColor = System.Drawing.Color.Transparent;
             this.submit_button2.BorderColor = System.Drawing.Color.Transparent;
             this.submit_button2.ButtonColor = System.Drawing.Color.Coral;
+            this.submit_button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.submit_button2.FlatAppearance.BorderSize = 0;
+            this.submit_button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.submit_button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.submit_button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submit_button2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submit_button2.ForeColor = System.Drawing.Color.Transparent;
@@ -196,6 +202,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(455, 198);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Coral;
+            this.label2.Location = new System.Drawing.Point(3, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 29);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "First Name";
+            // 
             // tb_password
             // 
             this.tb_password.Location = new System.Drawing.Point(230, 56);
@@ -232,23 +249,19 @@
             this.tb_userName.Size = new System.Drawing.Size(222, 30);
             this.tb_userName.TabIndex = 4;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Coral;
-            this.label2.Location = new System.Drawing.Point(3, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 29);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "First Name";
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(230, 109);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 30);
             this.textBox1.TabIndex = 7;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(230, 161);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(222, 30);
+            this.textBox2.TabIndex = 9;
             // 
             // label3
             // 
@@ -261,19 +274,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Last Name";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(230, 161);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 30);
-            this.textBox2.TabIndex = 9;
-            // 
             // RegisterPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(781, 418);
+            this.ClientSize = new System.Drawing.Size(825, 361);
             this.Controls.Add(this.Register);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.Logo);

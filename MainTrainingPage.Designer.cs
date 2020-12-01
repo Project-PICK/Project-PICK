@@ -58,6 +58,7 @@
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseTrainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tbl_answers.SuspendLayout();
@@ -131,10 +132,10 @@
             // 
             // gb_stats
             // 
-            this.gb_stats.BackColor = System.Drawing.Color.White;
+            this.gb_stats.BackColor = System.Drawing.Color.Transparent;
             this.gb_stats.Controls.Add(this.tableLayoutPanel2);
             this.gb_stats.Font = new System.Drawing.Font("Rockwell", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_stats.ForeColor = System.Drawing.Color.Black;
+            this.gb_stats.ForeColor = System.Drawing.Color.Coral;
             this.gb_stats.Location = new System.Drawing.Point(131, 74);
             this.gb_stats.Name = "gb_stats";
             this.gb_stats.Size = new System.Drawing.Size(391, 75);
@@ -144,7 +145,7 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -354,7 +355,7 @@
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.lbl_welcome.ForeColor = System.Drawing.Color.Coral;
-            this.lbl_welcome.Location = new System.Drawing.Point(171, 49);
+            this.lbl_welcome.Location = new System.Drawing.Point(132, 35);
             this.lbl_welcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_welcome.Name = "lbl_welcome";
             this.lbl_welcome.Size = new System.Drawing.Size(328, 23);
@@ -372,7 +373,7 @@
             this.goback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.goback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goback.ForeColor = System.Drawing.Color.Transparent;
-            this.goback.Location = new System.Drawing.Point(551, 74);
+            this.goback.Location = new System.Drawing.Point(551, 116);
             this.goback.Margin = new System.Windows.Forms.Padding(2);
             this.goback.Name = "goback";
             this.goback.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
@@ -418,23 +419,47 @@
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // chooseTrainingToolStripMenuItem
             // 
             this.chooseTrainingToolStripMenuItem.Name = "chooseTrainingToolStripMenuItem";
-            this.chooseTrainingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chooseTrainingToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.chooseTrainingToolStripMenuItem.Text = "Choose Training";
             this.chooseTrainingToolStripMenuItem.Click += new System.EventHandler(this.chooseTrainingToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // button_WOC2
+            // 
+            this.button_WOC2.BackColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.ButtonColor = System.Drawing.Color.Coral;
+            this.button_WOC2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC2.FlatAppearance.BorderSize = 0;
+            this.button_WOC2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.button_WOC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC2.ForeColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.Location = new System.Drawing.Point(551, 74);
+            this.button_WOC2.Margin = new System.Windows.Forms.Padding(2);
+            this.button_WOC2.Name = "button_WOC2";
+            this.button_WOC2.OnHoverBorderColor = System.Drawing.Color.DarkGreen;
+            this.button_WOC2.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.button_WOC2.OnHoverTextColor = System.Drawing.Color.Black;
+            this.button_WOC2.Size = new System.Drawing.Size(97, 35);
+            this.button_WOC2.TabIndex = 19;
+            this.button_WOC2.Text = "Exit";
+            this.button_WOC2.TextColor = System.Drawing.Color.Black;
+            this.button_WOC2.UseVisualStyleBackColor = false;
+            this.button_WOC2.Click += new System.EventHandler(this.button_WOC2_Click);
             // 
             // MainTrainingPage
             // 
@@ -442,6 +467,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(1051, 710);
+            this.Controls.Add(this.button_WOC2);
             this.Controls.Add(this.menuOptions);
             this.Controls.Add(this.goback);
             this.Controls.Add(this.lbl_welcome);
@@ -503,5 +529,6 @@
         private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chooseTrainingToolStripMenuItem;
+        private ePOSOne.btnProduct.Button_WOC button_WOC2;
     }
 }

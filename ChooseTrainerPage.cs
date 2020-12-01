@@ -351,7 +351,7 @@ namespace PICKTrainingInc
 
         private void discord_button_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://discord.gg/TchN36rp");
+            System.Diagnostics.Process.Start("https://discord.gg/CsYS7YGVfb");
         }
     }
 }

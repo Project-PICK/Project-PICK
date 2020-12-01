@@ -652,5 +652,23 @@ namespace PICKTrainingInc
             ChooseTrainerPage lp = new ChooseTrainerPage(dbManager, stateManager);
             lp.Show();
         }
+
+        private void button_WOC2_Click(object sender, EventArgs e)
+        {
+            {
+                // Show a dialog box.
+                DialogResult d = MessageBox.Show("Are You Sure You Want To Exit?", "Project PICK", MessageBoxButtons.YesNo);
+                if (d == DialogResult.No)
+                {
+
+                    // don't do anything
+                }
+                else
+                {
+                    closeProgram = true;
+                    System.Environment.Exit(1);
+                }
+            }
+        }
     }
 }
