@@ -13,10 +13,10 @@ Version 0.1
 | ------ | ----------- |-------- |
 | ~~09/23~~   | ~~Software Requirement Specification-Sprint 1~~ |~~**6%**~~ |
 | ~~10/17~~ | ~~Software Design Specification Sprint 2 (including User Interface design)~~ |~~*4%*~~ |
-| **11/12**    | **Test Plan** |*4%* |
-| 12/02    | Demonstration of the software  |**10%**|
-| 12/05    | User Manual |*3%* |
-| 12/05    | Programmers’ manual |*3%* |
+|~~**11/12**~~    | ~~**Test Plan**~~ |~~*4%*~~ |
+|~~12/02~~    | ~~Demonstration of the software~~  |~~**10%**~~|
+|12/09  | User Manual |*3%*|
+| 12/09    | Programmers’ manual |*3%* |
 | Week 7 & 14| Peer Evaluation Week |`TBD`|
 | Ongoing- Week 14 | Client Evaluation  |`TBD`|
 ***
@@ -24,8 +24,8 @@ Version 0.1
 
 
 ## 📑 Team Checklist:
-- [ ] **Discuss possible CI/CD implementation**
-- [ ] **NUnit Testing implementation**
+- [✅] **Discuss possible CI/CD implementation**
+- [✅] **NUnit Testing implementation**
 - [✅] ~~*Find database that fits project*~~
 - [✅] ~~*Continuously update [SRS](https://docs.google.com/document/d/1lbW62LPh84QcCzgn3-WpvVLJhuLZc-Fj-svnL28oMaM/edit) documentation*~~
 - [✅] ~~**Brainstorm and apply features we want in our application**~~
