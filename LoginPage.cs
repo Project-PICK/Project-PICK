@@ -91,6 +91,23 @@ namespace PICKTrainingInc
             {
                 returnVal = true;
                 stateManager.setUserName(userName, password);
+                stateManager.setFirstName(queryResult[0]["firstName"]);
+                stateManager.setLastName(queryResult[0]["lastName"]);
+                stateManager.setPassword(password);
+                string str_isAdmin = queryResult[0]["isAdmin"];
+
+                bool isAdmin;
+
+                if (str_isAdmin == "") {
+                    isAdmin = false;
+                }
+                else
+                {
+                  isAdmin  = bool.Parse(queryResult[0]["isAdmin"]);
+                }
+                
+                
+                stateManager.setIsAdmin(isAdmin);
             }
             else
             {
@@ -144,6 +161,15 @@ namespace PICKTrainingInc
         {
 
 
+        }
+
+        private void tb_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter || e.KeyChar == (char)Keys.Return)
+            {
+                e.Handled = true;
+                submit_button.PerformClick();
+            }
         }
 
         /**
@@ -215,5 +241,46 @@ namespace PICKTrainingInc
                 //statusStrip1.Refresh();
             }
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            {
+                // Show a dialog box.
+                DialogResult d = MessageBox.Show("Are You Sure You Want To Exit?", "Project PICK", MessageBoxButtons.YesNo);
+                if (d == DialogResult.No)
+                {
+
+                    // don't do anything
+                }
+                else
+                {
+                    closeProgram = true;
+                    System.Environment.Exit(1);
+                }
+            }
+        }
+
+        private void button_WOC1_Click(object sender, EventArgs e)
+        {
+            {
+                // Show a dialog box.
+                DialogResult d = MessageBox.Show("Are You Sure You Want To Change Your Password?", "Project PICK", MessageBoxButtons.YesNo);
+                if (d == DialogResult.No)
+                {
+                    DialogResult a = MessageBox.Show("You will now be redirected to the Login Screen");
+                    // don't do anything
+                }
+                else
+                {
+                    DialogResult a = MessageBox.Show("The Administrator has been contacted, please wait for an email.");
+                    closeProgram = false;
+
+                    this.Close();
+                    SplashPage sp = new SplashPage(dbManager, stateManager);
+                    sp.Show();
+                }
+            }
+        }
+
     }
 }
